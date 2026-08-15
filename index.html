@@ -1,38 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Love</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#fff0f5,#f8e8ff);display:flex;justify-content:center;padding:28px 14px;color:#3b2630}
-.app{width:min(850px,100%)}
-h1{text-align:center;font-size:34px;margin:10px 0 6px}
-.sub{text-align:center;color:#876b76;margin-bottom:22px}
-textarea{width:100%;min-height:58vh;border:0;border-radius:18px;padding:20px;background:#fff;box-shadow:0 8px 30px #00000012;font-size:17px;line-height:1.6;outline:none;resize:vertical}
-.buttons{display:flex;gap:10px;margin-top:12px}
-button{flex:1;border:0;border-radius:12px;padding:14px;font-size:15px;cursor:pointer;background:#9b5274;color:white}
-button.clear{background:#b8a5ad}
-#status{text-align:center;margin-top:10px;color:#876b76;font-size:14px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Love ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background:
+        radial-gradient(circle at 20% 20%, #ff4f81 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #7b2cff 0%, transparent 35%),
+        linear-gradient(135deg, #16001f, #3b082f, #12001d);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 650px;
+      padding: 45px 25px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 40px rgba(255, 70, 150, 0.35);
+      animation: appear 1.5s ease;
+      z-index: 2;
+    }
+
+    .heart {
+      font-size: 75px;
+      animation: heartbeat 1.2s infinite;
+      filter: drop-shadow(0 0 18px #ff4f91);
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-size: clamp(42px, 12vw, 75px);
+      text-shadow: 0 0 15px #ff4f91, 0 0 35px #ff1f75;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      line-height: 1.7;
+      color: #ffe8f2;
+    }
+
+    .small {
+      margin-top: 25px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .floating-heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 25px;
+      animation: floatUp linear forwards;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.9;
+      }
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="app">
-<h1>My Love ♡</h1>
-<div class="sub">A little place for your thoughts</div>
-<textarea id="notes" placeholder="Write your thoughts here..."></textarea>
-<div class="buttons">
-<button onclick="save()">Save</button>
-<button class="clear" onclick="clearNotes()">Clear</button>
-</div>
-<div id="status">Saved in this browser.</div>
-</div>
-<script>
-const notes=document.getElementById('notes'),status=document.getElementById('status');
-notes.value=localStorage.getItem('myLoveNotes')||'';
-function save(){localStorage.setItem('myLoveNotes',notes.value);status.textContent='Saved ✓';}
-function clearNotes(){if(confirm('Clear your saved writing?')){notes.value='';localStorage.removeItem('myLoveNotes');status.textContent='Cleared.';}}
-</script>
+
+  <div class="container">
+    <div class="heart">❤️</div>
+
+    <h1>My Love</h1>
+
+    <p class="message">
+      You are a beautiful part of my thoughts. ❤️<br>
+      Some feelings are too special to explain with words.
+    </p>
+
+    <p class="small">
+      Made with ❤️
+    </p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+
+      const hearts = ["❤️", "💗", "💕", "💖", "💜"];
+      heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (15 + Math.random() * 25) + "px";
+      heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 11000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
 </body>
 </html>
