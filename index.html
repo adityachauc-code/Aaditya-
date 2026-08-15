@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>My Love ❤️</title>
 
 <style>
@@ -16,11 +16,10 @@ color:white;
 background:
 radial-gradient(circle at 15% 15%,#ff4f8140,transparent 28%),
 radial-gradient(circle at 85% 80%,#8b4dff40,transparent 30%),
-linear-gradient(145deg,#08000f,#29001f,#100018);
+linear-gradient(145deg,#08000f,#29001f,#100018)
 }
 
 .container{
-width:100%;
 max-width:680px;
 margin:auto;
 padding:28px 16px;
@@ -28,7 +27,7 @@ border-radius:28px;
 background:#ffffff12;
 border:1px solid #ffffff25;
 backdrop-filter:blur(12px);
-box-shadow:0 15px 50px #00000060;
+box-shadow:0 15px 50px #00000060
 }
 
 .main-heart{
@@ -37,9 +36,7 @@ font-size:65px;
 animation:beat 1.4s infinite
 }
 
-@keyframes beat{
-50%{transform:scale(1.15)}
-}
+@keyframes beat{50%{transform:scale(1.15)}}
 
 h1{
 text-align:center;
@@ -64,7 +61,6 @@ border:1px solid #ffffff18
 
 .question h2{
 font-size:17px;
-line-height:1.4;
 margin-bottom:10px
 }
 
@@ -143,9 +139,7 @@ display:flex;
 gap:8px
 }
 
-.ask-row input{
-flex:1
-}
+.ask-row input{flex:1}
 
 .ask-row button{
 padding:0 18px;
@@ -155,8 +149,6 @@ background:#ff4f91;
 color:white;
 font-weight:bold
 }
-
-/* VISITOR QUESTION */
 
 .visitor-card{
 margin-top:15px;
@@ -187,58 +179,9 @@ font-weight:bold;
 margin-bottom:7px
 }
 
-.waiting{
-opacity:.7
-}
+.waiting{opacity:.7}
 
-/* ADMIN */
-
-.login{
-margin-top:25px;
-text-align:center
-}
-
-.login-box{
-display:none;
-margin-top:15px
-}
-
-.small-button,
-.admin-button{
-padding:10px 15px;
-border:0;
-border-radius:10px;
-background:#ff4f91;
-color:white;
-font-weight:bold
-}
-
-.admin-button{
-margin-top:8px
-}
-
-.admin{
-display:none;
-margin-top:35px;
-padding-top:25px;
-border-top:1px solid #ffffff20
-}
-
-.admin-card{
-margin-top:15px;
-padding:16px;
-border-radius:16px;
-background:#ffffff0d;
-border:1px solid #ffffff20
-}
-
-.logout{
-background:#555
-}
-
-/* MEDIA */
-
-.media-item{
+.media-item,.admin-card{
 margin-top:15px;
 padding:15px;
 border-radius:15px;
@@ -263,9 +206,39 @@ font-weight:bold;
 margin-bottom:10px
 }
 
-.upload-status{
-margin-top:10px;
+.login{
+margin-top:25px;
 text-align:center
+}
+
+.login-box{
+display:none;
+margin-top:15px
+}
+
+.small-button,.admin-button{
+padding:10px 15px;
+border:0;
+border-radius:10px;
+background:#ff4f91;
+color:white;
+font-weight:bold
+}
+
+.admin-button{margin-top:8px}
+
+.admin{
+display:none;
+margin-top:35px;
+padding-top:25px;
+border-top:1px solid #ffffff20
+}
+
+.logout{background:#555}
+
+.status{
+text-align:center;
+margin-top:10px
 }
 
 @media(max-width:500px){
@@ -359,30 +332,56 @@ Your answers were saved. ❤️
 </div>
 
 
-<!-- MEDIA -->
+<!-- VISITOR MEDIA UPLOAD -->
+
+<div class="section">
+
+<h2>📸 Share a Memory</h2>
+
+<p>Upload a photo, video or audio. ❤️</p>
+
+<input
+type="file"
+id="visitorMedia"
+accept="image/*,video/*,audio/*">
+
+<input
+type="text"
+id="visitorMediaTitle"
+placeholder="Title (optional)"
+style="margin-top:10px">
+
+<button
+class="button"
+id="visitorUpload">
+📤 Upload Media
+</button>
+
+<p class="status" id="visitorUploadStatus"></p>
+
+</div>
+
+
+<!-- MEDIA GALLERY -->
 
 <div class="section">
 
 <h2>💖 Memories</h2>
 
-<p>Photos, videos and audio shared here. ✨</p>
-
 <div id="mediaGallery">
-<p>No memories uploaded yet. ❤️</p>
+<p>No memories yet. ❤️</p>
 </div>
 
 </div>
 
 
-<!-- ASK SECTION -->
+<!-- ASK -->
 
 <div class="section">
 
 <h2>💌 Ask Me Anything</h2>
 
-<p>
-Ask me a question and I will reply. ❤️
-</p>
+<p>Ask a question and I will reply. ❤️</p>
 
 <div class="ask-row">
 
@@ -411,9 +410,7 @@ id="adminLoginButton">
 🔐 Admin
 </button>
 
-<div
-class="login-box"
-id="loginBox">
+<div class="login-box" id="loginBox">
 
 <input
 id="adminEmail"
@@ -438,64 +435,23 @@ Login
 </div>
 
 
-<!-- ADMIN PANEL -->
+<!-- ADMIN -->
 
-<div
-class="admin"
-id="adminPanel">
+<div class="admin" id="adminPanel">
 
 <h2>👑 Admin Panel</h2>
 
-
-<!-- MEDIA UPLOAD -->
-
-<h3 style="margin-top:20px">
-📤 Add Photo / Video / Audio
-</h3>
-
-<br>
-
-<input
-type="file"
-id="mediaFile"
-accept="image/*,video/*,audio/*">
-
-<br><br>
-
-<input
-type="text"
-id="mediaTitle"
-placeholder="Media title">
-
-<button
-class="admin-button"
-id="uploadMediaButton">
-📤 Upload
-</button>
-
-<p
-class="upload-status"
-id="uploadStatus">
-</p>
-
-
-<!-- ADMIN QUESTIONS -->
-
-<h3 style="margin-top:30px">
+<h3 style="margin-top:25px">
 💌 Visitor Questions
 </h3>
 
 <div id="adminQuestions"></div>
-
-
-<!-- SUBMISSIONS -->
 
 <h3 style="margin-top:30px">
 📝 Submitted Answers
 </h3>
 
 <div id="submissions"></div>
-
 
 <button
 class="button logout"
@@ -508,40 +464,42 @@ Log Out
 </div>
 
 
-<!-- FIREBASE -->
-
 <script type="module">
 
-import {
+import{
 initializeApp
-} from
+}
+from
 "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
-import {
+import{
 getAuth,
 signInAnonymously,
 signInWithEmailAndPassword,
 onAuthStateChanged,
 signOut
-} from
+}
+from
 "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
 
-import {
+import{
 getDatabase,
 ref,
 push,
 set,
 onValue,
 update
-} from
+}
+from
 "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
-import {
+import{
 getStorage,
 ref as storageRef,
 uploadBytes,
 getDownloadURL
-} from
+}
+from
 "https://www.gstatic.com/firebasejs/12.17.1/firebase-storage.js";
 
 
@@ -579,8 +537,6 @@ const ADMIN_EMAIL=
 "adityachauc@gmail.com";
 
 
-/* START FIREBASE */
-
 const app=
 initializeApp(firebaseConfig);
 
@@ -594,7 +550,7 @@ const storage=
 getStorage(app);
 
 
-/* ANONYMOUS VISITOR */
+/* VISITOR LOGIN */
 
 async function visitorLogin(){
 
@@ -615,7 +571,7 @@ console.error(error);
 }
 
 
-/* ANSWER BUTTONS */
+/* ANSWERS */
 
 document
 .querySelectorAll(".answer")
@@ -623,8 +579,7 @@ document
 
 button.onclick=function(){
 
-const q=
-this.dataset.q;
+const q=this.dataset.q;
 
 document
 .querySelectorAll(
@@ -641,14 +596,13 @@ this.classList.add("selected");
 });
 
 
-/* SUBMIT ANSWERS */
+/* SUBMIT */
 
 document
 .getElementById("submit")
 .onclick=async function(){
 
-const user=
-auth.currentUser;
+const user=auth.currentUser;
 
 if(!user){
 
@@ -735,12 +689,11 @@ return;
 
 }
 
-const user=
-auth.currentUser;
+const user=auth.currentUser;
 
-if(!user || !user.isAnonymous){
+if(!user){
 
-alert("Please wait a moment.");
+alert("Please wait.");
 return;
 
 }
@@ -762,6 +715,8 @@ createdAt:Date.now()
 
 input.value="";
 
+alert("Question sent ❤️");
+
 }catch(error){
 
 console.error(error);
@@ -773,18 +728,12 @@ alert("Question could not be sent.");
 };
 
 
-/* VISITOR QUESTIONS + REPLIES */
+/* VISITOR QUESTIONS */
 
 function loadVisitorQuestions(user){
 
-if(!user || !user.isAnonymous)
-return;
-
-const questionsRef=
-ref(db,"questions");
-
 onValue(
-questionsRef,
+ref(db,"questions"),
 snapshot=>{
 
 const box=
@@ -794,24 +743,16 @@ document.getElementById(
 
 box.innerHTML="";
 
-const data=
-snapshot.val();
+const data=snapshot.val();
 
-if(!data)
-return;
+if(!data)return;
 
 Object.entries(data)
 .filter(
 ([id,item])=>
 item.uid===user.uid
 )
-.sort(
-(a,b)=>
-(a[1].createdAt||0)-
-(b[1].createdAt||0)
-)
-.forEach(
-([id,item])=>{
+.forEach(([id,item])=>{
 
 const card=
 document.createElement("div");
@@ -820,22 +761,14 @@ card.className=
 "visitor-card";
 
 
-/* SLOT 1 */
-
 const questionSlot=
 document.createElement("div");
 
 questionSlot.className=
 "slot question-slot";
 
-const questionTitle=
-document.createElement("div");
-
-questionTitle.className=
-"slot-title";
-
-questionTitle.textContent=
-"❓ Your Question";
+questionSlot.innerHTML=
+"<div class='slot-title'>❓ Your Question</div>";
 
 const questionText=
 document.createElement("div");
@@ -844,15 +777,9 @@ questionText.textContent=
 item.question;
 
 questionSlot.appendChild(
-questionTitle
-);
-
-questionSlot.appendChild(
 questionText
 );
 
-
-/* SLOT 2 */
 
 const replySlot=
 document.createElement("div");
@@ -860,56 +787,26 @@ document.createElement("div");
 replySlot.className=
 "slot reply-slot";
 
-const replyTitle=
+replySlot.innerHTML=
+"<div class='slot-title'>❤️ My Reply</div>";
+
+const reply=
 document.createElement("div");
 
-replyTitle.className=
-"slot-title";
+reply.textContent=
+item.answer
+?item.answer
+:"⏳ Waiting for a reply...";
 
-replyTitle.textContent=
-"❤️ My Reply";
+if(!item.answer)
+reply.className="waiting";
 
-const replyText=
-document.createElement("div");
+replySlot.appendChild(reply);
 
-if(
-item.answer &&
-item.answer.trim()
-){
+card.appendChild(questionSlot);
+card.appendChild(replySlot);
 
-replyText.textContent=
-item.answer;
-
-}else{
-
-replyText.textContent=
-"⏳ Waiting for a reply...";
-
-replyText.className=
-"waiting";
-
-}
-
-replySlot.appendChild(
-replyTitle
-);
-
-replySlot.appendChild(
-replyText
-);
-
-
-card.appendChild(
-questionSlot
-);
-
-card.appendChild(
-replySlot
-);
-
-box.appendChild(
-card
-);
+box.appendChild(card);
 
 });
 
@@ -918,18 +815,232 @@ card
 }
 
 
-/* ADMIN LOGIN BUTTON */
+/* VISITOR MEDIA UPLOAD */
 
 document
-.getElementById(
-"adminLoginButton"
+.getElementById("visitorUpload")
+.onclick=async function(){
+
+const user=auth.currentUser;
+
+if(!user){
+
+alert("Please wait.");
+return;
+
+}
+
+const file=
+document
+.getElementById("visitorMedia")
+.files[0];
+
+const title=
+document
+.getElementById("visitorMediaTitle")
+.value.trim();
+
+const status=
+document
+.getElementById("visitorUploadStatus");
+
+if(!file){
+
+alert("Choose a file first.");
+return;
+
+}
+
+
+/*
+Visitor upload limit:
+20 MB
+*/
+
+if(file.size>20*1024*1024){
+
+alert("Maximum file size is 20 MB.");
+return;
+
+}
+
+try{
+
+status.textContent=
+"Uploading... ⏳";
+
+const safeName=
+file.name.replace(
+/[^a-zA-Z0-9._-]/g,
+"_"
+);
+
+const fileRef=
+storageRef(
+storage,
+"visitor-media/"
++user.uid+"/"
++Date.now()+"_"+safeName
+);
+
+await uploadBytes(
+fileRef,
+file
+);
+
+const url=
+await getDownloadURL(fileRef);
+
+const media=
+push(ref(db,"media"));
+
+await set(
+media,
+{
+uid:user.uid,
+title:title||file.name,
+url:url,
+type:file.type,
+createdAt:Date.now()
+}
+);
+
+status.textContent=
+"Uploaded successfully ❤️";
+
+document
+.getElementById("visitorMedia")
+.value="";
+
+document
+.getElementById("visitorMediaTitle")
+.value="";
+
+}catch(error){
+
+console.error(error);
+
+status.textContent=
+"Upload failed.";
+
+alert(
+"Upload failed. Check Firebase Storage Rules."
+);
+
+}
+
+};
+
+
+/* MEDIA GALLERY */
+
+onValue(
+ref(db,"media"),
+snapshot=>{
+
+const gallery=
+document.getElementById(
+"mediaGallery"
+);
+
+gallery.innerHTML="";
+
+const data=snapshot.val();
+
+if(!data){
+
+gallery.innerHTML=
+"<p>No memories yet. ❤️</p>";
+
+return;
+
+}
+
+Object.values(data)
+.sort(
+(a,b)=>
+(b.createdAt||0)-
+(a.createdAt||0)
 )
+.forEach(item=>{
+
+const div=
+document.createElement("div");
+
+div.className=
+"media-item";
+
+const title=
+document.createElement("div");
+
+title.className="media-title";
+
+title.textContent=
+"✨ "+item.title;
+
+div.appendChild(title);
+
+
+if(
+item.type?.startsWith("image/")
+){
+
+const img=
+document.createElement("img");
+
+img.src=item.url;
+
+img.alt=item.title;
+
+div.appendChild(img);
+
+}
+
+else if(
+item.type?.startsWith("video/")
+){
+
+const video=
+document.createElement("video");
+
+video.src=item.url;
+
+video.controls=true;
+
+div.appendChild(video);
+
+}
+
+else if(
+item.type?.startsWith("audio/")
+){
+
+const audio=
+document.createElement("audio");
+
+audio.src=item.url;
+
+audio.controls=true;
+
+div.appendChild(audio);
+
+}
+
+gallery.appendChild(div);
+
+});
+
+});
+
+
+/* ADMIN BUTTON */
+
+document
+.getElementById("adminLoginButton")
 .onclick=function(){
 
 document
-.getElementById(
-"loginBox"
-)
+.getElementById("loginBox")
 .style.display="block";
 
 };
@@ -938,23 +1049,17 @@ document
 /* ADMIN LOGIN */
 
 document
-.getElementById(
-"loginButton"
-)
+.getElementById("loginButton")
 .onclick=async function(){
 
 const email=
 document
-.getElementById(
-"adminEmail"
-)
+.getElementById("adminEmail")
 .value.trim();
 
 const password=
 document
-.getElementById(
-"adminPassword"
-)
+.getElementById("adminPassword")
 .value;
 
 if(email!==ADMIN_EMAIL){
@@ -972,9 +1077,7 @@ email,
 password
 );
 
-alert(
-"Admin login successful 👑"
-);
+alert("Admin login successful 👑");
 
 }catch(error){
 
@@ -1004,8 +1107,7 @@ document.getElementById(
 
 box.innerHTML="";
 
-const data=
-snapshot.val();
+const data=snapshot.val();
 
 if(!data){
 
@@ -1018,113 +1120,61 @@ return;
 
 Object.entries(data)
 .reverse()
-.forEach(
-([id,item])=>{
+.forEach(([id,item])=>{
 
 const card=
-document.createElement(
-"div"
-);
+document.createElement("div");
 
-card.className=
-"admin-card";
+card.className="admin-card";
 
+const q=
+document.createElement("p");
 
-const question=
-document.createElement(
-"div"
-);
+q.innerHTML=
+"<strong>❓ Question:</strong><br>"
++item.question;
 
-question.innerHTML=
-"<strong>❓ Visitor Question</strong><br>"
-+
-item.question;
-
-card.appendChild(
-question
-);
+card.appendChild(q);
 
 
 if(item.answer){
 
 const reply=
-document.createElement(
-"div"
-);
+document.createElement("p");
 
-reply.className=
-"reply";
+reply.style.marginTop="12px";
 
 reply.innerHTML=
-"<strong>❤️ Your Reply</strong><br>"
-+
-item.answer;
+"<strong>❤️ Reply:</strong><br>"
++item.answer;
 
-card.appendChild(
-reply
-);
+card.appendChild(reply);
 
 }else{
 
 const input=
-document.createElement(
-"textarea"
-);
+document.createElement("textarea");
 
-input.id=
-"reply-"+id;
+input.id="reply-"+id;
 
 input.placeholder=
-"Write your reply here...";
+"Write your reply...";
 
-card.appendChild(
-input
-);
+card.appendChild(input);
 
 const button=
-document.createElement(
-"button"
-);
+document.createElement("button");
 
-button.className=
-"admin-button";
+button.className="admin-button";
 
 button.textContent=
 "❤️ Send Reply";
 
 button.onclick=
-function(){
+async function(){
 
-sendReply(
-id,
-input.value.trim()
-);
-
-};
-
-card.appendChild(
-button
-);
-
-}
-
-box.appendChild(
-card
-);
-
-});
-
-});
-
-}
-
-
-/* SEND ADMIN REPLY */
-
-async function sendReply(
-id,
-answer
-){
+const answer=
+input.value.trim();
 
 if(!answer){
 
@@ -1143,19 +1193,27 @@ answeredAt:Date.now()
 }
 );
 
-alert(
-"Reply sent ❤️"
-);
+alert("Reply sent ❤️");
 
 }catch(error){
 
 console.error(error);
 
-alert(
-"Reply could not be sent."
-);
+alert("Reply failed.");
 
 }
+
+};
+
+card.appendChild(button);
+
+}
+
+box.appendChild(card);
+
+});
+
+});
 
 }
 
@@ -1175,8 +1233,7 @@ document.getElementById(
 
 box.innerHTML="";
 
-const data=
-snapshot.val();
+const data=snapshot.val();
 
 if(!data){
 
@@ -1187,18 +1244,14 @@ return;
 
 }
 
-Object.entries(data)
+Object.values(data)
 .reverse()
-.forEach(
-([id,item])=>{
+.forEach(item=>{
 
 const div=
-document.createElement(
-"div"
-);
+document.createElement("div");
 
-div.className=
-"admin-card";
+div.className="admin-card";
 
 const date=
 new Date(
@@ -1206,9 +1259,7 @@ item.createdAt
 ).toLocaleString();
 
 const title=
-document.createElement(
-"h4"
-);
+document.createElement("h4");
 
 title.textContent=
 "📝 Submission — "+date;
@@ -1218,8 +1269,7 @@ div.appendChild(title);
 Object.entries(
 item.answers||{}
 )
-.forEach(
-([question,answer])=>{
+.forEach(([q,a])=>{
 
 const p=
 document.createElement("p");
@@ -1227,7 +1277,7 @@ document.createElement("p");
 p.style.marginTop="10px";
 
 p.textContent=
-question+": "+answer;
+q+": "+a;
 
 div.appendChild(p);
 
@@ -1242,236 +1292,7 @@ box.appendChild(div);
 }
 
 
-/* MEDIA UPLOAD */
-
-document
-.getElementById(
-"uploadMediaButton"
-)
-.onclick=async function(){
-
-const user=
-auth.currentUser;
-
-if(
-!user ||
-user.email!==ADMIN_EMAIL
-){
-
-alert("Admin only.");
-return;
-
-}
-
-const file=
-document
-.getElementById(
-"mediaFile"
-)
-.files[0];
-
-const title=
-document
-.getElementById(
-"mediaTitle"
-)
-.value.trim();
-
-const status=
-document
-.getElementById(
-"uploadStatus"
-);
-
-if(!file){
-
-alert(
-"Choose a photo, video or audio file."
-);
-
-return;
-
-}
-
-try{
-
-status.textContent=
-"Uploading... ⏳";
-
-const fileName=
-file.name.replace(
-/[^a-zA-Z0-9._-]/g,
-"_"
-);
-
-const fileRef=
-storageRef(
-storage,
-"media/"
-+Date.now()
-+"_"+fileName
-);
-
-await uploadBytes(
-fileRef,
-file
-);
-
-const url=
-await getDownloadURL(
-fileRef
-);
-
-const media=
-push(ref(db,"media"));
-
-await set(
-media,
-{
-title:
-title||file.name,
-url:url,
-type:file.type,
-createdAt:Date.now()
-}
-);
-
-status.textContent=
-"Uploaded successfully ❤️";
-
-document
-.getElementById("mediaFile")
-.value="";
-
-document
-.getElementById("mediaTitle")
-.value="";
-
-}catch(error){
-
-console.error(error);
-
-status.textContent=
-"Upload failed.";
-
-}
-
-};
-
-
-/* SHOW MEDIA */
-
-onValue(
-ref(db,"media"),
-snapshot=>{
-
-const gallery=
-document.getElementById(
-"mediaGallery"
-);
-
-gallery.innerHTML="";
-
-const data=
-snapshot.val();
-
-if(!data){
-
-gallery.innerHTML=
-"<p>No memories uploaded yet. ❤️</p>";
-
-return;
-
-}
-
-Object.values(data)
-.sort(
-(a,b)=>
-(b.createdAt||0)-
-(a.createdAt||0)
-)
-.forEach(item=>{
-
-const div=
-document.createElement(
-"div"
-);
-
-div.className=
-"media-item";
-
-const title=
-document.createElement(
-"div"
-);
-
-title.className=
-"media-title";
-
-title.textContent=
-"✨ "+item.title;
-
-div.appendChild(title);
-
-
-if(
-item.type &&
-item.type.startsWith("image/")
-){
-
-const img=
-document.createElement("img");
-
-img.src=item.url;
-
-img.alt=item.title;
-
-div.appendChild(img);
-
-}
-
-
-else if(
-item.type &&
-item.type.startsWith("video/")
-){
-
-const video=
-document.createElement("video");
-
-video.src=item.url;
-
-video.controls=true;
-
-div.appendChild(video);
-
-}
-
-
-else if(
-item.type &&
-item.type.startsWith("audio/")
-){
-
-const audio=
-document.createElement("audio");
-
-audio.src=item.url;
-
-audio.controls=true;
-
-div.appendChild(audio);
-
-}
-
-gallery.appendChild(div);
-
-});
-
-});
-
-
-/* AUTH STATE */
+/* AUTH */
 
 onAuthStateChanged(
 auth,
@@ -1497,14 +1318,8 @@ loadSubmissions();
 
 panel.style.display="none";
 
-if(
-user &&
-user.isAnonymous
-){
-
+if(user)
 loadVisitorQuestions(user);
-
-}
 
 }
 
@@ -1514,9 +1329,7 @@ loadVisitorQuestions(user);
 /* LOGOUT */
 
 document
-.getElementById(
-"logoutButton"
-)
+.getElementById("logoutButton")
 .onclick=async function(){
 
 await signOut(auth);
@@ -1527,8 +1340,6 @@ await visitorLogin();
 
 };
 
-
-/* START */
 
 visitorLogin();
 
