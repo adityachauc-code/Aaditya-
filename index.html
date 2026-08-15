@@ -443,14 +443,16 @@ signOut
 from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
 
 import {
-getDatabase,
-ref,
-push,
-set,
-onValue,
-update
-}
-from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+  getDatabase,
+  ref,
+  push,
+  set,
+  onValue,
+  update,
+  query,
+  orderByChild,
+  equalTo
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 
 /* FIREBASE CONFIG */
@@ -735,7 +737,13 @@ alert("Question could not be sent.");
 
 /* SHOW VISITOR QUESTIONS */
 
-onValue(ref(db,"questions"),snapshot=>{
+onValue(
+  query(
+    ref(db,"questions"),
+    orderByChild("uid"),
+    equalTo(auth.currentUser.uid)
+  ),
+  snapshot=>{
 
 const box=
 document.getElementById("questions");
