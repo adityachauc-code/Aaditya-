@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>My Love ❤️</title>
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -23,1991 +15,1044 @@
 
 body{
   min-height:100vh;
+  padding:20px 12px;
   font-family:Arial,sans-serif;
   color:white;
-  overflow-x:hidden;
-
   background:
-    radial-gradient(
-      circle at 15% 15%,
-      #ff4f9140,
-      transparent 28%
-    ),
-
-    radial-gradient(
-      circle at 85% 80%,
-      #8b4dff40,
-      transparent 30%
-    ),
-
-    linear-gradient(
-      150deg,
-      #08000f,
-      #27001f,
-      #100018
-    );
-
-  padding:20px 12px;
+    radial-gradient(circle at 15% 15%,#ff4f8140,transparent 28%),
+    radial-gradient(circle at 85% 80%,#8b4dff40,transparent 30%),
+    linear-gradient(145deg,#08000f,#29001f,#100018);
 }
-
-
-/* =========================
-   BACKGROUND STARS
-========================= */
-
-#stars{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-}
-
-.star{
-  position:absolute;
-  color:white;
-  opacity:.5;
-  animation:twinkle 3s infinite alternate;
-}
-
-@keyframes twinkle{
-
-  from{
-    opacity:.15;
-    transform:scale(.7);
-  }
-
-  to{
-    opacity:.9;
-    transform:scale(1.2);
-  }
-
-}
-
-
-/* =========================
-   MAIN CONTAINER
-========================= */
 
 .container{
-
-  position:relative;
-  z-index:2;
-
   width:100%;
   max-width:680px;
-
   margin:auto;
-
   padding:28px 16px;
-
   border-radius:28px;
-
   background:#ffffff12;
-
   border:1px solid #ffffff25;
-
   backdrop-filter:blur(12px);
-
-  box-shadow:
-    0 15px 50px #00000060;
-
+  box-shadow:0 15px 50px #00000060;
 }
-
-
-/* =========================
-   HEART
-========================= */
 
 .main-heart{
-
   text-align:center;
-
   font-size:65px;
-
-  animation:heartbeat 1.4s infinite;
-
-  filter:
-    drop-shadow(
-      0 0 18px #ff4f91
-    );
-
+  animation:beat 1.4s infinite;
 }
 
-@keyframes heartbeat{
-
-  0%,100%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.15);
-  }
-
+@keyframes beat{
+  50%{transform:scale(1.15)}
 }
-
-
-/* =========================
-   TITLE
-========================= */
 
 h1{
-
   text-align:center;
-
-  font-size:
-    clamp(42px,12vw,72px);
-
-  text-shadow:
-    0 0 15px #ff4f91,
-    0 0 35px #ff267f;
-
+  font-size:clamp(42px,12vw,72px);
+  text-shadow:0 0 15px #ff4f91,0 0 35px #ff267f;
 }
 
 .intro{
-
   text-align:center;
-
-  margin:
-    15px auto 30px;
-
+  margin:15px auto 30px;
   line-height:1.7;
-
   color:#ffe8f2;
-
 }
 
-
-/* =========================
-   QUESTIONS
-========================= */
-
 .question{
-
   margin-top:18px;
-
   padding:18px;
-
   border-radius:18px;
-
   background:#ffffff0d;
-
-  border:
-    1px solid #ffffff18;
-
+  border:1px solid #ffffff18;
 }
 
 .question h2{
-
   font-size:17px;
-
-  margin-bottom:10px;
-
   line-height:1.4;
-
+  margin-bottom:10px;
 }
-
-
-/* =========================
-   ANSWER BUTTONS
-========================= */
 
 .answer{
-
   width:100%;
-
   padding:12px;
-
   margin-top:8px;
-
   border-radius:12px;
-
-  border:
-    1px solid #ffffff25;
-
+  border:1px solid #ffffff25;
   background:#ffffff0d;
-
   color:white;
-
   font-size:15px;
-
-  cursor:pointer;
-
-  transition:.2s;
-
-}
-
-.answer:hover{
-
-  background:#ff4f9130;
-
-}
-
-.answer:active{
-
-  transform:scale(.97);
-
 }
 
 .answer.selected{
-
   background:#ff469955;
-
   border-color:#ff9bc7;
-
 }
 
-
-/* =========================
-   INPUTS
-========================= */
-
-textarea,
-input{
-
+textarea,input{
   width:100%;
-
   padding:12px;
-
   border-radius:12px;
-
-  border:
-    1px solid #ffffff25;
-
+  border:1px solid #ffffff25;
   background:#00000035;
-
   color:white;
-
   font-size:15px;
-
   outline:none;
-
 }
 
 textarea{
-
   min-height:90px;
-
   resize:vertical;
-
 }
-
-textarea::placeholder,
-input::placeholder{
-
-  color:#c9a8ba;
-
-}
-
-
-/* =========================
-   BUTTON
-========================= */
 
 .button{
-
   width:100%;
-
   margin-top:15px;
-
   padding:14px;
-
   border:0;
-
   border-radius:15px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff4f91,
-      #934cff
-    );
-
+  background:linear-gradient(135deg,#ff4f91,#934cff);
   color:white;
-
   font-size:17px;
-
   font-weight:bold;
-
-  cursor:pointer;
-
-  transition:.2s;
-
 }
-
-.button:active{
-
-  transform:scale(.97);
-
-}
-
-
-/* =========================
-   SUCCESS MESSAGE
-========================= */
 
 .message{
-
   display:none;
-
   margin-top:15px;
-
   padding:15px;
-
   border-radius:15px;
-
   text-align:center;
-
   background:#ff509926;
-
 }
-
-
-/* =========================
-   ASK ME
-========================= */
 
 .ask{
-
   margin-top:35px;
-
   padding-top:25px;
-
-  border-top:
-    1px solid #ffffff20;
-
+  border-top:1px solid #ffffff20;
 }
 
-.ask h2{
-
+.ask h2,.admin h2{
   text-align:center;
-
-  margin-bottom:8px;
-
+  margin-bottom:10px;
 }
 
 .ask p{
-
   text-align:center;
-
   color:#e5c9d8;
-
   margin-bottom:15px;
-
 }
 
 .ask-row{
-
   display:flex;
-
   gap:8px;
-
 }
 
 .ask-row input{
-
   flex:1;
-
 }
 
 .ask-row button{
-
   padding:0 18px;
-
   border:0;
-
   border-radius:12px;
-
   background:#ff4f91;
-
   color:white;
-
   font-weight:bold;
-
-  cursor:pointer;
-
 }
 
-
-/* =========================
-   QUESTIONS DISPLAY
-========================= */
-
-.item{
-
+.item,.admin-box{
   margin-top:12px;
-
   padding:15px;
-
   border-radius:15px;
-
   background:#ffffff0d;
-
   line-height:1.5;
-
 }
 
 .reply{
-
   margin-top:10px;
-
   padding:10px;
-
   border-radius:10px;
-
   background:#ff4f9120;
-
 }
-
-
-/* =========================
-   ADMIN
-========================= */
 
 .admin{
-
   display:none;
-
   margin-top:35px;
-
   padding-top:25px;
-
-  border-top:
-    1px solid #ffffff20;
-
+  border-top:1px solid #ffffff20;
 }
-
-.admin-title{
-
-  text-align:center;
-
-  margin-bottom:15px;
-
-}
-
-.admin-box{
-
-  margin-top:12px;
-
-  padding:15px;
-
-  border-radius:15px;
-
-  background:#ffffff0d;
-
-}
-
-.admin-answer{
-
-  margin-top:10px;
-
-}
-
-.admin-button{
-
-  margin-top:8px;
-
-  padding:10px 14px;
-
-  border:0;
-
-  border-radius:10px;
-
-  background:#ff4f91;
-
-  color:white;
-
-  font-weight:bold;
-
-}
-
-.logout{
-
-  background:#555;
-
-}
-
-
-/* =========================
-   TOUCH EMOJI
-========================= */
-
-.touch{
-
-  position:fixed;
-
-  pointer-events:none;
-
-  z-index:1000;
-
-  font-size:40px;
-
-  animation:
-    touchAnimation 1.4s
-    ease-out forwards;
-
-}
-
-@keyframes touchAnimation{
-
-  0%{
-
-    transform:
-      translate(-50%,-50%)
-      scale(.4);
-
-    opacity:0;
-
-  }
-
-  20%{
-
-    transform:
-      translate(-50%,-50%)
-      scale(1.2);
-
-    opacity:1;
-
-  }
-
-  100%{
-
-    transform:
-      translate(-50%,-160%)
-      scale(1);
-
-    opacity:0;
-
-  }
-
-}
-
-
-/* =========================
-   FLOATING EMOJIS
-========================= */
-
-.floating{
-
-  position:fixed;
-
-  bottom:-50px;
-
-  pointer-events:none;
-
-  z-index:1;
-
-  animation:
-    floatUp 6s linear forwards;
-
-}
-
-@keyframes floatUp{
-
-  from{
-
-    transform:
-      translateY(0)
-      rotate(0deg);
-
-    opacity:0;
-
-  }
-
-  15%{
-    opacity:.8;
-  }
-
-  to{
-
-    transform:
-      translateY(-110vh)
-      rotate(360deg);
-
-    opacity:0;
-
-  }
-
-}
-
-
-/* =========================
-   ADMIN LOGIN
-========================= */
 
 .login{
-
   margin-top:25px;
-
   text-align:center;
-
 }
 
 .login-box{
-
   display:none;
-
   margin-top:15px;
-
 }
 
 .small-button{
-
   padding:10px 15px;
-
   border:0;
-
   border-radius:10px;
-
   background:#ffffff18;
-
   color:white;
-
 }
 
+.admin-button{
+  margin-top:8px;
+  padding:10px 14px;
+  border:0;
+  border-radius:10px;
+  background:#ff4f91;
+  color:white;
+  font-weight:bold;
+}
 
-/* =========================
-   MOBILE
-========================= */
+.logout{
+  background:#555;
+}
+
+.touch{
+  position:fixed;
+  pointer-events:none;
+  z-index:9999;
+  font-size:40px;
+  animation:touch 1.4s ease-out forwards;
+}
+
+@keyframes touch{
+  0%{
+    transform:translate(-50%,-50%) scale(.4);
+    opacity:0;
+  }
+  20%{
+    transform:translate(-50%,-50%) scale(1.2);
+    opacity:1;
+  }
+  100%{
+    transform:translate(-50%,-160%) scale(1);
+    opacity:0;
+  }
+}
+
+.floating{
+  position:fixed;
+  bottom:-50px;
+  pointer-events:none;
+  z-index:1;
+  animation:float 6s linear forwards;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0);
+    opacity:0;
+  }
+  15%{opacity:.8}
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
 
 @media(max-width:500px){
-
-  .container{
-
-    padding:
-      24px 12px;
-
-  }
-
   .ask-row{
-
     flex-direction:column;
-
   }
 
   .ask-row button{
-
     padding:12px;
-
   }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- BACKGROUND -->
-
-<div id="stars"></div>
-
-
 <div class="container">
 
+<div class="main-heart">❤️</div>
 
-<!-- TITLE -->
-
-<div class="main-heart">
-❤️
-</div>
-
-<h1>
-My Love
-</h1>
+<h1>My Love</h1>
 
 <p class="intro">
-
-Some feelings are too special
-to explain with words. ❤️
-
-<br>
-
-Answer these questions
-and ask me anything. ✨
-
+Some feelings are too special to explain with words. ❤️<br>
+Answer these questions and ask me anything. ✨
 </p>
 
-
-<!-- =========================
-     QUESTION 1
-========================= -->
+<!-- QUESTIONS -->
 
 <div class="question">
-
-<h2>
-1. What makes you happiest? 😊
-</h2>
-
-<button
-class="answer"
-data-q="1">
-
-😊 Spending time together
-
-</button>
-
-<button
-class="answer"
-data-q="1">
-
-😂 Making each other laugh
-
-</button>
-
-<button
-class="answer"
-data-q="1">
-
-💖 Being understood
-
-</button>
-
-<button
-class="answer"
-data-q="1">
-
-✨ Something else
-
-</button>
-
+<h2>1. What makes you happiest? 😊</h2>
+<button class="answer" data-q="1">😊 Spending time together</button>
+<button class="answer" data-q="1">😂 Making each other laugh</button>
+<button class="answer" data-q="1">💖 Being understood</button>
+<button class="answer" data-q="1">✨ Something else</button>
 </div>
-
-
-<!-- QUESTION 2 -->
 
 <div class="question">
-
-<h2>
-2. Choose a feeling ❤️
-</h2>
-
-<button
-class="answer"
-data-q="2">
-
-🥰 Happiness
-
-</button>
-
-<button
-class="answer"
-data-q="2">
-
-😍 Love
-
-</button>
-
-<button
-class="answer"
-data-q="2">
-
-🤗 Comfort
-
-</button>
-
-<button
-class="answer"
-data-q="2">
-
-✨ Peace
-
-</button>
-
+<h2>2. Choose a feeling ❤️</h2>
+<button class="answer" data-q="2">🥰 Happiness</button>
+<button class="answer" data-q="2">😍 Love</button>
+<button class="answer" data-q="2">🤗 Comfort</button>
+<button class="answer" data-q="2">✨ Peace</button>
 </div>
-
-
-<!-- QUESTION 3 -->
 
 <div class="question">
-
-<h2>
-3. What would you choose? 🌙
-</h2>
-
-<button
-class="answer"
-data-q="3">
-
-🌅 Watching the sunset
-
-</button>
-
-<button
-class="answer"
-data-q="3">
-
-🌙 Looking at stars
-
-</button>
-
-<button
-class="answer"
-data-q="3">
-
-🎵 Listening to music
-
-</button>
-
-<button
-class="answer"
-data-q="3">
-
-💬 Talking for hours
-
-</button>
-
+<h2>3. What would you choose? 🌙</h2>
+<button class="answer" data-q="3">🌅 Watching the sunset</button>
+<button class="answer" data-q="3">🌙 Looking at stars</button>
+<button class="answer" data-q="3">🎵 Listening to music</button>
+<button class="answer" data-q="3">💬 Talking for hours</button>
 </div>
-
-
-<!-- QUESTIONS 4-10 -->
 
 <div class="question">
-
-<h2>
-4. Write something you want to say 💌
-</h2>
-
-<textarea
-id="q4"
-placeholder="Your answer...">
-</textarea>
-
+<h2>4. Write something you want to say 💌</h2>
+<textarea id="q4" placeholder="Your answer..."></textarea>
 </div>
-
 
 <div class="question">
-
-<h2>
-5. What makes you smile? 😊
-</h2>
-
-<textarea
-id="q5"
-placeholder="Your answer...">
-</textarea>
-
+<h2>5. What makes you smile? 😊</h2>
+<textarea id="q5" placeholder="Your answer..."></textarea>
 </div>
-
 
 <div class="question">
-
-<h2>
-6. What is your favorite memory? 💭
-</h2>
-
-<textarea
-id="q6"
-placeholder="Your answer...">
-</textarea>
-
+<h2>6. What is your favorite memory? 💭</h2>
+<textarea id="q6" placeholder="Your answer..."></textarea>
 </div>
-
 
 <div class="question">
-
-<h2>
-7. What would you like to say right now? ❤️
-</h2>
-
-<textarea
-id="q7"
-placeholder="Write anything...">
-</textarea>
-
+<h2>7. What would you like to say right now? ❤️</h2>
+<textarea id="q7" placeholder="Write anything..."></textarea>
 </div>
-
 
 <div class="question">
-
-<h2>
-8. Describe this website in one word ✨
-</h2>
-
-<textarea
-id="q8"
-placeholder="Your answer...">
-</textarea>
-
+<h2>8. Describe this website in one word ✨</h2>
+<textarea id="q8" placeholder="Your answer..."></textarea>
 </div>
-
 
 <div class="question">
-
-<h2>
-9. What makes someone special? 🥰
-</h2>
-
-<textarea
-id="q9"
-placeholder="Your answer...">
-</textarea>
-
+<h2>9. What makes someone special? 🥰</h2>
+<textarea id="q9" placeholder="Your answer..."></textarea>
 </div>
-
 
 <div class="question">
-
-<h2>
-10. Anything else you want to share? 💖
-</h2>
-
-<textarea
-id="q10"
-placeholder="Write your answer...">
-</textarea>
-
+<h2>10. Anything else you want to share? 💖</h2>
+<textarea id="q10" placeholder="Write your answer..."></textarea>
 </div>
 
-
-<button
-class="button"
-id="submit">
-
+<button class="button" id="submit">
 💌 Submit Answers
-
 </button>
 
-
-<div
-class="message"
-id="message">
-
-Your answers were saved online. ❤️
-
+<div class="message" id="message">
+Your answers were saved. ❤️
 </div>
 
-
-<!-- =========================
-     ASK ME
-========================= -->
+<!-- ASK -->
 
 <div class="ask">
 
-<h2>
-💌 Ask Me Anything
-</h2>
+<h2>💌 Ask Me Anything</h2>
 
-<p>
-Ask as many questions as you want.
-</p>
-
+<p>Ask as many questions as you want.</p>
 
 <div class="ask-row">
 
-<input
-id="questionInput"
-placeholder="Write your question..."
->
+<input id="questionInput"
+placeholder="Write your question...">
 
-<button
-id="askButton">
-
-Ask
-
-</button>
+<button id="askButton">Ask</button>
 
 </div>
 
-
-<div id="questions">
-
-</div>
+<div id="questions"></div>
 
 </div>
 
-
-<!-- =========================
-     ADMIN LOGIN
-========================= -->
+<!-- ADMIN LOGIN -->
 
 <div class="login">
 
-<button
-class="small-button"
-id="adminLoginButton">
-
+<button class="small-button" id="adminLoginButton">
 🔐 Admin
-
 </button>
 
+<div class="login-box" id="loginBox">
 
-<div
-class="login-box"
-id="loginBox">
-
-<input
+<input id="adminEmail"
 type="email"
-id="adminEmail"
-placeholder="Admin email"
->
+placeholder="Admin email">
 
 <br><br>
 
-<input
+<input id="adminPassword"
 type="password"
-id="adminPassword"
-placeholder="Password"
->
+placeholder="Password">
 
-<button
-class="button"
-id="loginButton">
-
+<button class="button" id="loginButton">
 Login
-
 </button>
 
 </div>
 
 </div>
 
+<!-- ADMIN PANEL -->
 
-<!-- =========================
-     ADMIN PANEL
-========================= -->
+<div class="admin" id="adminPanel">
 
-<div
-class="admin"
-id="adminPanel">
+<h2>👑 Admin Panel</h2>
 
-<h2 class="admin-title">
+<h3>💌 Visitor Questions</h3>
 
-👑 Admin Panel
-
-</h2>
-
-
-<h3>
-💌 Visitor Questions
-</h3>
-
-
-<div id="adminQuestions">
-
-</div>
-
+<div id="adminQuestions"></div>
 
 <h3 style="margin-top:25px">
-
 📝 Submitted Answers
-
 </h3>
 
+<div id="submissions"></div>
 
-<div id="submissions">
-
-</div>
-
-
-<button
-class="button logout"
-id="logoutButton">
-
+<button class="button logout" id="logoutButton">
 Log Out
-
 </button>
 
 </div>
 
-
 </div>
 
 
-
-<!-- =========================
-     FIREBASE
-========================= -->
+<!-- FIREBASE -->
 
 <script type="module">
 
-
-/* FIREBASE APP */
-
-import {
-  initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-
-
-/* AUTHENTICATION */
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
 import {
-
-  getAuth,
-
-  signInAnonymously,
-
-  signInWithEmailAndPassword,
-
-  onAuthStateChanged,
-
-  signOut
-
+getAuth,
+signInAnonymously,
+signInWithEmailAndPassword,
+onAuthStateChanged,
+signOut
 }
-from
-"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
-
-
-/* REALTIME DATABASE */
+from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
 
 import {
-
-  getDatabase,
-
-  ref,
-
-  push,
-
-  set,
-
-  onValue,
-
-  update
-
+getDatabase,
+ref,
+push,
+set,
+onValue,
+update
 }
-from
-"https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 
-
-/* =========================
-   YOUR FIREBASE CONFIG
-========================= */
+/* FIREBASE CONFIG */
 
 const firebaseConfig = {
 
-  apiKey:
-  "AIzaSyCD4Hdw-hFVEzp4d6VtTFtaSL5lDm4_9kQ",
+apiKey:
+"AIzaSyCD4Hdw-hFVEzp4d6VtTFtaSL5lDm4_9kQ",
 
-  authDomain:
-  "my-love-f71e9.firebaseapp.com",
+authDomain:
+"my-love-f71e9.firebaseapp.com",
 
-  databaseURL:
-  "https://my-love-f71e9-default-rtdb.asia-southeast1.firebasedatabase.app",
+databaseURL:
+"https://my-love-f71e9-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-  projectId:
-  "my-love-f71e9",
+projectId:
+"my-love-f71e9",
 
-  storageBucket:
-  "my-love-f71e9.firebasestorage.app",
+storageBucket:
+"my-love-f71e9.firebasestorage.app",
 
-  messagingSenderId:
-  "360275672768",
+messagingSenderId:
+"360275672768",
 
-  appId:
-  "1:360275672768:web:5badcea5ab381da01df725"
+appId:
+"1:360275672768:web:5badcea5ab381da01df725"
 
 };
 
 
-
-/* =========================
-   YOUR ADMIN EMAIL
-========================= */
-
-/*
-
-IMPORTANT:
-
-Replace this with the SAME
-Gmail you created in Firebase
-Authentication.
-
-*/
+/* PUT YOUR FIREBASE ADMIN GMAIL HERE */
 
 const ADMIN_EMAIL =
 "adityachauc@gmail.com";
 
 
+/* START FIREBASE */
 
-/* =========================
-   START FIREBASE
-========================= */
+const app = initializeApp(firebaseConfig);
 
-const app =
-initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-
-const auth =
-getAuth(app);
+const db = getDatabase(app);
 
 
-const db =
-getDatabase(app);
-
-
-
-/* =========================
-   VISITOR LOGIN
-========================= */
+/* VISITOR LOGIN */
 
 async function visitorLogin(){
 
-  if(!auth.currentUser){
+try{
 
-    try{
+if(!auth.currentUser){
 
-      await signInAnonymously(auth);
+await signInAnonymously(auth);
 
-    }
+}
 
-    catch(error){
+}catch(error){
 
-      console.error(
-        "Anonymous login error:",
-        error
-      );
+console.error(error);
 
-    }
-
-  }
+}
 
 }
 
 visitorLogin();
 
 
+/* TOUCH EMOJIS */
 
-/* =========================
-   STARS
-========================= */
+document.addEventListener("pointerdown",function(e){
 
-const stars =
-document.getElementById("stars");
+const emojis=[
+"😘",
+"❤️‍🩹",
+"🥰"
+];
+
+const emoji=document.createElement("div");
+
+emoji.className="touch";
+
+emoji.textContent=
+emojis[
+Math.floor(Math.random()*emojis.length)
+];
+
+emoji.style.left=e.clientX+"px";
+
+emoji.style.top=e.clientY+"px";
+
+document.body.appendChild(emoji);
+
+setTimeout(()=>{
+emoji.remove();
+},1400);
+
+});
 
 
-for(
-  let i=0;
-  i<35;
-  i++
+/* FLOATING EMOJIS */
+
+const floatingEmojis=[
+"❤️","💗","💕","💖","💜","🥰","😊","✨"
+];
+
+setInterval(function(){
+
+const emoji=document.createElement("div");
+
+emoji.className="floating";
+
+emoji.textContent=
+floatingEmojis[
+Math.floor(Math.random()*floatingEmojis.length)
+];
+
+emoji.style.left=
+Math.random()*100+"vw";
+
+emoji.style.fontSize=
+(18+Math.random()*15)+"px";
+
+document.body.appendChild(emoji);
+
+setTimeout(()=>{
+emoji.remove();
+},6000);
+
+},1500);
+
+
+/* ANSWER BUTTONS */
+
+document.querySelectorAll(".answer").forEach(button=>{
+
+button.addEventListener("click",function(){
+
+const q=this.dataset.q;
+
+document.querySelectorAll(
+'[data-q="'+q+'"]'
+).forEach(b=>{
+b.classList.remove("selected");
+});
+
+this.classList.add("selected");
+
+});
+
+});
+
+
+/* SUBMIT ANSWERS */
+
+document.getElementById("submit").onclick=async function(){
+
+const user=auth.currentUser;
+
+if(!user){
+
+alert("Please wait a moment.");
+
+return;
+
+}
+
+const answers={};
+
+for(let i=1;i<=3;i++){
+
+const selected=
+document.querySelector(
+'[data-q="'+i+'"].selected'
+);
+
+answers["question"+i]=
+selected
+?selected.innerText
+:"Not answered";
+
+}
+
+for(let i=4;i<=10;i++){
+
+answers["question"+i]=
+document.getElementById("q"+i)
+.value.trim()
+||"Not answered";
+
+}
+
+try{
+
+const newSubmission=
+push(ref(db,"submissions"));
+
+await set(newSubmission,{
+
+uid:user.uid,
+
+createdAt:Date.now(),
+
+answers:answers
+
+});
+
+document.getElementById("message")
+.style.display="block";
+
+alert("Answers saved ❤️");
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Could not save answers. Check Firebase rules."
+);
+
+}
+
+};
+
+
+/* ASK QUESTION */
+
+document.getElementById("askButton").onclick=async function(){
+
+const input=
+document.getElementById("questionInput");
+
+const question=input.value.trim();
+
+if(!question){
+
+alert("Write a question first.");
+
+return;
+
+}
+
+const user=auth.currentUser;
+
+if(!user){
+
+alert("Please wait a moment.");
+
+return;
+
+}
+
+try{
+
+const newQuestion=
+push(ref(db,"questions"));
+
+await set(newQuestion,{
+
+uid:user.uid,
+
+question:question,
+
+answer:"",
+
+createdAt:Date.now()
+
+});
+
+input.value="";
+
+}catch(error){
+
+console.error(error);
+
+alert("Question could not be sent.");
+
+}
+
+};
+
+
+/* SHOW VISITOR QUESTIONS */
+
+onValue(ref(db,"questions"),snapshot=>{
+
+const box=
+document.getElementById("questions");
+
+box.innerHTML="";
+
+const data=snapshot.val();
+
+const user=auth.currentUser;
+
+if(!data||!user)return;
+
+Object.entries(data).forEach(([id,item])=>{
+
+if(item.uid!==user.uid)return;
+
+const div=document.createElement("div");
+
+div.className="item";
+
+const q=document.createElement("div");
+
+q.textContent="❓ "+item.question;
+
+div.appendChild(q);
+
+const reply=document.createElement("div");
+
+reply.className="reply";
+
+reply.textContent=
+item.answer
+?"❤️ My answer: "+item.answer
+:"⏳ Waiting for a reply...";
+
+div.appendChild(reply);
+
+box.appendChild(div);
+
+});
+
+});
+
+
+/* ADMIN BUTTON */
+
+document.getElementById("adminLoginButton").onclick=function(){
+
+const box=document.getElementById("loginBox");
+
+box.style.display=
+box.style.display==="block"
+?"none"
+:"block";
+
+};
+
+
+/* ADMIN LOGIN */
+
+document.getElementById("loginButton").onclick=async function(){
+
+const email=
+document.getElementById("adminEmail")
+.value.trim();
+
+const password=
+document.getElementById("adminPassword")
+.value;
+
+if(email!==ADMIN_EMAIL){
+
+alert("Wrong admin email.");
+
+return;
+
+}
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+alert("Admin login successful 👑");
+
+}catch(error){
+
+console.error(error);
+
+alert("Login failed. Check email and password.");
+
+}
+
+};
+
+
+/* AUTH STATE */
+
+onAuthStateChanged(auth,user=>{
+
+if(
+user &&
+user.email===ADMIN_EMAIL
 ){
 
-  const star =
-  document.createElement("div");
+document.getElementById("adminPanel")
+.style.display="block";
 
-  star.className =
-  "star";
+loadAdminQuestions();
 
-  star.textContent =
-  "✦";
+loadSubmissions();
 
-  star.style.left =
-  Math.random()*100+"vw";
+}else{
 
-  star.style.top =
-  Math.random()*100+"vh";
+document.getElementById("adminPanel")
+.style.display="none";
 
-  star.style.animationDelay =
-  Math.random()*3+"s";
+}
 
-  stars.appendChild(star);
+});
+
+
+/* ADMIN QUESTIONS */
+
+function loadAdminQuestions(){
+
+onValue(ref(db,"questions"),snapshot=>{
+
+const box=
+document.getElementById("adminQuestions");
+
+box.innerHTML="";
+
+const data=snapshot.val();
+
+if(!data){
+
+box.innerHTML="<p>No questions yet.</p>";
+
+return;
+
+}
+
+Object.entries(data).forEach(([id,item])=>{
+
+const div=document.createElement("div");
+
+div.className="admin-box";
+
+const q=document.createElement("p");
+
+q.textContent="❓ "+item.question;
+
+div.appendChild(q);
+
+if(item.answer){
+
+const reply=document.createElement("div");
+
+reply.className="reply";
+
+reply.textContent=
+"❤️ Your reply: "+item.answer;
+
+div.appendChild(reply);
+
+}else{
+
+const input=document.createElement("textarea");
+
+input.id="reply-"+id;
+
+input.placeholder="Write your reply...";
+
+div.appendChild(input);
+
+const button=document.createElement("button");
+
+button.className="admin-button";
+
+button.textContent="❤️ Reply";
+
+button.onclick=()=>replyToQuestion(id);
+
+div.appendChild(button);
+
+}
+
+box.appendChild(div);
+
+});
+
+});
 
 }
 
 
+/* REPLY */
 
-/* =========================
-   TOUCH EMOJIS
-========================= */
+async function replyToQuestion(id){
 
-document.addEventListener(
-"pointerdown",
-function(event){
+const input=
+document.getElementById("reply-"+id);
 
-  const emojis = [
+const answer=input.value.trim();
 
-    "😘",
-    "❤️‍🩹",
-    "🥰"
+if(!answer){
 
-  ];
+alert("Write a reply first.");
 
+return;
 
-  const emoji =
-  document.createElement("div");
+}
 
+try{
 
-  emoji.className =
-  "touch";
+await update(
+ref(db,"questions/"+id),
+{
+answer:answer,
+answeredAt:Date.now()
+}
+);
 
+alert("Reply sent ❤️");
 
-  emoji.textContent =
-  emojis[
-    Math.floor(
-      Math.random()*emojis.length
-    )
-  ];
+}catch(error){
 
+console.error(error);
 
-  emoji.style.left =
-  event.clientX+"px";
+alert("Could not send reply.");
 
+}
 
-  emoji.style.top =
-  event.clientY+"px";
+}
 
 
-  document.body.appendChild(
-    emoji
-  );
+/* SUBMISSIONS */
 
+function loadSubmissions(){
 
-  setTimeout(
-    ()=>emoji.remove(),
-    1400
-  );
+onValue(ref(db,"submissions"),snapshot=>{
+
+const box=
+document.getElementById("submissions");
+
+box.innerHTML="";
+
+const data=snapshot.val();
+
+if(!data){
+
+box.innerHTML=
+"<p>No submissions yet.</p>";
+
+return;
+
+}
+
+Object.entries(data)
+.reverse()
+.forEach(([id,item])=>{
+
+const div=document.createElement("div");
+
+div.className="admin-box";
+
+const date=
+new Date(item.createdAt)
+.toLocaleString();
+
+const title=
+document.createElement("h4");
+
+title.textContent=
+"📝 Submission — "+date;
+
+div.appendChild(title);
+
+Object.entries(
+item.answers||{}
+).forEach(([question,answer])=>{
+
+const p=document.createElement("p");
+
+p.style.marginTop="10px";
+
+p.textContent=
+question+": "+answer;
+
+div.appendChild(p);
 
 });
 
-
-
-/* =========================
-   FLOATING EMOJIS
-========================= */
-
-const floatingEmojis = [
-
-  "❤️",
-  "💗",
-  "💕",
-  "💖",
-  "💜",
-  "🥰",
-  "😊",
-  "✨"
-
-];
-
-
-let floatingCount = 0;
-
-
-setInterval(
-function(){
-
-  if(
-    floatingCount>=5
-  ){
-    return;
-  }
-
-
-  const emoji =
-  document.createElement("div");
-
-
-  emoji.className =
-  "floating";
-
-
-  emoji.textContent =
-  floatingEmojis[
-    Math.floor(
-      Math.random()*
-      floatingEmojis.length
-    )
-  ];
-
-
-  emoji.style.left =
-  Math.random()*100+"vw";
-
-
-  emoji.style.fontSize =
-  (18+
-   Math.random()*15)
-   +"px";
-
-
-  document.body.appendChild(
-    emoji
-  );
-
-
-  floatingCount++;
-
-
-  setTimeout(
-  function(){
-
-    emoji.remove();
-
-    floatingCount--;
-
-  },
-  6000);
-
-},
-1200);
-
-
-
-/* =========================
-   MULTIPLE CHOICE
-========================= */
-
-document
-.querySelectorAll(".answer")
-.forEach(
-function(button){
-
-  button.addEventListener(
-  "click",
-  function(){
-
-    const q =
-    this.dataset.q;
-
-
-    document
-    .querySelectorAll(
-      '[data-q="'+q+'"]'
-    )
-    .forEach(
-    function(b){
-
-      b.classList.remove(
-        "selected"
-      );
-
-    });
-
-
-    this.classList.add(
-      "selected"
-    );
-
-  });
+box.appendChild(div);
 
 });
 
-
-
-/* =========================
-   SUBMIT ANSWERS
-========================= */
-
-document
-.getElementById("submit")
-.addEventListener(
-"click",
-async function(){
-
-  const user =
-  auth.currentUser;
-
-
-  if(!user){
-
-    alert(
-      "Please wait a moment and try again."
-    );
-
-    return;
-
-  }
-
-
-  const answers = {};
-
-
-  for(
-    let i=1;
-    i<=3;
-    i++
-  ){
-
-    const selected =
-    document.querySelector(
-      '[data-q="'+i+'"].selected'
-    );
-
-
-    answers[
-      "question"+i
-    ] =
-    selected
-    ? selected.innerText
-    : "Not answered";
-
-  }
-
-
-  for(
-    let i=4;
-    i<=10;
-    i++
-  ){
-
-    answers[
-      "question"+i
-    ] =
-    document
-    .getElementById("q"+i)
-    .value
-    .trim()
-    ||
-    "Not answered";
-
-  }
-
-
-  try{
-
-    const newSubmission =
-    push(
-      ref(db,"submissions")
-    );
-
-
-    await set(
-      newSubmission,
-      {
-
-        uid:user.uid,
-
-        createdAt:
-        Date.now(),
-
-        answers:answers
-
-      }
-    );
-
-
-    document
-    .getElementById("message")
-    .style.display =
-    "block";
-
-
-    alert(
-      "Your answers were submitted ❤️"
-    );
-
-  }
-
-  catch(error){
-
-    console.error(error);
-
-    alert(
-      "Could not save answers. Check Firebase rules."
-    );
-
-  }
-
 });
 
+}
 
 
-/* =========================
-   ASK QUESTION
-========================= */
+/* LOGOUT */
 
-document
-.getElementById("askButton")
-.addEventListener(
-"click",
-async function(){
+document.getElementById("logoutButton").onclick=async function(){
 
-  const input =
-  document.getElementById(
-    "questionInput"
-  );
+await signOut(auth);
 
+alert("Logged out.");
 
-  const question =
-  input.value.trim();
+};
 
+</script>
 
-  if(!question){
-
-    alert(
-      "Write a question first."
-    );
-
-    return;
-
-  }
-
-
-  const user =
-  auth.currentUser;
-
-
-  if(!user){
-
-    alert(
-      "Please wait a moment."
-    );
-
-    return;
-
-  }
-
-
-  try{
-
-    const newQuestion =
-    push(
-      ref(db,"questions")
-    );
-
-
-    await set(
-      newQuestion,
-      {
-
-        uid:user.uid,
-
-        question:question,
-
-        answer:"",
-
-        createdAt:
-        Date.now()
-
-      }
-    );
-
-
-    input.value="";
-
-
-  }
-
-  catch(error){
-
-    console.error(error);
-
-    alert(
-      "Question could not be sent."
-    );
-
-  }
-
-});
-
-
-
-/* =========================
-   DISPLAY VISITOR QUESTIONS
-========================= */
-
-onValue(
-ref(db,"questions"),
-function(snapshot){
-
-  const box =
-  document.getElementById(
-    "questions"
-  );
-
-
-  box.innerHTML="";
-
-
-  const data =
-  snapshot.val();
-
-
-  if(!data){
-
-    return;
-
-  }
-
-
-  const user =
-  auth.currentUser;
-
-
-  if(!user){
-
-    return;
-
-  }
-
-
-  Object.entries(data)
-  .forEach(
-  function([id,item]){
-
-    if(
-      item.uid !==
-      user.uid
-    ){
-
-      return;
-
-    }
-
-
-    const div =
-    document.createElement(
-      "div"
-    );
-
-
-    div.className =
-    "item";
-
-
-    const question =
-    document.createElement(
-      "div"
-    );
-
-
-    question.textContent =
-    "❓ "+item.question;
-
-
-    div.appendChild(
-      question
-    );
-
-
-    const reply =
-    document.createElement(
-      "div"
-    );
-
-
-    reply.className =
-    "reply";
-
-
-    if(item.answer){
-
-      reply.textContent =
-      "❤️ My answer: "+
-      item.answer;
-
-    }
-
-    else{
-
-      reply.textContent =
-      "⏳ Waiting for a reply...";
-
-    }
-
-
-    div.appendChild(
-      reply
-    );
-
-
-    box.appendChild(
-      div
-    );
-
-  });
-
-});
-
-
-
-/* =========================
-   ADMIN LOGIN BUTTON
-========================= */
-
-document
-.getElementById(
-  "adminLoginButton"
-)
-.addEventListener(
-"click",
-function(){
-
-  const box =
-  document.getElementById(
-    "loginBox"
-  );
-
-
-  if(
-    box.style.display===
-    "block"
-  ){
-
-    box.style.display=
-    "none";
-
-  }
-
-  else{
-
-    box.style.display=
-    "block";
-
-  }
-
-});
-
-
-
-/* =========================
-   ADMIN LOGIN
-========================= */
-
-document
-.getElementById(
-  "loginButton"
-)
-.addEventListener(
-"click",
-async function(){
-
-  const email =
-  document.getElementById(
-    "adminEmail"
-  ).value.trim();
-
-
-  const password =
-  document.getElementById(
-    "adminPassword"
-  ).value;
-
-
-  if(
-    email !== ADMIN_EMAIL
-  ){
-
-    alert(
-      "That is not the admin email."
-    );
-
-    return;
-
-  }
-
-
-  try{
-
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
-
-    alert(
-      "Admin login successful 👑"
-    );
-
-  }
-
-  catch(error){
-
-    console.error(error);
-
-    alert(
-      "Login failed. Check your email and password."
-    );
-
-  }
-
-});
-
-
-
-/* =========================
-   CHECK LOGIN
-========================= */
-
-onAuthStateChanged(
-auth,
-function(user){
-
-  if(
-    user &&
-    user.email ===
-    ADMIN_EMAIL
-  ){
-
-    document
-    .getElementById(
-      "adminPanel"
-    )
-    .style.display =
-    "block";
-
-
-    loadAdminQuestions();
-
-    loadSubmissions();
-
-  }
-
-  else{
-
-    document
-    .getElementById(
-      "adminPanel"
-    )
-    .style.display =
-    "none";
-
-  }
-
-});
-
-
-
-/* =========================
-   ADMIN QUESTIONS
-========================= */
-
-function loadAdminQuestions(){
-
-  onValue(
-  ref(db,"questions"),
-  function(snapshot){
-
-    const box =
-    document.getElementById(
-      "adminQuestions"
-    );
-
-
-    box.innerHTML="";
-
-
-    const data =
-    snapshot.val();
-
-
-    if(!data){
-
-      box.innerHTML =
-      "<p>No questions yet.</p>";
-
-      return;
-
-    }
-
-
-    Object.entries(data)
-    .forEach(
-    function([id,item]){
-
-      const div =
-      document.createElement(
-        "div"
-      );
-
-
-      div.className =
-      "admin-box";
-
-
-      const question =
-      document.c
+</body>
+</html>
