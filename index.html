@@ -3,605 +3,431 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Love ❤️</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  min-height:100vh;
-  padding:20px 12px;
-  font-family:Arial,sans-serif;
-  color:white;
-  overflow-x:hidden;
-
-  background:
-    radial-gradient(circle at 15% 15%,#ff4f8145,transparent 30%),
-    radial-gradient(circle at 85% 80%,#8b4dff45,transparent 30%),
-    linear-gradient(145deg,#08000f,#29001f,#100018);
-}
-
-/* GRAPHICS */
-
-.glow{
-  position:fixed;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  filter:blur(70px);
-  opacity:.35;
-  pointer-events:none;
-  z-index:-1;
-}
-
-.glow.one{
-  background:#ff3f8e;
-  top:5%;
-  left:-70px;
-}
-
-.glow.two{
-  background:#873cff;
-  bottom:5%;
-  right:-70px;
+min-height:100vh;
+padding:20px 12px;
+font-family:Arial,sans-serif;
+color:white;
+overflow-x:hidden;
+background:
+radial-gradient(circle at 15% 15%,#ff4f8145,transparent 30%),
+radial-gradient(circle at 85% 80%,#8b4dff45,transparent 30%),
+linear-gradient(145deg,#08000f,#29001f,#100018);
 }
 
 .container{
-  width:100%;
-  max-width:650px;
-  margin:auto;
-  padding:28px 16px;
-  border-radius:28px;
-
-  background:#ffffff10;
-  border:1px solid #ffffff25;
-  backdrop-filter:blur(14px);
-
-  box-shadow:
-    0 20px 60px #00000070;
+width:100%;
+max-width:650px;
+margin:auto;
+padding:28px 16px;
+border-radius:28px;
+background:#ffffff10;
+border:1px solid #ffffff25;
+backdrop-filter:blur(14px);
+box-shadow:0 20px 60px #00000070;
 }
 
-/* HEADER */
-
 .heart{
-  text-align:center;
-  font-size:65px;
-  animation:beat 1.4s infinite;
+text-align:center;
+font-size:65px;
+animation:beat 1.4s infinite;
 }
 
 @keyframes beat{
-  50%{
-    transform:scale(1.15);
-  }
+50%{transform:scale(1.15)}
 }
 
 h1{
-  text-align:center;
-  font-size:clamp(42px,12vw,70px);
-
-  text-shadow:
-    0 0 15px #ff4f91,
-    0 0 35px #ff267f;
+text-align:center;
+font-size:clamp(42px,12vw,70px);
+text-shadow:0 0 15px #ff4f91,0 0 35px #ff267f;
 }
 
 .intro{
-  text-align:center;
-  line-height:1.7;
-  margin:12px 0 28px;
-  color:#ffe8f2;
+text-align:center;
+line-height:1.7;
+margin:12px 0 28px;
+color:#ffe8f2;
 }
 
-/* CARDS */
-
 .card{
-  margin-top:16px;
-  padding:18px;
-
-  border-radius:18px;
-
-  background:#ffffff0c;
-  border:1px solid #ffffff1c;
-
-  box-shadow:0 8px 25px #00000025;
+margin-top:16px;
+padding:18px;
+border-radius:18px;
+background:#ffffff0c;
+border:1px solid #ffffff1c;
 }
 
 .card h2{
-  font-size:18px;
-  margin-bottom:12px;
+font-size:18px;
+margin-bottom:12px;
 }
 
-/* CHOICES */
-
 .choice{
-  width:100%;
-  margin-top:8px;
-  padding:12px;
-
-  border:1px solid #ffffff22;
-  border-radius:12px;
-
-  background:#ffffff0b;
-  color:white;
-
-  text-align:left;
-  font-size:15px;
-
-  cursor:pointer;
+width:100%;
+margin-top:8px;
+padding:12px;
+border:1px solid #ffffff22;
+border-radius:12px;
+background:#ffffff0b;
+color:white;
+text-align:left;
+font-size:15px;
+cursor:pointer;
 }
 
 .choice.selected{
-  background:#ff4f9160;
-  border-color:#ff9bc7;
-
-  box-shadow:0 0 15px #ff4f9130;
+background:#ff4f9160;
+border-color:#ff9bc7;
 }
 
-/* TEXT */
-
-textarea,
-input{
-  width:100%;
-  padding:12px;
-
-  border:1px solid #ffffff25;
-  border-radius:12px;
-
-  background:#00000035;
-  color:white;
-
-  outline:none;
-  font-size:15px;
+textarea,input{
+width:100%;
+padding:12px;
+border:1px solid #ffffff25;
+border-radius:12px;
+background:#00000035;
+color:white;
+outline:none;
+font-size:15px;
 }
 
 textarea{
-  min-height:90px;
-  resize:vertical;
+min-height:90px;
+resize:vertical;
 }
 
-::placeholder{
-  color:#d8bfd0;
-}
-
-/* BUTTON */
+::placeholder{color:#d8bfd0}
 
 .main-button{
-  width:100%;
-  margin-top:16px;
-  padding:14px;
-
-  border:0;
-  border-radius:14px;
-
-  background:linear-gradient(135deg,#ff4f91,#914cff);
-
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-
-  cursor:pointer;
-
-  box-shadow:0 8px 25px #ff4f9130;
-}
-
-.main-button:active{
-  transform:scale(.98);
+width:100%;
+margin-top:16px;
+padding:14px;
+border:0;
+border-radius:14px;
+background:linear-gradient(135deg,#ff4f91,#914cff);
+color:white;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .message{
-  display:none;
-  margin-top:12px;
-  padding:13px;
-  border-radius:12px;
-  text-align:center;
-  background:#ff4f9125;
+display:none;
+margin-top:12px;
+padding:13px;
+border-radius:12px;
+text-align:center;
+background:#ff4f9125;
 }
 
-/* Q&A */
-
 .qa-section{
-  margin-top:35px;
-  padding-top:25px;
-
-  border-top:1px solid #ffffff20;
+margin-top:35px;
+padding-top:25px;
+border-top:1px solid #ffffff20;
 }
 
 .qa-section h2{
-  text-align:center;
-  margin-bottom:8px;
+text-align:center;
+margin-bottom:8px;
 }
 
-.qa-section > p{
-  text-align:center;
-  color:#e5c9d8;
-  margin-bottom:16px;
+.qa-section>p{
+text-align:center;
+color:#e5c9d8;
+margin-bottom:16px;
 }
 
 .question-box{
-  display:flex;
-  gap:8px;
+display:flex;
+gap:8px;
 }
 
-.question-box input{
-  flex:1;
-}
+.question-box input{flex:1}
 
 .question-box button{
-  padding:0 18px;
-
-  border:0;
-  border-radius:12px;
-
-  background:#ff4f91;
-  color:white;
-  font-weight:bold;
-
-  cursor:pointer;
+padding:0 18px;
+border:0;
+border-radius:12px;
+background:#ff4f91;
+color:white;
+font-weight:bold;
+cursor:pointer;
 }
 
-/* QUESTION / REPLY */
-
 .qa-item{
-  margin-top:15px;
-  padding:15px;
-
-  border-radius:15px;
-
-  background:#ffffff0c;
-  border:1px solid #ffffff20;
+margin-top:15px;
+padding:15px;
+border-radius:15px;
+background:#ffffff0c;
+border:1px solid #ffffff20;
 }
 
 .viewer-question{
-  padding:12px;
-  border-radius:10px;
-
-  background:#914cff20;
-  border-left:4px solid #914cff;
-
-  line-height:1.5;
+padding:12px;
+border-radius:10px;
+background:#914cff20;
+border-left:4px solid #914cff;
+line-height:1.5;
 }
 
 .host-reply{
-  margin-top:10px;
-  padding:12px;
-
-  border-radius:10px;
-
-  background:#ff4f9120;
-  border-left:4px solid #ff4f91;
-
-  line-height:1.5;
+margin-top:10px;
+padding:12px;
+border-radius:10px;
+background:#ff4f9120;
+border-left:4px solid #ff4f91;
+line-height:1.5;
 }
 
 .label{
-  font-weight:bold;
-  margin-bottom:5px;
+font-weight:bold;
+margin-bottom:5px;
 }
 
-/* ADMIN */
-
 .admin-login{
-  margin-top:30px;
-  text-align:center;
-
-  border-top:1px solid #ffffff20;
-  padding-top:22px;
+margin-top:30px;
+text-align:center;
+border-top:1px solid #ffffff20;
+padding-top:22px;
 }
 
 .admin-login-box{
-  display:none;
-  margin-top:12px;
+display:none;
+margin-top:12px;
 }
 
 .admin-panel{
-  display:none;
-  margin-top:25px;
-  padding-top:25px;
-
-  border-top:1px solid #ffffff20;
+display:none;
+margin-top:25px;
+padding-top:25px;
+border-top:1px solid #ffffff20;
 }
 
 .admin-panel h2{
-  text-align:center;
-  margin-bottom:15px;
+text-align:center;
+margin-bottom:20px;
+}
+
+.admin-section{
+margin-top:25px;
+}
+
+.admin-section h3{
+margin-bottom:10px;
 }
 
 .admin-item{
-  margin-top:15px;
-  padding:15px;
-
-  border-radius:15px;
-
-  background:#ffffff0c;
-  border:1px solid #ffffff20;
+margin-top:15px;
+padding:15px;
+border-radius:15px;
+background:#ffffff0c;
+border:1px solid #ffffff20;
+line-height:1.5;
 }
 
 .reply-button{
-  margin-top:8px;
-  padding:10px 14px;
-
-  border:0;
-  border-radius:10px;
-
-  background:#ff4f91;
-  color:white;
-  font-weight:bold;
-
-  cursor:pointer;
+margin-top:10px;
+padding:10px 14px;
+border:0;
+border-radius:10px;
+background:#ff4f91;
+color:white;
+font-weight:bold;
+cursor:pointer;
 }
 
-.logout{
-  background:#555;
-}
-
-/* FLOATING EMOJIS */
+.logout{background:#555}
 
 .floating{
-  position:fixed;
-  bottom:-50px;
-
-  pointer-events:none;
-  z-index:5;
-
-  animation:floatUp 6s linear forwards;
+position:fixed;
+bottom:-50px;
+pointer-events:none;
+z-index:5;
+animation:floatUp 6s linear forwards;
 }
 
 @keyframes floatUp{
-  0%{
-    transform:translateY(0) rotate(0deg);
-    opacity:0;
-  }
-
-  15%{
-    opacity:.8;
-  }
-
-  100%{
-    transform:translateY(-110vh) rotate(360deg);
-    opacity:0;
-  }
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+15%{opacity:.8}
+100%{
+transform:translateY(-110vh) rotate(360deg);
+opacity:0;
+}
 }
 
 @media(max-width:500px){
-
-  .question-box{
-    flex-direction:column;
-  }
-
-  .question-box button{
-    padding:12px;
-  }
+.question-box{flex-direction:column}
+.question-box button{padding:12px}
 }
 </style>
 </head>
 
-
 <body>
-
-<div class="glow one"></div>
-<div class="glow two"></div>
 
 <div class="container">
 
-  <div class="heart">❤️</div>
+<div class="heart">❤️</div>
 
-  <h1>My Love</h1>
+<h1>My Love</h1>
 
-  <p class="intro">
-    Some feelings are too special to explain with words. ❤️
-    <br>
-    Answer, choose, and ask anything. ✨
-  </p>
+<p class="intro">
+Some feelings are too special to explain with words. ❤️
+<br>
+Answer, choose, and ask anything. ✨
+</p>
 
 
-  <!-- CHOOSE ANSWERS -->
+<!-- CHOOSE ANSWERS -->
 
-  <div class="card">
+<div class="card">
+<h2>1. What makes you happiest? 😊</h2>
 
-    <h2>1. What makes you happiest? 😊</h2>
+<button class="choice" data-q="1">😊 Spending time together</button>
+<button class="choice" data-q="1">😂 Making each other laugh</button>
+<button class="choice" data-q="1">💖 Being understood</button>
+<button class="choice" data-q="1">✨ Something else</button>
+</div>
 
-    <button class="choice" data-q="1">
-      😊 Spending time together
-    </button>
 
-    <button class="choice" data-q="1">
-      😂 Making each other laugh
-    </button>
+<div class="card">
+<h2>2. Choose a feeling ❤️</h2>
 
-    <button class="choice" data-q="1">
-      💖 Being understood
-    </button>
+<button class="choice" data-q="2">🥰 Happiness</button>
+<button class="choice" data-q="2">😍 Love</button>
+<button class="choice" data-q="2">🤗 Comfort</button>
+<button class="choice" data-q="2">✨ Peace</button>
+</div>
 
-    <button class="choice" data-q="1">
-      ✨ Something else
-    </button>
 
-  </div>
+<div class="card">
+<h2>3. What would you choose? 🌙</h2>
 
+<button class="choice" data-q="3">🌅 Watching the sunset</button>
+<button class="choice" data-q="3">🌙 Looking at stars</button>
+<button class="choice" data-q="3">🎵 Listening to music</button>
+<button class="choice" data-q="3">💬 Talking for hours</button>
+</div>
 
-  <div class="card">
 
-    <h2>2. Choose a feeling ❤️</h2>
+<!-- WRITTEN ANSWERS -->
 
-    <button class="choice" data-q="2">
-      🥰 Happiness
-    </button>
+<div class="card">
+<h2>4. Write something you want to say 💌</h2>
+<textarea id="answer4" placeholder="Write your answer..."></textarea>
+</div>
 
-    <button class="choice" data-q="2">
-      😍 Love
-    </button>
+<div class="card">
+<h2>5. What makes you smile? 😊</h2>
+<textarea id="answer5" placeholder="Write your answer..."></textarea>
+</div>
 
-    <button class="choice" data-q="2">
-      🤗 Comfort
-    </button>
+<button class="main-button" id="submitButton">
+💌 Submit Answers
+</button>
 
-    <button class="choice" data-q="2">
-      ✨ Peace
-    </button>
+<div class="message" id="savedMessage">
+Your answers were saved ❤️
+</div>
 
-  </div>
 
+<!-- QUESTIONS AND REPLIES -->
 
-  <div class="card">
+<div class="qa-section">
 
-    <h2>3. What would you choose? 🌙</h2>
+<h2>💬 Ask Me Anything</h2>
 
-    <button class="choice" data-q="3">
-      🌅 Watching the sunset
-    </button>
+<p>
+Ask your question and come back to see the Host's reply. ❤️
+</p>
 
-    <button class="choice" data-q="3">
-      🌙 Looking at stars
-    </button>
+<div class="question-box">
 
-    <button class="choice" data-q="3">
-      🎵 Listening to music
-    </button>
+<input id="questionInput"
+placeholder="Write your question...">
 
-    <button class="choice" data-q="3">
-      💬 Talking for hours
-    </button>
+<button id="askButton">Ask</button>
 
-  </div>
+</div>
 
+<div id="visitorQuestions"></div>
 
-  <!-- WRITE ANSWER -->
+</div>
 
-  <div class="card">
 
-    <h2>4. Write something you want to say 💌</h2>
+<!-- HOST LOGIN -->
 
-    <textarea
-      id="answer4"
-      placeholder="Write your answer...">
-    </textarea>
+<div class="admin-login">
 
-  </div>
+<button class="reply-button" id="adminLoginButton">
+🔐 Host Login
+</button>
 
+<div class="admin-login-box" id="loginBox">
 
-  <div class="card">
+<input id="adminEmail"
+type="email"
+placeholder="Host email">
 
-    <h2>5. What makes you smile? 😊</h2>
+<br><br>
 
-    <textarea
-      id="answer5"
-      placeholder="Write your answer...">
-    </textarea>
+<input id="adminPassword"
+type="password"
+placeholder="Password">
 
-  </div>
+<button class="main-button" id="loginButton">
+Login
+</button>
 
+</div>
 
-  <button
-    class="main-button"
-    id="submitButton">
+</div>
 
-    💌 Submit Answers
 
-  </button>
+<!-- HOST PANEL -->
 
+<div class="admin-panel" id="adminPanel">
 
-  <div
-    class="message"
-    id="savedMessage">
+<h2>👑 Host Panel</h2>
 
-    Your answers were saved ❤️
 
-  </div>
+<!-- QUESTIONS -->
 
+<div class="admin-section">
 
-  <!-- QUESTION + HOST REPLY -->
+<h3>💬 Visitor Questions</h3>
 
-  <div class="qa-section">
+<div id="adminQuestions"></div>
 
-    <h2>💬 Ask Me Anything</h2>
+</div>
 
-    <p>
-      Ask your question and come back to see the Host's reply. ❤️
-    </p>
 
-    <div class="question-box">
+<!-- ANSWERS -->
 
-      <input
-        id="questionInput"
-        placeholder="Write your question...">
+<div class="admin-section">
 
-      <button id="askButton">
-        Ask
-      </button>
+<h3>📝 Visitor Submitted Answers</h3>
 
-    </div>
+<div id="submissions">
+<p>Loading answers...</p>
+</div>
 
+</div>
 
-    <div id="visitorQuestions"></div>
 
-  </div>
+<button class="main-button logout" id="logoutButton">
+Log Out
+</button>
 
-
-  <!-- ADMIN LOGIN -->
-
-  <div class="admin-login">
-
-    <button
-      class="reply-button"
-      id="adminLoginButton">
-
-      🔐 Host Login
-
-    </button>
-
-
-    <div
-      class="admin-login-box"
-      id="loginBox">
-
-      <input
-        id="adminEmail"
-        type="email"
-        placeholder="Host email">
-
-      <br><br>
-
-      <input
-        id="adminPassword"
-        type="password"
-        placeholder="Password">
-
-      <button
-        class="main-button"
-        id="loginButton">
-
-        Login
-
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- HOST PANEL -->
-
-  <div
-    class="admin-panel"
-    id="adminPanel">
-
-    <h2>👑 Host Panel</h2>
-
-    <div id="adminQuestions"></div>
-
-    <button
-      class="main-button logout"
-      id="logoutButton">
-
-      Log Out
-
-    </button>
-
-  </div>
+</div>
 
 </div>
 
@@ -609,149 +435,150 @@ textarea{
 <script type="module">
 
 import {
-  initializeApp
+initializeApp
 }
 from
 "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
 
 import {
-  getAuth,
-  signInAnonymously,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut
+getAuth,
+signInAnonymously,
+signInWithEmailAndPassword,
+onAuthStateChanged,
+signOut
 }
 from
 "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
 
 
 import {
-  getDatabase,
-  ref,
-  push,
-  set,
-  onValue,
-  update
+getDatabase,
+ref,
+push,
+set,
+onValue,
+update,
+query,
+orderByChild,
+equalTo
 }
 from
 "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 
-/* FIREBASE */
+/* FIREBASE CONFIG */
 
-const firebaseConfig = {
+const firebaseConfig={
 
-  apiKey:
-  "AIzaSyCD4Hdw-hFVEzp4d6VtTFtaSL5lDm4_9kQ",
+apiKey:
+"AIzaSyCD4Hdw-hFVEzp4d6VtTFtaSL5lDm4_9kQ",
 
-  authDomain:
-  "my-love-f71e9.firebaseapp.com",
+authDomain:
+"my-love-f71e9.firebaseapp.com",
 
-  databaseURL:
-  "https://my-love-f71e9-default-rtdb.asia-southeast1.firebasedatabase.app",
+databaseURL:
+"https://my-love-f71e9-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-  projectId:
-  "my-love-f71e9",
+projectId:
+"my-love-f71e9",
 
-  storageBucket:
-  "my-love-f71e9.firebasestorage.app",
+storageBucket:
+"my-love-f71e9.firebasestorage.app",
 
-  messagingSenderId:
-  "360275672768",
+messagingSenderId:
+"360275672768",
 
-  appId:
-  "1:360275672768:web:5badcea5ab381da01df725"
+appId:
+"1:360275672768:web:5badcea5ab381da01df725"
+
 };
 
 
-/* YOUR HOST EMAIL */
-
-const ADMIN_EMAIL =
+const ADMIN_EMAIL=
 "adityachauc@gmail.com";
 
 
-const app =
+const app=
 initializeApp(firebaseConfig);
 
-const auth =
+const auth=
 getAuth(app);
 
-const db =
+const db=
 getDatabase(app);
 
 
 /* FLOATING EMOJIS */
 
-const emojis = [
-  "❤️",
-  "💗",
-  "💕",
-  "💖",
-  "💜",
-  "🥰",
-  "✨",
-  "🌸"
+const emojis=[
+"❤️","💗","💕","💖","💜","🥰","✨","🌸"
 ];
 
-setInterval(() => {
+setInterval(()=>{
 
-  const e =
-  document.createElement("div");
+const e=
+document.createElement("div");
 
-  e.className =
-  "floating";
+e.className="floating";
 
-  e.textContent =
-  emojis[
-    Math.floor(
-      Math.random()*emojis.length
-    )
-  ];
+e.textContent=
+emojis[
+Math.floor(
+Math.random()*emojis.length
+)
+];
 
-  e.style.left =
-  Math.random()*100 + "vw";
+e.style.left=
+Math.random()*100+"vw";
 
-  e.style.fontSize =
-  (18 + Math.random()*18) + "px";
+e.style.fontSize=
+(18+Math.random()*18)+"px";
 
-  document.body.appendChild(e);
+document.body.appendChild(e);
 
-  setTimeout(() => {
-    e.remove();
-  },6000);
+setTimeout(()=>{
+e.remove();
+},6000);
 
 },1200);
+
+
+/* SAFE TEXT */
+
+function safeText(text){
+
+const div=
+document.createElement("div");
+
+div.textContent=text||"";
+
+return div.innerHTML;
+
+}
 
 
 /* CHOICE BUTTONS */
 
 document
 .querySelectorAll(".choice")
-.forEach(button => {
+.forEach(button=>{
 
-  button.onclick = function(){
+button.onclick=function(){
 
-    const q =
-    this.dataset.q;
+const q=this.dataset.q;
 
-    document
-    .querySelectorAll(
-      '[data-q="' + q + '"]'
-    )
-    .forEach(b => {
+document
+.querySelectorAll(
+'[data-q="'+q+'"]'
+)
+.forEach(b=>{
+b.classList.remove("selected");
+});
 
-      b.classList.remove(
-        "selected"
-      );
+this.classList.add("selected");
 
-    });
-
-    this.classList.add(
-      "selected"
-    );
-
-  };
+};
 
 });
 
@@ -760,81 +587,79 @@ document
 
 document
 .getElementById("submitButton")
-.onclick = async function(){
+.onclick=async function(){
 
-  const user =
-  auth.currentUser;
+const user=auth.currentUser;
 
-  if(!user){
+if(!user){
 
-    alert(
-      "Please wait a moment."
-    );
+alert("Please wait a moment.");
 
-    return;
-  }
+return;
 
-  const answers = {};
+}
 
-  for(let i=1;i<=3;i++){
+const answers={};
 
-    const selected =
-    document.querySelector(
-      '[data-q="' + i + '"].selected'
-    );
+for(let i=1;i<=3;i++){
 
-    answers["question"+i] =
-    selected
-    ? selected.innerText
-    : "Not answered";
+const selected=
+document.querySelector(
+'[data-q="'+i+'"].selected'
+);
 
-  }
+answers["question"+i]=
+selected
+?selected.innerText
+:"Not answered";
 
-  answers.question4 =
-  document
-  .getElementById("answer4")
-  .value.trim()
-  || "Not answered";
+}
 
-  answers.question5 =
-  document
-  .getElementById("answer5")
-  .value.trim()
-  || "Not answered";
+answers.question4=
+document
+.getElementById("answer4")
+.value.trim()
+||"Not answered";
+
+answers.question5=
+document
+.getElementById("answer5")
+.value.trim()
+||"Not answered";
 
 
-  try{
+try{
 
-    const newAnswer =
-    push(
-      ref(db,"submissions")
-    );
+const newAnswer=
+push(ref(db,"submissions"));
 
-    await set(
-      newAnswer,
-      {
-        uid:user.uid,
-        createdAt:Date.now(),
-        answers:answers
-      }
-    );
+await set(
+newAnswer,
+{
+uid:user.uid,
+createdAt:Date.now(),
+answers:answers
+}
+);
 
-    document
-    .getElementById("savedMessage")
-    .style.display =
-    "block";
+document
+.getElementById("savedMessage")
+.style.display="block";
 
-  }
+alert("Answers saved ❤️");
 
-  catch(error){
+}
 
-    console.error(error);
+catch(error){
 
-    alert(
-      "Could not save answers."
-    );
+console.error(error);
 
-  }
+alert(
+"Could not save answers: "
++error.message
+);
+
+}
 
 };
 
@@ -843,192 +668,155 @@ document
 
 document
 .getElementById("askButton")
-.onclick = async function(){
+.onclick=async function(){
 
-  const input =
-  document
-  .getElementById(
-    "questionInput"
-  );
+const input=
+document.getElementById("questionInput");
 
-  const question =
-  input.value.trim();
+const question=
+input.value.trim();
 
-  if(!question){
+if(!question){
 
-    alert(
-      "Write a question first."
-    );
+alert("Write a question first.");
 
-    return;
-  }
+return;
 
-  const user =
-  auth.currentUser;
+}
 
-  if(!user){
+const user=
+auth.currentUser;
 
-    alert(
-      "Please wait a moment."
-    );
+if(!user){
 
-    return;
-  }
+alert("Please wait.");
 
+return;
 
-  try{
+}
 
-    const newQuestion =
-    push(
-      ref(db,"questions")
-    );
+try{
 
-    await set(
-      newQuestion,
-      {
-        uid:user.uid,
-        question:question,
-        answer:"",
-        createdAt:Date.now()
-      }
-    );
+const newQuestion=
+push(ref(db,"questions"));
 
-    input.value = "";
+await set(
+newQuestion,
+{
+uid:user.uid,
+question:question,
+answer:"",
+createdAt:Date.now()
+}
+);
 
-  }
+input.value="";
 
-  catch(error){
+alert("Question sent ❤️");
 
-    console.error(error);
+}
 
-    alert(
-      "Question could not be sent."
-    );
+catch(error){
 
-  }
+console.error(error);
+
+alert(
+"Question could not be sent: "
++error.message
+);
+
+}
 
 };
 
 
-/* SHOW VIEWER QUESTIONS */
+/* VISITOR QUESTIONS */
 
 function loadVisitorQuestions(user){
 
-  if(!user) return;
+if(!user)return;
 
-  onValue(
-    ref(db,"questions"),
-    snapshot => {
+const visitorQuery=
+query(
+ref(db,"questions"),
+orderByChild("uid"),
+equalTo(user.uid)
+);
 
-      const box =
-      document.getElementById(
-        "visitorQuestions"
-      );
+onValue(
+visitorQuery,
+snapshot=>{
 
-      box.innerHTML = "";
+const box=
+document.getElementById(
+"visitorQuestions"
+);
 
-      const data =
-      snapshot.val();
+box.innerHTML="";
 
-      if(!data) return;
+const data=
+snapshot.val();
 
+if(!data){
 
-      Object.entries(data)
-      .filter(
-        ([id,item]) =>
-        item.uid === user.uid
-      )
-      .sort(
-        (a,b) =>
-        (a[1].createdAt || 0) -
-        (b[1].createdAt || 0)
-      )
-      .forEach(
-        ([id,item]) => {
-
-          const card =
-          document.createElement(
-            "div"
-          );
-
-          card.className =
-          "qa-item";
-
-
-          const question =
-          document.createElement(
-            "div"
-          );
-
-          question.className =
-          "viewer-question";
-
-          question.innerHTML =
-          "<div class='label'>❓ Viewer Question</div>"
-          +
-          safeText(item.question);
-
-          card.appendChild(
-            question
-          );
-
-
-          const reply =
-          document.createElement(
-            "div"
-          );
-
-          reply.className =
-          "host-reply";
-
-
-          if(item.answer){
-
-            reply.innerHTML =
-            "<div class='label'>❤️ Host Reply</div>"
-            +
-            safeText(item.answer);
-
-          }
-          else{
-
-            reply.innerHTML =
-            "<div class='label'>❤️ Host Reply</div>"
-            +
-            "⏳ Waiting for host reply...";
-
-          }
-
-          card.appendChild(
-            reply
-          );
-
-          box.appendChild(
-            card
-          );
-
-        }
-      );
-
-    }
-  );
+return;
 
 }
 
+Object.entries(data)
+.sort(
+(a,b)=>
+(a[1].createdAt||0)-
+(b[1].createdAt||0)
+)
+.forEach(([id,item])=>{
 
-/* SAFE TEXT */
+const card=
+document.createElement("div");
 
-function safeText(text){
+card.className="qa-item";
 
-  const div =
-  document.createElement(
-    "div"
-  );
 
-  div.textContent =
-  text || "";
+const question=
+document.createElement("div");
 
-  return div.innerHTML;
+question.className=
+"viewer-question";
+
+question.innerHTML=
+"<div class='label'>❓ Viewer Question</div>"+
+safeText(item.question);
+
+card.appendChild(question);
+
+
+const reply=
+document.createElement("div");
+
+reply.className="host-reply";
+
+
+if(item.answer){
+
+reply.innerHTML=
+"<div class='label'>❤️ Host Reply</div>"+
+safeText(item.answer);
+
+}else{
+
+reply.innerHTML=
+"<div class='label'>❤️ Host Reply</div>"+
+"⏳ Waiting for host reply...";
+
+}
+
+card.appendChild(reply);
+
+box.appendChild(card);
+
+});
+
+});
 
 }
 
@@ -1036,17 +824,12 @@ function safeText(text){
 /* HOST LOGIN BUTTON */
 
 document
-.getElementById(
-  "adminLoginButton"
-)
-.onclick = function(){
+.getElementById("adminLoginButton")
+.onclick=function(){
 
-  document
-  .getElementById(
-    "loginBox"
-  )
-  .style.display =
-  "block";
+document
+.getElementById("loginBox")
+.style.display="block";
 
 };
 
@@ -1054,59 +837,51 @@ document
 /* HOST LOGIN */
 
 document
-.getElementById(
-  "loginButton"
-)
-.onclick = async function(){
+.getElementById("loginButton")
+.onclick=async function(){
 
-  const email =
-  document
-  .getElementById(
-    "adminEmail"
-  )
-  .value.trim();
+const email=
+document
+.getElementById("adminEmail")
+.value.trim();
 
-  const password =
-  document
-  .getElementById(
-    "adminPassword"
-  )
-  .value;
+const password=
+document
+.getElementById("adminPassword")
+.value;
 
 
-  if(email !== ADMIN_EMAIL){
+if(email!==ADMIN_EMAIL){
 
-    alert(
-      "Wrong host email."
-    );
+alert("Wrong host email.");
 
-    return;
-  }
+return;
+
+}
 
 
-  try{
+try{
 
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
 
-    alert(
-      "Host login successful 👑"
-    );
+alert("Host login successful 👑");
 
-  }
+}
 
-  catch(error){
+catch(error){
 
-    console.error(error);
+console.error(error);
 
-    alert(
-      "Login failed. Check your password."
-    );
+alert(
+"Login failed: "+
+error.message
+);
 
-  }
+}
 
 };
 
@@ -1115,247 +890,274 @@ document
 
 function loadAdminQuestions(){
 
-  onValue(
-    ref(db,"questions"),
-    snapshot => {
+onValue(
+ref(db,"questions"),
+snapshot=>{
 
-      const box =
-      document.getElementById(
-        "adminQuestions"
-      );
+const box=
+document.getElementById(
+"adminQuestions"
+);
 
-      box.innerHTML = "";
+box.innerHTML="";
 
-      const data =
-      snapshot.val();
+const data=
+snapshot.val();
 
+if(!data){
 
-      if(!data){
+box.innerHTML=
+"<p>No visitor questions yet.</p>";
 
-        box.innerHTML =
-        "<p>No questions yet.</p>";
-
-        return;
-      }
-
-
-      Object.entries(data)
-      .reverse()
-      .forEach(
-        ([id,item]) => {
-
-          const card =
-          document.createElement(
-            "div"
-          );
-
-          card.className =
-          "admin-item";
-
-
-          const question =
-          document.createElement(
-            "div"
-          );
-
-          question.innerHTML =
-          "<b>❓ Viewer Question</b><br>"
-          +
-          safeText(
-            item.question
-          );
-
-          card.appendChild(
-            question
-          );
-
-
-          if(item.answer){
-
-            const reply =
-            document.createElement(
-              "div"
-            );
-
-            reply.style.marginTop =
-            "12px";
-
-            reply.innerHTML =
-            "<b>❤️ Host Reply</b><br>"
-            +
-            safeText(
-              item.answer
-            );
-
-            card.appendChild(
-              reply
-            );
-
-          }
-          else{
-
-            const input =
-            document.createElement(
-              "textarea"
-            );
-
-            input.placeholder =
-            "Write host reply...";
-
-            card.appendChild(
-              input
-            );
-
-
-            const button =
-            document.createElement(
-              "button"
-            );
-
-            button.className =
-            "reply-button";
-
-            button.textContent =
-            "❤️ Send Host Reply";
-
-
-            button.onclick =
-            async function(){
-
-              const answer =
-              input.value.trim();
-
-              if(!answer){
-
-                alert(
-                  "Write a reply first."
-                );
-
-                return;
-              }
-
-
-              try{
-
-                await update(
-                  ref(
-                    db,
-                    "questions/"+id
-                  ),
-                  {
-                    answer:answer,
-                    answeredAt:Date.now()
-                  }
-                );
-
-                alert(
-                  "Reply sent ❤️"
-                );
-
-              }
-
-              catch(error){
-
-                console.error(
-                  error
-                );
-
-                alert(
-                  "Reply failed."
-                );
-
-              }
-
-            };
-
-
-            card.appendChild(
-              button
-            );
-
-          }
-
-
-          box.appendChild(
-            card
-          );
-
-        }
-      );
-
-    }
-  );
+return;
 
 }
 
 
-/* AUTH */
+Object.entries(data)
+.reverse()
+.forEach(([id,item])=>{
+
+const card=
+document.createElement("div");
+
+card.className="admin-item";
+
+
+const question=
+document.createElement("div");
+
+question.innerHTML=
+"<b>❓ Visitor Question</b><br>"+
+safeText(item.question);
+
+card.appendChild(question);
+
+
+if(item.answer){
+
+const reply=
+document.createElement("div");
+
+reply.style.marginTop="12px";
+
+reply.innerHTML=
+"<b>❤️ Host Reply</b><br>"+
+safeText(item.answer);
+
+card.appendChild(reply);
+
+}else{
+
+const input=
+document.createElement("textarea");
+
+input.placeholder=
+"Write host reply...";
+
+card.appendChild(input);
+
+
+const button=
+document.createElement("button");
+
+button.className="reply-button";
+
+button.textContent=
+"❤️ Send Reply";
+
+
+button.onclick=async function(){
+
+const answer=
+input.value.trim();
+
+if(!answer){
+
+alert("Write a reply first.");
+
+return;
+
+}
+
+
+try{
+
+await update(
+ref(db,"questions/"+id),
+{
+answer:answer,
+answeredAt:Date.now()
+}
+);
+
+alert("Reply sent ❤️");
+
+}
+
+catch(error){
+
+console.error(error);
+
+alert(
+"Reply failed: "+
+error.message
+);
+
+}
+
+};
+
+
+card.appendChild(button);
+
+}
+
+box.appendChild(card);
+
+});
+
+});
+
+}
+
+
+/* HOST SUBMITTED ANSWERS */
+
+function loadSubmissions(){
+
+onValue(
+ref(db,"submissions"),
+snapshot=>{
+
+const box=
+document.getElementById("submissions");
+
+box.innerHTML="";
+
+const data=
+snapshot.val();
+
+if(!data){
+
+box.innerHTML=
+"<p>No submitted answers yet.</p>";
+
+return;
+
+}
+
+
+Object.entries(data)
+.reverse()
+.forEach(([id,item])=>{
+
+const card=
+document.createElement("div");
+
+card.className="admin-item";
+
+
+const title=
+document.createElement("h4");
+
+const date=
+item.createdAt
+?new Date(item.createdAt)
+.toLocaleString()
+:"";
+
+title.textContent=
+"📝 Visitor Answers — "+date;
+
+card.appendChild(title);
+
+
+Object.entries(
+item.answers||{}
+)
+.forEach(([question,answer])=>{
+
+const p=
+document.createElement("p");
+
+p.style.marginTop="10px";
+
+p.innerHTML=
+"<b>"+
+safeText(question)+
+":</b> "+
+safeText(answer);
+
+card.appendChild(p);
+
+});
+
+
+box.appendChild(card);
+
+});
+
+});
+
+}
+
+
+/* AUTH STATE */
 
 onAuthStateChanged(
-  auth,
-  user => {
+auth,
+user=>{
 
-    const panel =
-    document.getElementById(
-      "adminPanel"
-    );
-
-
-    if(
-      user &&
-      user.email === ADMIN_EMAIL
-    ){
-
-      panel.style.display =
-      "block";
-
-      loadAdminQuestions();
-
-    }
-    else{
-
-      panel.style.display =
-      "none";
-
-      if(user){
-
-        loadVisitorQuestions(
-          user
-        );
-
-      }
-
-    }
-
-  }
+const panel=
+document.getElementById(
+"adminPanel"
 );
+
+
+if(
+user &&
+user.email===ADMIN_EMAIL
+){
+
+panel.style.display="block";
+
+loadAdminQuestions();
+
+loadSubmissions();
+
+}else{
+
+panel.style.display="none";
+
+if(user){
+
+loadVisitorQuestions(user);
+
+}
+
+}
+
+});
 
 
 /* VISITOR LOGIN */
 
 async function visitorLogin(){
 
-  try{
+try{
 
-    if(!auth.currentUser){
+if(!auth.currentUser){
 
-      await signInAnonymously(
-        auth
-      );
+await signInAnonymously(auth);
 
-    }
+}
 
-  }
+}catch(error){
 
-  catch(error){
+console.error(error);
 
-    console.error(error);
-
-    alert(
-      "Firebase visitor login failed."
-    );
-
-  }
+}
 
 }
 
@@ -1365,18 +1167,14 @@ visitorLogin();
 /* LOGOUT */
 
 document
-.getElementById(
-  "logoutButton"
-)
-.onclick = async function(){
+.getElementById("logoutButton")
+.onclick=async function(){
 
-  await signOut(auth);
+await signOut(auth);
 
-  alert(
-    "Logged out."
-  );
+alert("Logged out ❤️");
 
-  visitorLogin();
+visitorLogin();
 
 };
 
