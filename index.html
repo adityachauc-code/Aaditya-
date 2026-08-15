@@ -2,270 +2,275 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>My Love ❤️</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  min-height:100vh;
-  padding:20px 12px;
-  font-family:Arial,sans-serif;
-  color:white;
-  background:
-    radial-gradient(circle at 15% 15%,#ff4f8140,transparent 28%),
-    radial-gradient(circle at 85% 80%,#8b4dff40,transparent 30%),
-    linear-gradient(145deg,#08000f,#29001f,#100018);
+min-height:100vh;
+padding:20px 12px;
+font-family:Arial,sans-serif;
+color:white;
+background:
+radial-gradient(circle at 15% 15%,#ff4f8140,transparent 28%),
+radial-gradient(circle at 85% 80%,#8b4dff40,transparent 30%),
+linear-gradient(145deg,#08000f,#29001f,#100018);
 }
 
 .container{
-  width:100%;
-  max-width:680px;
-  margin:auto;
-  padding:28px 16px;
-  border-radius:28px;
-  background:#ffffff12;
-  border:1px solid #ffffff25;
-  backdrop-filter:blur(12px);
-  box-shadow:0 15px 50px #00000060;
+width:100%;
+max-width:680px;
+margin:auto;
+padding:28px 16px;
+border-radius:28px;
+background:#ffffff12;
+border:1px solid #ffffff25;
+backdrop-filter:blur(12px);
+box-shadow:0 15px 50px #00000060;
 }
 
 .main-heart{
-  text-align:center;
-  font-size:65px;
-  animation:beat 1.4s infinite;
+text-align:center;
+font-size:65px;
+animation:beat 1.4s infinite
 }
 
 @keyframes beat{
-  50%{transform:scale(1.15)}
+50%{transform:scale(1.15)}
 }
 
 h1{
-  text-align:center;
-  font-size:clamp(42px,12vw,72px);
-  text-shadow:0 0 15px #ff4f91,0 0 35px #ff267f;
+text-align:center;
+font-size:clamp(42px,12vw,72px);
+text-shadow:0 0 15px #ff4f91,0 0 35px #ff267f
 }
 
 .intro{
-  text-align:center;
-  margin:15px auto 30px;
-  line-height:1.7;
-  color:#ffe8f2;
+text-align:center;
+margin:15px auto 30px;
+line-height:1.7;
+color:#ffe8f2
 }
 
 .question{
-  margin-top:18px;
-  padding:18px;
-  border-radius:18px;
-  background:#ffffff0d;
-  border:1px solid #ffffff18;
+margin-top:18px;
+padding:18px;
+border-radius:18px;
+background:#ffffff0d;
+border:1px solid #ffffff18
 }
 
 .question h2{
-  font-size:17px;
-  line-height:1.4;
-  margin-bottom:10px;
+font-size:17px;
+line-height:1.4;
+margin-bottom:10px
 }
 
 .answer{
-  width:100%;
-  padding:12px;
-  margin-top:8px;
-  border-radius:12px;
-  border:1px solid #ffffff25;
-  background:#ffffff0d;
-  color:white;
-  font-size:15px;
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:12px;
+border:1px solid #ffffff25;
+background:#ffffff0d;
+color:white;
+font-size:15px
 }
 
 .answer.selected{
-  background:#ff469955;
-  border-color:#ff9bc7;
+background:#ff469955;
+border-color:#ff9bc7
 }
 
 textarea,input{
-  width:100%;
-  padding:12px;
-  border-radius:12px;
-  border:1px solid #ffffff25;
-  background:#00000035;
-  color:white;
-  font-size:15px;
-  outline:none;
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid #ffffff25;
+background:#00000035;
+color:white;
+font-size:15px;
+outline:none
 }
 
 textarea{
-  min-height:90px;
-  resize:vertical;
+min-height:90px;
+resize:vertical
 }
 
 .button{
-  width:100%;
-  margin-top:15px;
-  padding:14px;
-  border:0;
-  border-radius:15px;
-  background:linear-gradient(135deg,#ff4f91,#934cff);
-  color:white;
-  font-size:17px;
-  font-weight:bold;
+width:100%;
+margin-top:15px;
+padding:14px;
+border:0;
+border-radius:15px;
+background:linear-gradient(135deg,#ff4f91,#934cff);
+color:white;
+font-size:17px;
+font-weight:bold
 }
 
 .message{
-  display:none;
-  margin-top:15px;
-  padding:15px;
-  border-radius:15px;
-  text-align:center;
-  background:#ff509926;
+display:none;
+margin-top:15px;
+padding:15px;
+border-radius:15px;
+text-align:center;
+background:#ff509926
 }
 
-.ask{
-  margin-top:35px;
-  padding-top:25px;
-  border-top:1px solid #ffffff20;
+.section{
+margin-top:35px;
+padding-top:25px;
+border-top:1px solid #ffffff20
 }
 
-.ask h2,.admin h2{
-  text-align:center;
-  margin-bottom:10px;
+.section h2{
+text-align:center;
+margin-bottom:10px
 }
 
-.ask p{
-  text-align:center;
-  color:#e5c9d8;
-  margin-bottom:15px;
+.section>p{
+text-align:center;
+color:#e5c9d8;
+margin-bottom:15px
 }
 
 .ask-row{
-  display:flex;
-  gap:8px;
+display:flex;
+gap:8px
 }
 
 .ask-row input{
-  flex:1;
+flex:1
 }
 
 .ask-row button{
-  padding:0 18px;
-  border:0;
-  border-radius:12px;
-  background:#ff4f91;
-  color:white;
-  font-weight:bold;
+padding:0 18px;
+border:0;
+border-radius:12px;
+background:#ff4f91;
+color:white;
+font-weight:bold
 }
 
-.item,.admin-box{
-  margin-top:12px;
-  padding:15px;
-  border-radius:15px;
-  background:#ffffff0d;
-  line-height:1.5;
+/* VISITOR QUESTION */
+
+.visitor-card{
+margin-top:15px;
+padding:16px;
+border-radius:16px;
+background:#ffffff0d;
+border:1px solid #ffffff20
 }
 
-.reply{
-  margin-top:10px;
-  padding:10px;
-  border-radius:10px;
-  background:#ff4f9120;
+.slot{
+padding:13px;
+border-radius:12px;
+margin-top:10px
 }
 
-.admin{
-  display:none;
-  margin-top:35px;
-  padding-top:25px;
-  border-top:1px solid #ffffff20;
+.question-slot{
+background:#6d4aff20;
+border-left:4px solid #934cff
 }
+
+.reply-slot{
+background:#ff4f9120;
+border-left:4px solid #ff4f91
+}
+
+.slot-title{
+font-weight:bold;
+margin-bottom:7px
+}
+
+.waiting{
+opacity:.7
+}
+
+/* ADMIN */
 
 .login{
-  margin-top:25px;
-  text-align:center;
+margin-top:25px;
+text-align:center
 }
 
 .login-box{
-  display:none;
-  margin-top:15px;
+display:none;
+margin-top:15px
 }
 
-.small-button{
-  padding:10px 15px;
-  border:0;
-  border-radius:10px;
-  background:#ffffff18;
-  color:white;
+.small-button,
+.admin-button{
+padding:10px 15px;
+border:0;
+border-radius:10px;
+background:#ff4f91;
+color:white;
+font-weight:bold
 }
 
 .admin-button{
-  margin-top:8px;
-  padding:10px 14px;
-  border:0;
-  border-radius:10px;
-  background:#ff4f91;
-  color:white;
-  font-weight:bold;
+margin-top:8px
+}
+
+.admin{
+display:none;
+margin-top:35px;
+padding-top:25px;
+border-top:1px solid #ffffff20
+}
+
+.admin-card{
+margin-top:15px;
+padding:16px;
+border-radius:16px;
+background:#ffffff0d;
+border:1px solid #ffffff20
 }
 
 .logout{
-  background:#555;
+background:#555
 }
 
-.touch{
-  position:fixed;
-  pointer-events:none;
-  z-index:9999;
-  font-size:40px;
-  animation:touch 1.4s ease-out forwards;
+/* MEDIA */
+
+.media-item{
+margin-top:15px;
+padding:15px;
+border-radius:15px;
+background:#ffffff0d;
+border:1px solid #ffffff18
 }
 
-@keyframes touch{
-  0%{
-    transform:translate(-50%,-50%) scale(.4);
-    opacity:0;
-  }
-  20%{
-    transform:translate(-50%,-50%) scale(1.2);
-    opacity:1;
-  }
-  100%{
-    transform:translate(-50%,-160%) scale(1);
-    opacity:0;
-  }
+.media-item img,
+.media-item video{
+width:100%;
+max-height:400px;
+object-fit:contain;
+border-radius:12px
 }
 
-.floating{
-  position:fixed;
-  bottom:-50px;
-  pointer-events:none;
-  z-index:1;
-  animation:float 6s linear forwards;
+.media-item audio{
+width:100%
 }
 
-@keyframes float{
-  0%{
-    transform:translateY(0);
-    opacity:0;
-  }
-  15%{opacity:.8}
-  100%{
-    transform:translateY(-110vh) rotate(360deg);
-    opacity:0;
-  }
+.media-title{
+font-weight:bold;
+margin-bottom:10px
+}
+
+.upload-status{
+margin-top:10px;
+text-align:center
 }
 
 @media(max-width:500px){
-  .ask-row{
-    flex-direction:column;
-  }
-
-  .ask-row button{
-    padding:12px;
-  }
+.ask-row{flex-direction:column}
+.ask-row button{padding:12px}
 }
 </style>
 </head>
@@ -282,6 +287,7 @@ textarea{
 Some feelings are too special to explain with words. ❤️<br>
 Answer these questions and ask me anything. ✨
 </p>
+
 
 <!-- QUESTIONS -->
 
@@ -352,48 +358,78 @@ Answer these questions and ask me anything. ✨
 Your answers were saved. ❤️
 </div>
 
-<!-- ASK -->
 
-<div class="ask">
+<!-- MEDIA -->
+
+<div class="section">
+
+<h2>💖 Memories</h2>
+
+<p>Photos, videos and audio shared here. ✨</p>
+
+<div id="mediaGallery">
+<p>No memories uploaded yet. ❤️</p>
+</div>
+
+</div>
+
+
+<!-- ASK SECTION -->
+
+<div class="section">
 
 <h2>💌 Ask Me Anything</h2>
 
-<p>Ask as many questions as you want.</p>
+<p>
+Ask me a question and I will reply. ❤️
+</p>
 
 <div class="ask-row">
 
-<input id="questionInput"
+<input
+id="questionInput"
 placeholder="Write your question...">
 
-<button id="askButton">Ask</button>
+<button id="askButton">
+Ask
+</button>
 
 </div>
 
-<div id="questions"></div>
+<div id="visitorQuestions"></div>
 
 </div>
+
 
 <!-- ADMIN LOGIN -->
 
 <div class="login">
 
-<button class="small-button" id="adminLoginButton">
+<button
+class="small-button"
+id="adminLoginButton">
 🔐 Admin
 </button>
 
-<div class="login-box" id="loginBox">
+<div
+class="login-box"
+id="loginBox">
 
-<input id="adminEmail"
+<input
+id="adminEmail"
 type="email"
 placeholder="Admin email">
 
 <br><br>
 
-<input id="adminPassword"
+<input
+id="adminPassword"
 type="password"
 placeholder="Password">
 
-<button class="button" id="loginButton">
+<button
+class="button"
+id="loginButton">
 Login
 </button>
 
@@ -401,23 +437,69 @@ Login
 
 </div>
 
+
 <!-- ADMIN PANEL -->
 
-<div class="admin" id="adminPanel">
+<div
+class="admin"
+id="adminPanel">
 
 <h2>👑 Admin Panel</h2>
 
-<h3>💌 Visitor Questions</h3>
+
+<!-- MEDIA UPLOAD -->
+
+<h3 style="margin-top:20px">
+📤 Add Photo / Video / Audio
+</h3>
+
+<br>
+
+<input
+type="file"
+id="mediaFile"
+accept="image/*,video/*,audio/*">
+
+<br><br>
+
+<input
+type="text"
+id="mediaTitle"
+placeholder="Media title">
+
+<button
+class="admin-button"
+id="uploadMediaButton">
+📤 Upload
+</button>
+
+<p
+class="upload-status"
+id="uploadStatus">
+</p>
+
+
+<!-- ADMIN QUESTIONS -->
+
+<h3 style="margin-top:30px">
+💌 Visitor Questions
+</h3>
 
 <div id="adminQuestions"></div>
 
-<h3 style="margin-top:25px">
+
+<!-- SUBMISSIONS -->
+
+<h3 style="margin-top:30px">
 📝 Submitted Answers
 </h3>
 
 <div id="submissions"></div>
 
-<button class="button logout" id="logoutButton">
+
+<button
+class="button logout"
+id="logoutButton">
 Log Out
 </button>
 
@@ -430,8 +512,10 @@ Log Out
 
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import {
+initializeApp
+} from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
 import {
 getAuth,
@@ -439,25 +523,31 @@ signInAnonymously,
 signInWithEmailAndPassword,
 onAuthStateChanged,
 signOut
-}
-from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+} from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
 
 import {
-  getDatabase,
-  ref,
-  push,
-  set,
-  onValue,
-  update,
-  query,
-  orderByChild,
-  equalTo
-} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+getDatabase,
+ref,
+push,
+set,
+onValue,
+update
+} from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+
+import {
+getStorage,
+ref as storageRef,
+uploadBytes,
+getDownloadURL
+} from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-storage.js";
 
 
 /* FIREBASE CONFIG */
 
-const firebaseConfig = {
+const firebaseConfig={
 
 apiKey:
 "AIzaSyCD4Hdw-hFVEzp4d6VtTFtaSL5lDm4_9kQ",
@@ -483,22 +573,28 @@ appId:
 };
 
 
-/* PUT YOUR FIREBASE ADMIN GMAIL HERE */
+/* ADMIN EMAIL */
 
-const ADMIN_EMAIL =
+const ADMIN_EMAIL=
 "adityachauc@gmail.com";
 
 
 /* START FIREBASE */
 
-const app = initializeApp(firebaseConfig);
+const app=
+initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth=
+getAuth(app);
 
-const db = getDatabase(app);
+const db=
+getDatabase(app);
+
+const storage=
+getStorage(app);
 
 
-/* VISITOR LOGIN */
+/* ANONYMOUS VISITOR */
 
 async function visitorLogin(){
 
@@ -518,104 +614,45 @@ console.error(error);
 
 }
 
-visitorLogin();
-
-
-/* TOUCH EMOJIS */
-
-document.addEventListener("pointerdown",function(e){
-
-const emojis=[
-"😘",
-"❤️‍🩹",
-"🥰"
-];
-
-const emoji=document.createElement("div");
-
-emoji.className="touch";
-
-emoji.textContent=
-emojis[
-Math.floor(Math.random()*emojis.length)
-];
-
-emoji.style.left=e.clientX+"px";
-
-emoji.style.top=e.clientY+"px";
-
-document.body.appendChild(emoji);
-
-setTimeout(()=>{
-emoji.remove();
-},1400);
-
-});
-
-
-/* FLOATING EMOJIS */
-
-const floatingEmojis=[
-"❤️","💗","💕","💖","💜","🥰","😊","✨"
-];
-
-setInterval(function(){
-
-const emoji=document.createElement("div");
-
-emoji.className="floating";
-
-emoji.textContent=
-floatingEmojis[
-Math.floor(Math.random()*floatingEmojis.length)
-];
-
-emoji.style.left=
-Math.random()*100+"vw";
-
-emoji.style.fontSize=
-(18+Math.random()*15)+"px";
-
-document.body.appendChild(emoji);
-
-setTimeout(()=>{
-emoji.remove();
-},6000);
-
-},1500);
-
 
 /* ANSWER BUTTONS */
 
-document.querySelectorAll(".answer").forEach(button=>{
+document
+.querySelectorAll(".answer")
+.forEach(button=>{
 
-button.addEventListener("click",function(){
+button.onclick=function(){
 
-const q=this.dataset.q;
+const q=
+this.dataset.q;
 
-document.querySelectorAll(
+document
+.querySelectorAll(
 '[data-q="'+q+'"]'
-).forEach(b=>{
-b.classList.remove("selected");
-});
+)
+.forEach(b=>
+b.classList.remove("selected")
+);
 
 this.classList.add("selected");
 
-});
+};
 
 });
 
 
 /* SUBMIT ANSWERS */
 
-document.getElementById("submit").onclick=async function(){
+document
+.getElementById("submit")
+.onclick=async function(){
 
-const user=auth.currentUser;
+const user=
+auth.currentUser;
 
 if(!user){
 
 alert("Please wait a moment.");
-
 return;
 
 }
@@ -639,7 +676,8 @@ selected
 for(let i=4;i<=10;i++){
 
 answers["question"+i]=
-document.getElementById("q"+i)
+document
+.getElementById("q"+i)
 .value.trim()
 ||"Not answered";
 
@@ -647,20 +685,20 @@ document.getElementById("q"+i)
 
 try{
 
-const newSubmission=
+const submission=
 push(ref(db,"submissions"));
 
-await set(newSubmission,{
-
+await set(
+submission,
+{
 uid:user.uid,
-
 createdAt:Date.now(),
-
 answers:answers
+}
+);
 
-});
-
-document.getElementById("message")
+document
+.getElementById("message")
 .style.display="block";
 
 alert("Answers saved ❤️");
@@ -669,9 +707,7 @@ alert("Answers saved ❤️");
 
 console.error(error);
 
-alert(
-"Could not save answers. Check Firebase rules."
-);
+alert("Could not save answers.");
 
 }
 
@@ -680,27 +716,31 @@ alert(
 
 /* ASK QUESTION */
 
-document.getElementById("askButton").onclick=async function(){
+document
+.getElementById("askButton")
+.onclick=async function(){
 
 const input=
-document.getElementById("questionInput");
+document.getElementById(
+"questionInput"
+);
 
-const question=input.value.trim();
+const question=
+input.value.trim();
 
 if(!question){
 
 alert("Write a question first.");
-
 return;
 
 }
 
-const user=auth.currentUser;
+const user=
+auth.currentUser;
 
-if(!user){
+if(!user || !user.isAnonymous){
 
 alert("Please wait a moment.");
-
 return;
 
 }
@@ -710,17 +750,15 @@ try{
 const newQuestion=
 push(ref(db,"questions"));
 
-await set(newQuestion,{
-
+await set(
+newQuestion,
+{
 uid:user.uid,
-
 question:question,
-
 answer:"",
-
 createdAt:Date.now()
-
-});
+}
+);
 
 input.value="";
 
@@ -735,106 +773,193 @@ alert("Question could not be sent.");
 };
 
 
-/* SHOW VISITOR QUESTIONS */
+/* VISITOR QUESTIONS + REPLIES */
 
 function loadVisitorQuestions(user){
 
-  if(!user || user.isAnonymous !== true){
-    return;
-  }
+if(!user || !user.isAnonymous)
+return;
 
-  const questionsQuery = query(
-    ref(db,"questions"),
-    orderByChild("uid"),
-    equalTo(user.uid)
-  );
+const questionsRef=
+ref(db,"questions");
 
-  onValue(questionsQuery, snapshot=>{
+onValue(
+questionsRef,
+snapshot=>{
 
-    const box =
-      document.getElementById("questions");
+const box=
+document.getElementById(
+"visitorQuestions"
+);
 
-    box.innerHTML = "";
+box.innerHTML="";
 
-    const data = snapshot.val();
+const data=
+snapshot.val();
 
-    if(!data){
-      return;
-    }
+if(!data)
+return;
 
-    Object.entries(data).forEach(([id,item])=>{
+Object.entries(data)
+.filter(
+([id,item])=>
+item.uid===user.uid
+)
+.sort(
+(a,b)=>
+(a[1].createdAt||0)-
+(b[1].createdAt||0)
+)
+.forEach(
+([id,item])=>{
 
-      const div =
-        document.createElement("div");
+const card=
+document.createElement("div");
 
-      div.className = "item";
+card.className=
+"visitor-card";
 
-      const q =
-        document.createElement("div");
 
-      q.textContent =
-        "❓ " + item.question;
+/* SLOT 1 */
 
-      div.appendChild(q);
+const questionSlot=
+document.createElement("div");
 
-      const reply =
-        document.createElement("div");
+questionSlot.className=
+"slot question-slot";
 
-      reply.className = "reply";
+const questionTitle=
+document.createElement("div");
 
-      reply.textContent =
-        item.answer
-        ? "❤️ My answer: " + item.answer
-        : "⏳ Waiting for a reply...";
+questionTitle.className=
+"slot-title";
 
-      div.appendChild(reply);
+questionTitle.textContent=
+"❓ Your Question";
 
-      box.appendChild(div);
+const questionText=
+document.createElement("div");
 
-    });
+questionText.textContent=
+item.question;
 
-  });
+questionSlot.appendChild(
+questionTitle
+);
+
+questionSlot.appendChild(
+questionText
+);
+
+
+/* SLOT 2 */
+
+const replySlot=
+document.createElement("div");
+
+replySlot.className=
+"slot reply-slot";
+
+const replyTitle=
+document.createElement("div");
+
+replyTitle.className=
+"slot-title";
+
+replyTitle.textContent=
+"❤️ My Reply";
+
+const replyText=
+document.createElement("div");
+
+if(
+item.answer &&
+item.answer.trim()
+){
+
+replyText.textContent=
+item.answer;
+
+}else{
+
+replyText.textContent=
+"⏳ Waiting for a reply...";
+
+replyText.className=
+"waiting";
+
+}
+
+replySlot.appendChild(
+replyTitle
+);
+
+replySlot.appendChild(
+replyText
+);
+
+
+card.appendChild(
+questionSlot
+);
+
+card.appendChild(
+replySlot
+);
+
+box.appendChild(
+card
+);
+
+});
+
+});
+
 }
 
 
-/* WAIT FOR VISITOR LOGIN */
+/* ADMIN LOGIN BUTTON */
 
-onAuthStateChanged(auth, user=>{
+document
+.getElementById(
+"adminLoginButton"
+)
+.onclick=function(){
 
-  if(user && user.isAnonymous){
+document
+.getElementById(
+"loginBox"
+)
+.style.display="block";
 
-    loadVisitorQuestions(user);
-
-  }
-
-});
-
-
-/* ADMIN BUTTON */
-
-document.getElementById("adminLoginButton").addEventListener("click", function(){
-
-    document.getElementById("loginBox").style.display = "block";
-
-});
+};
 
 
 /* ADMIN LOGIN */
 
-document.getElementById("loginButton").onclick=async function(){
+document
+.getElementById(
+"loginButton"
+)
+.onclick=async function(){
 
 const email=
-document.getElementById("adminEmail")
+document
+.getElementById(
+"adminEmail"
+)
 .value.trim();
 
 const password=
-document.getElementById("adminPassword")
+document
+.getElementById(
+"adminPassword"
+)
 .value;
 
 if(email!==ADMIN_EMAIL){
 
 alert("Wrong admin email.");
-
 return;
 
 }
@@ -847,133 +972,163 @@ email,
 password
 );
 
-alert("Admin login successful 👑");
+alert(
+"Admin login successful 👑"
+);
 
 }catch(error){
 
 console.error(error);
 
-alert("Login failed. Check email and password.");
+alert(
+"Login failed. Check email and password."
+);
 
 }
 
 };
 
 
-/* AUTH STATE */
-
-onAuthStateChanged(auth,user=>{
-
-if(
-user &&
-user.email===ADMIN_EMAIL
-){
-
-document.getElementById("adminPanel")
-.style.display="block";
-
-loadAdminQuestions();
-
-loadSubmissions();
-
-}else{
-
-document.getElementById("adminPanel")
-.style.display="none";
-
-}
-
-});
-
-
 /* ADMIN QUESTIONS */
 
 function loadAdminQuestions(){
 
-onValue(ref(db,"questions"),snapshot=>{
+onValue(
+ref(db,"questions"),
+snapshot=>{
 
 const box=
-document.getElementById("adminQuestions");
+document.getElementById(
+"adminQuestions"
+);
 
 box.innerHTML="";
 
-const data=snapshot.val();
+const data=
+snapshot.val();
 
 if(!data){
 
-box.innerHTML="<p>No questions yet.</p>";
+box.innerHTML=
+"<p>No questions yet.</p>";
 
 return;
 
 }
 
-Object.entries(data).forEach(([id,item])=>{
+Object.entries(data)
+.reverse()
+.forEach(
+([id,item])=>{
 
-const div=document.createElement("div");
+const card=
+document.createElement(
+"div"
+);
 
-div.className="admin-box";
+card.className=
+"admin-card";
 
-const q=document.createElement("p");
 
-q.textContent="❓ "+item.question;
+const question=
+document.createElement(
+"div"
+);
 
-div.appendChild(q);
+question.innerHTML=
+"<strong>❓ Visitor Question</strong><br>"
++
+item.question;
+
+card.appendChild(
+question
+);
+
 
 if(item.answer){
 
-const reply=document.createElement("div");
+const reply=
+document.createElement(
+"div"
+);
 
-reply.className="reply";
+reply.className=
+"reply";
 
-reply.textContent=
-"❤️ Your reply: "+item.answer;
+reply.innerHTML=
+"<strong>❤️ Your Reply</strong><br>"
++
+item.answer;
 
-div.appendChild(reply);
+card.appendChild(
+reply
+);
 
 }else{
 
-const input=document.createElement("textarea");
-
-input.id="reply-"+id;
-
-input.placeholder="Write your reply...";
-
-div.appendChild(input);
-
-const button=document.createElement("button");
-
-button.className="admin-button";
-
-button.textContent="❤️ Reply";
-
-button.onclick=()=>replyToQuestion(id);
-
-div.appendChild(button);
-
-}
-
-box.appendChild(div);
-
-});
-
-});
-
-}
-
-
-/* REPLY */
-
-async function replyToQuestion(id){
-
 const input=
-document.getElementById("reply-"+id);
+document.createElement(
+"textarea"
+);
 
-const answer=input.value.trim();
+input.id=
+"reply-"+id;
+
+input.placeholder=
+"Write your reply here...";
+
+card.appendChild(
+input
+);
+
+const button=
+document.createElement(
+"button"
+);
+
+button.className=
+"admin-button";
+
+button.textContent=
+"❤️ Send Reply";
+
+button.onclick=
+function(){
+
+sendReply(
+id,
+input.value.trim()
+);
+
+};
+
+card.appendChild(
+button
+);
+
+}
+
+box.appendChild(
+card
+);
+
+});
+
+});
+
+}
+
+
+/* SEND ADMIN REPLY */
+
+async function sendReply(
+id,
+answer
+){
 
 if(!answer){
 
 alert("Write a reply first.");
-
 return;
 
 }
@@ -988,13 +1143,17 @@ answeredAt:Date.now()
 }
 );
 
-alert("Reply sent ❤️");
+alert(
+"Reply sent ❤️"
+);
 
 }catch(error){
 
 console.error(error);
 
-alert("Could not send reply.");
+alert(
+"Reply could not be sent."
+);
 
 }
 
@@ -1005,14 +1164,19 @@ alert("Could not send reply.");
 
 function loadSubmissions(){
 
-onValue(ref(db,"submissions"),snapshot=>{
+onValue(
+ref(db,"submissions"),
+snapshot=>{
 
 const box=
-document.getElementById("submissions");
+document.getElementById(
+"submissions"
+);
 
 box.innerHTML="";
 
-const data=snapshot.val();
+const data=
+snapshot.val();
 
 if(!data){
 
@@ -1025,18 +1189,26 @@ return;
 
 Object.entries(data)
 .reverse()
-.forEach(([id,item])=>{
+.forEach(
+([id,item])=>{
 
-const div=document.createElement("div");
+const div=
+document.createElement(
+"div"
+);
 
-div.className="admin-box";
+div.className=
+"admin-card";
 
 const date=
-new Date(item.createdAt)
-.toLocaleString();
+new Date(
+item.createdAt
+).toLocaleString();
 
 const title=
-document.createElement("h4");
+document.createElement(
+"h4"
+);
 
 title.textContent=
 "📝 Submission — "+date;
@@ -1045,9 +1217,12 @@ div.appendChild(title);
 
 Object.entries(
 item.answers||{}
-).forEach(([question,answer])=>{
+)
+.forEach(
+([question,answer])=>{
 
-const p=document.createElement("p");
+const p=
+document.createElement("p");
 
 p.style.marginTop="10px";
 
@@ -1067,15 +1242,295 @@ box.appendChild(div);
 }
 
 
+/* MEDIA UPLOAD */
+
+document
+.getElementById(
+"uploadMediaButton"
+)
+.onclick=async function(){
+
+const user=
+auth.currentUser;
+
+if(
+!user ||
+user.email!==ADMIN_EMAIL
+){
+
+alert("Admin only.");
+return;
+
+}
+
+const file=
+document
+.getElementById(
+"mediaFile"
+)
+.files[0];
+
+const title=
+document
+.getElementById(
+"mediaTitle"
+)
+.value.trim();
+
+const status=
+document
+.getElementById(
+"uploadStatus"
+);
+
+if(!file){
+
+alert(
+"Choose a photo, video or audio file."
+);
+
+return;
+
+}
+
+try{
+
+status.textContent=
+"Uploading... ⏳";
+
+const fileName=
+file.name.replace(
+/[^a-zA-Z0-9._-]/g,
+"_"
+);
+
+const fileRef=
+storageRef(
+storage,
+"media/"
++Date.now()
++"_"+fileName
+);
+
+await uploadBytes(
+fileRef,
+file
+);
+
+const url=
+await getDownloadURL(
+fileRef
+);
+
+const media=
+push(ref(db,"media"));
+
+await set(
+media,
+{
+title:
+title||file.name,
+url:url,
+type:file.type,
+createdAt:Date.now()
+}
+);
+
+status.textContent=
+"Uploaded successfully ❤️";
+
+document
+.getElementById("mediaFile")
+.value="";
+
+document
+.getElementById("mediaTitle")
+.value="";
+
+}catch(error){
+
+console.error(error);
+
+status.textContent=
+"Upload failed.";
+
+}
+
+};
+
+
+/* SHOW MEDIA */
+
+onValue(
+ref(db,"media"),
+snapshot=>{
+
+const gallery=
+document.getElementById(
+"mediaGallery"
+);
+
+gallery.innerHTML="";
+
+const data=
+snapshot.val();
+
+if(!data){
+
+gallery.innerHTML=
+"<p>No memories uploaded yet. ❤️</p>";
+
+return;
+
+}
+
+Object.values(data)
+.sort(
+(a,b)=>
+(b.createdAt||0)-
+(a.createdAt||0)
+)
+.forEach(item=>{
+
+const div=
+document.createElement(
+"div"
+);
+
+div.className=
+"media-item";
+
+const title=
+document.createElement(
+"div"
+);
+
+title.className=
+"media-title";
+
+title.textContent=
+"✨ "+item.title;
+
+div.appendChild(title);
+
+
+if(
+item.type &&
+item.type.startsWith("image/")
+){
+
+const img=
+document.createElement("img");
+
+img.src=item.url;
+
+img.alt=item.title;
+
+div.appendChild(img);
+
+}
+
+
+else if(
+item.type &&
+item.type.startsWith("video/")
+){
+
+const video=
+document.createElement("video");
+
+video.src=item.url;
+
+video.controls=true;
+
+div.appendChild(video);
+
+}
+
+
+else if(
+item.type &&
+item.type.startsWith("audio/")
+){
+
+const audio=
+document.createElement("audio");
+
+audio.src=item.url;
+
+audio.controls=true;
+
+div.appendChild(audio);
+
+}
+
+gallery.appendChild(div);
+
+});
+
+});
+
+
+/* AUTH STATE */
+
+onAuthStateChanged(
+auth,
+user=>{
+
+const panel=
+document.getElementById(
+"adminPanel"
+);
+
+if(
+user &&
+user.email===ADMIN_EMAIL
+){
+
+panel.style.display="block";
+
+loadAdminQuestions();
+
+loadSubmissions();
+
+}else{
+
+panel.style.display="none";
+
+if(
+user &&
+user.isAnonymous
+){
+
+loadVisitorQuestions(user);
+
+}
+
+}
+
+});
+
+
 /* LOGOUT */
 
-document.getElementById("logoutButton").onclick=async function(){
+document
+.getElementById(
+"logoutButton"
+)
+.onclick=async function(){
 
 await signOut(auth);
 
 alert("Logged out.");
 
+await visitorLogin();
+
 };
+
+
+/* START */
+
+visitorLogin();
 
 </script>
 
