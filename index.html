@@ -790,16 +790,11 @@ box.appendChild(div);
 
 /* ADMIN BUTTON */
 
-document.getElementById("adminLoginButton").onclick=function(){
+document.getElementById("adminLoginButton").addEventListener("click", function(){
 
-const box=document.getElementById("loginBox");
+    document.getElementById("loginBox").style.display = "block";
 
-box.style.display=
-box.style.display==="block"
-?"none"
-:"block";
-
-};
+});
 
 
 /* ADMIN LOGIN */
