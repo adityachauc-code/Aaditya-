@@ -1,193 +1,1244 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>My Love ❤️</title>
 
   <style>
-    body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(135deg, #25002e, #7b145f);
-      color: white;
-      font-family: Arial;
-      text-align: center;
+      padding: 0;
     }
 
-    .box {
-      position: relative;
-      z-index: 10;
-      margin-top: 150px;
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,80,150,.18), transparent 25%),
+        radial-gradient(circle at 85% 80%, rgba(130,70,255,.18), transparent 25%),
+        linear-gradient(160deg, #08000f, #21001f, #100018);
+
+      padding: 20px 12px;
     }
+
+    /* STARS */
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      font-size: 12px;
+      opacity: .5;
+      animation: twinkle 3s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: .2;
+      }
+
+      to {
+        opacity: .9;
+      }
+    }
+
+    /* MAIN CARD */
+
+    .container {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+      max-width: 650px;
+
+      margin: auto;
+      padding: 28px 16px;
+
+      border-radius: 25px;
+
+      background: rgba(255,255,255,.07);
+
+      border: 1px solid rgba(255,255,255,.15);
+
+      backdrop-filter: blur(8px);
+
+      box-shadow:
+        0 10px 40px rgba(0,0,0,.35);
+    }
+
+    /* HEART */
 
     .main-heart {
-      font-size: 70px;
-      animation: beat 1s infinite;
+      text-align: center;
+      font-size: 65px;
+
+      animation: heartbeat 1.4s infinite;
+    }
+
+    @keyframes heartbeat {
+      50% {
+        transform: scale(1.15);
+      }
     }
 
     h1 {
-      font-size: 55px;
+      text-align: center;
+
+      font-size:
+        clamp(42px,12vw,70px);
+
+      text-shadow:
+        0 0 15px #ff4f91,
+        0 0 30px #ff267f;
     }
 
-    p {
-      font-size: 20px;
+    .intro {
+      text-align: center;
+
+      margin: 15px auto 30px;
+
+      line-height: 1.6;
+
+      color: #ffe8f2;
     }
 
-    .emoji {
+    /* QUESTIONS */
+
+    .question {
+      margin-top: 18px;
+      padding: 18px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,.06);
+
+      border:
+        1px solid rgba(255,255,255,.1);
+    }
+
+    .question h2 {
+      font-size: 17px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .answer {
+      width: 100%;
+
+      padding: 12px;
+      margin-top: 8px;
+
+      border-radius: 12px;
+
+      border:
+        1px solid rgba(255,255,255,.15);
+
+      background:
+        rgba(255,255,255,.06);
+
+      color: white;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+      transition: .15s;
+    }
+
+    .answer:active {
+      transform: scale(.97);
+    }
+
+    .answer.selected {
+      background:
+        rgba(255,70,150,.35);
+
+      border-color: #ff8fc2;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 90px;
+
+      padding: 12px;
+
+      border-radius: 12px;
+
+      border:
+        1px solid rgba(255,255,255,.15);
+
+      background:
+        rgba(0,0,0,.2);
+
+      color: white;
+
+      font-size: 15px;
+
+      outline: none;
+
+      resize: vertical;
+    }
+
+    textarea::placeholder {
+      color: #cdaabd;
+    }
+
+    /* BUTTON */
+
+    .button {
+      width: 100%;
+
+      margin-top: 20px;
+
+      padding: 14px;
+
+      border: none;
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff4f91,
+          #934cff
+        );
+
+      color: white;
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+    }
+
+    .message {
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 15px;
+
+      border-radius: 15px;
+
+      text-align: center;
+
+      background:
+        rgba(255,80,160,.15);
+    }
+
+    /* ASK ME */
+
+    .ask-section {
+      margin-top: 35px;
+
+      padding-top: 25px;
+
+      border-top:
+        1px solid rgba(255,255,255,.15);
+    }
+
+    .ask-section h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .ask-section p {
+      text-align: center;
+
+      color: #e5c9d8;
+
+      margin-bottom: 15px;
+    }
+
+    .ask-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ask-row input {
+      flex: 1;
+
+      padding: 13px;
+
+      border-radius: 12px;
+
+      border:
+        1px solid rgba(255,255,255,.15);
+
+      background:
+        rgba(0,0,0,.2);
+
+      color: white;
+
+      outline: none;
+
+      font-size: 15px;
+    }
+
+    .ask-row button {
+      padding: 0 18px;
+
+      border: none;
+
+      border-radius: 12px;
+
+      background: #ff4f91;
+
+      color: white;
+
+      font-weight: bold;
+    }
+
+    /* QUESTION LIST */
+
+    .asked-question {
+      margin-top: 12px;
+
+      padding: 15px;
+
+      border-radius: 15px;
+
+      background:
+        rgba(255,255,255,.05);
+    }
+
+    .asked-text {
+      font-weight: bold;
+
+      color: #ffd3e5;
+    }
+
+    .my-answer {
+      margin-top: 10px;
+
+      color: #eee;
+
+      line-height: 1.5;
+    }
+
+    .answer-input {
+      margin-top: 10px;
+
+      width: 100%;
+
+      padding: 10px;
+
+      border-radius: 10px;
+
+      border:
+        1px solid rgba(255,255,255,.15);
+
+      background:
+        rgba(0,0,0,.2);
+
+      color: white;
+    }
+
+    /* FLOATING EMOJIS */
+
+    .floating {
       position: fixed;
+
+      bottom: -35px;
+
       pointer-events: none;
-      z-index: 20;
-      animation: fly 4s linear forwards;
+
+      z-index: 1;
+
+      animation:
+        floatUp 6s linear forwards;
     }
 
-    @keyframes beat {
-      50% {
-        transform: scale(1.2);
-      }
-    }
+    @keyframes floatUp {
 
-    @keyframes fly {
-      0% {
+      from {
         transform: translateY(0);
-        opacity: 1;
+        opacity: 0;
       }
 
-      100% {
-        transform: translateY(-100vh);
+      15% {
+        opacity: .8;
+      }
+
+      to {
+        transform: translateY(-105vh);
         opacity: 0;
       }
     }
+
+    /* TOUCH */
+
+    .touch {
+      position: fixed;
+
+      pointer-events: none;
+
+      z-index: 100;
+
+      font-size: 40px;
+
+      animation:
+        touchUp 1.4s ease-out forwards;
+    }
+
+    @keyframes touchUp {
+
+      from {
+        transform:
+          translate(-50%,-50%)
+          scale(.5);
+
+        opacity: 0;
+      }
+
+      20% {
+        transform:
+          translate(-50%,-50%)
+          scale(1.2);
+
+        opacity: 1;
+      }
+
+      to {
+        transform:
+          translate(-50%,-160%)
+          scale(1);
+
+        opacity: 0;
+      }
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <div class="box">
 
-    <div class="main-heart">❤️</div>
+  <div
+    class="stars"
+    id="stars">
+  </div>
 
-    <h1>My Love</h1>
 
-    <p>
-      You are a beautiful part of my thoughts. ❤️
+  <div class="container">
+
+
+    <div class="main-heart">
+      ❤️
+    </div>
+
+
+    <h1>
+      My Love
+    </h1>
+
+
+    <p class="intro">
+
+      Some feelings are too special
+      to explain with words. 💖
+
+      <br>
+
+      Answer these little questions
+      and ask me anything. ✨
+
     </p>
 
-    <p>
-      Some feelings are too special to explain with words.
-    </p>
+
+    <!-- QUESTION 1 -->
+
+    <div class="question">
+
+      <h2>
+        1. What makes you happiest? 😊
+      </h2>
+
+      <button class="answer" data-q="1">
+        😊 Spending time together
+      </button>
+
+      <button class="answer" data-q="1">
+        😂 Making each other laugh
+      </button>
+
+      <button class="answer" data-q="1">
+        💖 Being understood
+      </button>
+
+      <button class="answer" data-q="1">
+        ✨ Something else
+      </button>
+
+    </div>
+
+
+    <!-- QUESTION 2 -->
+
+    <div class="question">
+
+      <h2>
+        2. Choose a feeling ❤️
+      </h2>
+
+      <button class="answer" data-q="2">
+        🥰 Happiness
+      </button>
+
+      <button class="answer" data-q="2">
+        😍 Love
+      </button>
+
+      <button class="answer" data-q="2">
+        🤗 Comfort
+      </button>
+
+      <button class="answer" data-q="2">
+        ✨ Peace
+      </button>
+
+    </div>
+
+
+    <!-- QUESTION 3 -->
+
+    <div class="question">
+
+      <h2>
+        3. What would you choose? 🌙
+      </h2>
+
+      <button class="answer" data-q="3">
+        🌅 Watching the sunset
+      </button>
+
+      <button class="answer" data-q="3">
+        🌙 Looking at stars
+      </button>
+
+      <button class="answer" data-q="3">
+        🎵 Listening to music
+      </button>
+
+      <button class="answer" data-q="3">
+        💬 Talking for hours
+      </button>
+
+    </div>
+
+
+    <!-- WRITTEN QUESTIONS -->
+
+    <div class="question">
+
+      <h2>
+        4. Write something you want to say 💌
+      </h2>
+
+      <textarea
+        id="q4"
+        placeholder="Your answer...">
+      </textarea>
+
+    </div>
+
+
+    <div class="question">
+
+      <h2>
+        5. What makes you smile? 😊
+      </h2>
+
+      <textarea
+        id="q5"
+        placeholder="Your answer...">
+      </textarea>
+
+    </div>
+
+
+    <div class="question">
+
+      <h2>
+        6. What is your favorite memory? 💭
+      </h2>
+
+      <textarea
+        id="q6"
+        placeholder="Your answer...">
+      </textarea>
+
+    </div>
+
+
+    <div class="question">
+
+      <h2>
+        7. What would you like to say right now? ❤️
+      </h2>
+
+      <textarea
+        id="q7"
+        placeholder="Write anything...">
+      </textarea>
+
+    </div>
+
+
+    <div class="question">
+
+      <h2>
+        8. Describe this website in one word ✨
+      </h2>
+
+      <textarea
+        id="q8"
+        placeholder="Your answer...">
+      </textarea>
+
+    </div>
+
+
+    <div class="question">
+
+      <h2>
+        9. What makes someone special? 🥰
+      </h2>
+
+      <textarea
+        id="q9"
+        placeholder="Your answer...">
+      </textarea>
+
+    </div>
+
+
+    <div class="question">
+
+      <h2>
+        10. Anything else you want to share? 💖
+      </h2>
+
+      <textarea
+        id="q10"
+        placeholder="Your answer...">
+      </textarea>
+
+    </div>
+
+
+    <button
+      class="button"
+      id="submit">
+      💌 Submit Answers
+    </button>
+
+
+    <div
+      class="message"
+      id="message">
+      Your answers are saved. ❤️
+    </div>
+
+
+    <!-- ASK ME -->
+
+    <div class="ask-section">
+
+      <h2>
+        💌 Ask Me Anything
+      </h2>
+
+      <p>
+        You can ask as many questions
+        as you want.
+      </p>
+
+
+      <div class="ask-row">
+
+        <input
+          id="questionInput"
+          type="text"
+          placeholder="Write your question..."
+        >
+
+        <button
+          id="askButton">
+          Ask
+        </button>
+
+      </div>
+
+
+      <div id="questionList"></div>
+
+    </div>
+
 
   </div>
 
 
   <script>
 
+
+    /* STARS */
+
+    const stars =
+      document.getElementById("stars");
+
+
+    for (
+      let i = 0;
+      i < 20;
+      i++
+    ) {
+
+      const star =
+        document.createElement("div");
+
+      star.className = "star";
+
+      star.innerHTML = "✦";
+
+      star.style.left =
+        Math.random() * 100 + "vw";
+
+      star.style.top =
+        Math.random() * 100 + "vh";
+
+      star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+      stars.appendChild(star);
+
+    }
+
+
     /* FLOATING EMOJIS */
 
-    function makeEmoji() {
+    const floatingEmojis = [
 
-      let emoji = document.createElement("div");
+      "❤️",
+      "💗",
+      "💕",
+      "💖",
+      "💜",
+      "😊",
+      "🥰",
+      "✨",
+      "🌸",
+      "🌟"
 
-      let list = [
-        "❤️",
-        "💗",
-        "💕",
-        "💖",
-        "💜",
-        "😊",
-        "😄",
-        "🥰",
-        "😍",
-        "✨",
-        "🌸",
-        "🌟",
-        "🥳"
-      ];
+    ];
 
-      emoji.innerText =
-        list[Math.floor(Math.random() * list.length)];
 
-      emoji.className = "emoji";
+    let emojiCount = 0;
+
+
+    function createFloatingEmoji() {
+
+      if (emojiCount >= 7)
+        return;
+
+
+      const emoji =
+        document.createElement("div");
+
+
+      emoji.className =
+        "floating";
+
+
+      emoji.innerHTML =
+        floatingEmojis[
+          Math.floor(
+            Math.random() *
+            floatingEmojis.length
+          )
+        ];
+
 
       emoji.style.left =
         Math.random() * 100 + "vw";
 
-      emoji.style.bottom = "0px";
 
       emoji.style.fontSize =
-        20 + Math.random() * 30 + "px";
+        18 +
+        Math.random() * 14 +
+        "px";
 
-      document.body.appendChild(emoji);
 
-      setTimeout(function() {
-        emoji.remove();
-      }, 4000);
+      document.body.appendChild(
+        emoji
+      );
+
+
+      emojiCount++;
+
+
+      setTimeout(
+        function() {
+
+          emoji.remove();
+
+          emojiCount--;
+
+        },
+        6000
+      );
+
     }
 
 
-    /* NEW EMOJI EVERY HALF SECOND */
+    setInterval(
+      createFloatingEmoji,
+      900
+    );
 
-    setInterval(makeEmoji, 500);
 
+    /* TOUCH */
 
-    /* TOUCH ANIMATION */
+    document.addEventListener(
+      "pointerdown",
+      function(event) {
 
-    document.addEventListener("pointerdown", function(event) {
+        const touch =
+          document.createElement("div");
 
-      let touch = document.createElement("div");
-
-      let touchList = [
-        "😘",
-        "❤️‍🩹",
-        "🥰"
-      ];
-
-      touch.innerText =
-        touchList[
-          Math.floor(
-            Math.random() * touchList.length
-          )
+        const touchEmojis = [
+          "😘",
+          "❤️‍🩹",
+          "🥰"
         ];
 
-      touch.style.position = "fixed";
-      touch.style.left = event.clientX + "px";
-      touch.style.top = event.clientY + "px";
-      touch.style.fontSize = "45px";
-      touch.style.zIndex = "100";
-      touch.style.pointerEvents = "none";
+        touch.className =
+          "touch";
 
-      document.body.appendChild(touch);
+        touch.innerHTML =
+          touchEmojis[
+            Math.floor(
+              Math.random() *
+              touchEmojis.length
+            )
+          ];
 
-      let animation =
-        touch.animate(
-          [
-            {
-              transform: "translate(-50%, -50%) scale(0.5)",
-              opacity: 0
-            },
+        touch.style.left =
+          event.clientX + "px";
 
-            {
-              transform: "translate(-50%, -100%) scale(1.3)",
-              opacity: 1
-            },
+        touch.style.top =
+          event.clientY + "px";
 
-            {
-              transform: "translate(-50%, -200%) scale(1)",
-              opacity: 0
-            }
-          ],
-          {
-            duration: 2000,
-            easing: "ease-out"
-          }
+        document.body.appendChild(
+          touch
         );
 
-      animation.onfinish = function() {
-        touch.remove();
-      };
+        setTimeout(
+          function() {
 
-    });
+            touch.remove();
+
+          },
+          1400
+        );
+
+      }
+    );
+
+
+    /* MULTIPLE CHOICE */
+
+    document
+      .querySelectorAll(".answer")
+      .forEach(
+        function(button) {
+
+          button.addEventListener(
+            "click",
+            function(event) {
+
+              event.stopPropagation();
+
+              const q =
+                this.dataset.q;
+
+              document
+                .querySelectorAll(
+                  '[data-q="' + q + '"]'
+                )
+                .forEach(
+                  function(b) {
+
+                    b.classList.remove(
+                      "selected"
+                    );
+
+                  }
+                );
+
+              this.classList.add(
+                "selected"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* SAVE ANSWERS */
+
+    document
+      .getElementById("submit")
+      .addEventListener(
+        "click",
+        function() {
+
+
+          let answers = {};
+
+
+          for (
+            let i = 1;
+            i <= 3;
+            i++
+          ) {
+
+            const selected =
+              document.querySelector(
+                '[data-q="' +
+                i +
+                '"].selected'
+              );
+
+            answers[
+              "Question " + i
+            ] =
+              selected
+                ? selected.innerText
+                : "Not answered";
+
+          }
+
+
+          for (
+            let i = 4;
+            i <= 10;
+            i++
+          ) {
+
+            answers[
+              "Question " + i
+            ] =
+              document
+                .getElementById(
+                  "q" + i
+                )
+                .value
+                .trim() ||
+              "Not answered";
+
+          }
+
+
+          let saved =
+            JSON.parse(
+              localStorage.getItem(
+                "answers"
+              )
+            ) || [];
+
+
+          saved.push({
+
+            date:
+              new Date()
+                .toLocaleString(),
+
+            answers:
+              answers
+
+          });
+
+
+          localStorage.setItem(
+            "answers",
+            JSON.stringify(saved)
+          );
+
+
+          document
+            .getElementById(
+              "message"
+            )
+            .style.display =
+            "block";
+
+
+          alert(
+            "Answers saved ❤️"
+          );
+
+        }
+      );
+
+
+    /* ASK QUESTIONS */
+
+    const input =
+      document.getElementById(
+        "questionInput"
+      );
+
+    const askButton =
+      document.getElementById(
+        "askButton"
+      );
+
+    const questionList =
+      document.getElementById(
+        "questionList"
+      );
+
+
+    let questions =
+      JSON.parse(
+        localStorage.getItem(
+          "askedQuestions"
+        )
+      ) || [];
+
+
+    function displayQuestions() {
+
+
+      questionList.innerHTML =
+        "";
+
+
+      questions.forEach(
+        function(item, index) {
+
+
+          const box =
+            document.createElement(
+              "div"
+            );
+
+
+          box.className =
+            "asked-question";
+
+
+          const question =
+            document.createElement(
+              "div"
+            );
+
+
+          question.className =
+            "asked-text";
+
+
+          question.innerText =
+            "❓ " +
+            item.question;
+
+
+          box.appendChild(
+            question
+          );
+
+
+          if (item.answer) {
+
+
+            const answer =
+              document.createElement(
+                "div"
+              );
+
+
+            answer.className =
+              "my-answer";
+
+
+            answer.innerText =
+              "❤️ My answer: " +
+              item.answer;
+
+
+            box.appendChild(
+              answer
+            );
+
+
+          } else {
+
+
+            const input =
+              document.createElement(
+                "input"
+              );
+
+
+            input.className =
+              "answer-input";
+
+
+            input.placeholder =
+              "Write your answer here...";
+
+
+            const button =
+              document.createElement(
+                "button"
+              );
+
+
+            button.className =
+              "button";
+
+
+            button.innerText =
+              "Save My Answer";
+
+
+            button.addEventListener(
+              "click",
+              function() {
+
+
+                item.answer =
+                  input.value.trim();
+
+
+                if (!item.answer)
+                  return;
+
+
+                localStorage.setItem(
+                  "askedQuestions",
+                  JSON.stringify(
+                    questions
+                  )
+                );
+
+
+                displayQuestions();
+
+              }
+            );
+
+
+            box.appendChild(
+              input
+            );
+
+
+            box.appendChild(
+              button
+            );
+
+          }
+
+
+          questionList.appendChild(
+            box
+          );
+
+        }
+      );
+
+    }
+
+
+    askButton.addEventListener(
+      "click",
+      function() {
+
+
+        const text =
+          input.value.trim();
+
+
+        if (!text) {
+
+          alert(
+            "Please write a question first."
+          );
+
+          return;
+
+        }
+
+
+        questions.push({
+
+          question: text,
+
+          answer: ""
+
+        });
+
+
+        localStorage.setItem(
+          "askedQuestions",
+          JSON.stringify(
+            questions
+          )
+        );
+
+
+        input.value = "";
+
+
+        displayQuestions();
+
+      }
+    );
+
+
+    input.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Enter"
+        ) {
+
+          askButton.click();
+
+        }
+
+      }
+    );
+
+
+    displayQuestions();
+
 
   </script>
 
 </body>
+
 </html>
