@@ -1,430 +1,698 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>My Love ❤️</title>
+<meta charset="UTF-8">
 
-  <style>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>My Love ❤️</title>
 
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
+<style>
 
-      font-family: Arial, sans-serif;
-      color: white;
+/* =========================
+   BASIC
+========================= */
 
-      background:
-        radial-gradient(circle at 15% 15%, rgba(255,80,150,.18), transparent 25%),
-        radial-gradient(circle at 85% 80%, rgba(130,70,255,.18), transparent 25%),
-        linear-gradient(160deg, #08000f, #21001f, #100018);
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-      padding: 20px 12px;
-    }
+body{
+  min-height:100vh;
+  font-family:Arial,sans-serif;
+  color:white;
+  overflow-x:hidden;
 
-    /* STARS */
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      #ff4f9140,
+      transparent 28%
+    ),
 
-    .stars {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
+    radial-gradient(
+      circle at 85% 80%,
+      #8b4dff40,
+      transparent 30%
+    ),
 
-    .star {
-      position: absolute;
-      font-size: 12px;
-      opacity: .5;
-      animation: twinkle 3s infinite alternate;
-    }
+    linear-gradient(
+      150deg,
+      #08000f,
+      #27001f,
+      #100018
+    );
 
-    @keyframes twinkle {
-      from {
-        opacity: .2;
-      }
+  padding:20px 12px;
+}
 
-      to {
-        opacity: .9;
-      }
-    }
 
-    /* MAIN CARD */
+/* =========================
+   BACKGROUND STARS
+========================= */
 
-    .container {
-      position: relative;
-      z-index: 2;
+#stars{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
 
-      width: 100%;
-      max-width: 650px;
+.star{
+  position:absolute;
+  color:white;
+  opacity:.5;
+  animation:twinkle 3s infinite alternate;
+}
 
-      margin: auto;
-      padding: 28px 16px;
+@keyframes twinkle{
 
-      border-radius: 25px;
+  from{
+    opacity:.15;
+    transform:scale(.7);
+  }
 
-      background: rgba(255,255,255,.07);
+  to{
+    opacity:.9;
+    transform:scale(1.2);
+  }
 
-      border: 1px solid rgba(255,255,255,.15);
+}
 
-      backdrop-filter: blur(8px);
 
-      box-shadow:
-        0 10px 40px rgba(0,0,0,.35);
-    }
+/* =========================
+   MAIN CONTAINER
+========================= */
 
-    /* HEART */
+.container{
 
-    .main-heart {
-      text-align: center;
-      font-size: 65px;
+  position:relative;
+  z-index:2;
 
-      animation: heartbeat 1.4s infinite;
-    }
+  width:100%;
+  max-width:680px;
 
-    @keyframes heartbeat {
-      50% {
-        transform: scale(1.15);
-      }
-    }
+  margin:auto;
 
-    h1 {
-      text-align: center;
+  padding:28px 16px;
 
-      font-size:
-        clamp(42px,12vw,70px);
+  border-radius:28px;
 
-      text-shadow:
-        0 0 15px #ff4f91,
-        0 0 30px #ff267f;
-    }
+  background:#ffffff12;
 
-    .intro {
-      text-align: center;
+  border:1px solid #ffffff25;
 
-      margin: 15px auto 30px;
+  backdrop-filter:blur(12px);
 
-      line-height: 1.6;
+  box-shadow:
+    0 15px 50px #00000060;
 
-      color: #ffe8f2;
-    }
+}
 
-    /* QUESTIONS */
 
-    .question {
-      margin-top: 18px;
-      padding: 18px;
+/* =========================
+   HEART
+========================= */
 
-      border-radius: 18px;
+.main-heart{
 
-      background:
-        rgba(255,255,255,.06);
+  text-align:center;
 
-      border:
-        1px solid rgba(255,255,255,.1);
-    }
+  font-size:65px;
 
-    .question h2 {
-      font-size: 17px;
-      margin-bottom: 12px;
-      line-height: 1.4;
-    }
+  animation:heartbeat 1.4s infinite;
 
-    .answer {
-      width: 100%;
+  filter:
+    drop-shadow(
+      0 0 18px #ff4f91
+    );
 
-      padding: 12px;
-      margin-top: 8px;
+}
 
-      border-radius: 12px;
+@keyframes heartbeat{
 
-      border:
-        1px solid rgba(255,255,255,.15);
+  0%,100%{
+    transform:scale(1);
+  }
 
-      background:
-        rgba(255,255,255,.06);
+  50%{
+    transform:scale(1.15);
+  }
 
-      color: white;
+}
 
-      font-size: 15px;
 
-      cursor: pointer;
+/* =========================
+   TITLE
+========================= */
 
-      transition: .15s;
-    }
+h1{
 
-    .answer:active {
-      transform: scale(.97);
-    }
+  text-align:center;
 
-    .answer.selected {
-      background:
-        rgba(255,70,150,.35);
+  font-size:
+    clamp(42px,12vw,72px);
 
-      border-color: #ff8fc2;
-    }
+  text-shadow:
+    0 0 15px #ff4f91,
+    0 0 35px #ff267f;
 
-    textarea {
-      width: 100%;
-      min-height: 90px;
+}
 
-      padding: 12px;
+.intro{
 
-      border-radius: 12px;
+  text-align:center;
 
-      border:
-        1px solid rgba(255,255,255,.15);
+  margin:
+    15px auto 30px;
 
-      background:
-        rgba(0,0,0,.2);
+  line-height:1.7;
 
-      color: white;
+  color:#ffe8f2;
 
-      font-size: 15px;
+}
 
-      outline: none;
 
-      resize: vertical;
-    }
+/* =========================
+   QUESTIONS
+========================= */
 
-    textarea::placeholder {
-      color: #cdaabd;
-    }
+.question{
 
-    /* BUTTON */
+  margin-top:18px;
 
-    .button {
-      width: 100%;
+  padding:18px;
 
-      margin-top: 20px;
+  border-radius:18px;
 
-      padding: 14px;
+  background:#ffffff0d;
 
-      border: none;
+  border:
+    1px solid #ffffff18;
 
-      border-radius: 15px;
+}
 
-      background:
-        linear-gradient(
-          135deg,
-          #ff4f91,
-          #934cff
-        );
+.question h2{
 
-      color: white;
+  font-size:17px;
 
-      font-size: 17px;
+  margin-bottom:10px;
 
-      font-weight: bold;
+  line-height:1.4;
 
-      cursor: pointer;
-    }
+}
 
-    .message {
-      display: none;
 
-      margin-top: 18px;
+/* =========================
+   ANSWER BUTTONS
+========================= */
 
-      padding: 15px;
+.answer{
 
-      border-radius: 15px;
+  width:100%;
 
-      text-align: center;
+  padding:12px;
 
-      background:
-        rgba(255,80,160,.15);
-    }
+  margin-top:8px;
 
-    /* ASK ME */
+  border-radius:12px;
 
-    .ask-section {
-      margin-top: 35px;
+  border:
+    1px solid #ffffff25;
 
-      padding-top: 25px;
+  background:#ffffff0d;
 
-      border-top:
-        1px solid rgba(255,255,255,.15);
-    }
+  color:white;
 
-    .ask-section h2 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
+  font-size:15px;
 
-    .ask-section p {
-      text-align: center;
+  cursor:pointer;
 
-      color: #e5c9d8;
+  transition:.2s;
 
-      margin-bottom: 15px;
-    }
+}
 
-    .ask-row {
-      display: flex;
-      gap: 8px;
-    }
+.answer:hover{
 
-    .ask-row input {
-      flex: 1;
+  background:#ff4f9130;
 
-      padding: 13px;
+}
 
-      border-radius: 12px;
+.answer:active{
 
-      border:
-        1px solid rgba(255,255,255,.15);
+  transform:scale(.97);
 
-      background:
-        rgba(0,0,0,.2);
+}
 
-      color: white;
+.answer.selected{
 
-      outline: none;
+  background:#ff469955;
 
-      font-size: 15px;
-    }
+  border-color:#ff9bc7;
 
-    .ask-row button {
-      padding: 0 18px;
+}
 
-      border: none;
 
-      border-radius: 12px;
+/* =========================
+   INPUTS
+========================= */
 
-      background: #ff4f91;
+textarea,
+input{
 
-      color: white;
+  width:100%;
 
-      font-weight: bold;
-    }
+  padding:12px;
 
-    /* QUESTION LIST */
+  border-radius:12px;
 
-    .asked-question {
-      margin-top: 12px;
+  border:
+    1px solid #ffffff25;
 
-      padding: 15px;
+  background:#00000035;
 
-      border-radius: 15px;
+  color:white;
 
-      background:
-        rgba(255,255,255,.05);
-    }
+  font-size:15px;
 
-    .asked-text {
-      font-weight: bold;
+  outline:none;
 
-      color: #ffd3e5;
-    }
+}
 
-    .my-answer {
-      margin-top: 10px;
+textarea{
 
-      color: #eee;
+  min-height:90px;
 
-      line-height: 1.5;
-    }
+  resize:vertical;
 
-    .answer-input {
-      margin-top: 10px;
+}
 
-      width: 100%;
+textarea::placeholder,
+input::placeholder{
 
-      padding: 10px;
+  color:#c9a8ba;
 
-      border-radius: 10px;
+}
 
-      border:
-        1px solid rgba(255,255,255,.15);
 
-      background:
-        rgba(0,0,0,.2);
+/* =========================
+   BUTTON
+========================= */
 
-      color: white;
-    }
+.button{
 
-    /* FLOATING EMOJIS */
+  width:100%;
 
-    .floating {
-      position: fixed;
+  margin-top:15px;
 
-      bottom: -35px;
+  padding:14px;
 
-      pointer-events: none;
+  border:0;
 
-      z-index: 1;
+  border-radius:15px;
 
-      animation:
-        floatUp 6s linear forwards;
-    }
+  background:
+    linear-gradient(
+      135deg,
+      #ff4f91,
+      #934cff
+    );
 
-    @keyframes floatUp {
+  color:white;
 
-      from {
-        transform: translateY(0);
-        opacity: 0;
-      }
+  font-size:17px;
 
-      15% {
-        opacity: .8;
-      }
+  font-weight:bold;
 
-      to {
-        transform: translateY(-105vh);
-        opacity: 0;
-      }
-    }
+  cursor:pointer;
 
-    /* TOUCH */
+  transition:.2s;
 
-    .touch {
-      position: fixed;
+}
 
-      pointer-events: none;
+.button:active{
 
-      z-index: 100;
+  transform:scale(.97);
 
-      font-size: 40px;
+}
 
-      animation:
-        touchUp 1.4s ease-out forwards;
-    }
 
-    @keyframes touchUp {
+/* =========================
+   SUCCESS MESSAGE
+========================= */
 
-      from {
-        transform:
-          translate(-50%,-50%)
-          scale(.5);
+.message{
 
-        opacity: 0;
-      }
+  display:none;
 
-      20% {
-        transform:
-          translate(-50%,-50%)
-          scale(1.2);
+  margin-top:15px;
 
-        opacity: 1;
-      }
+  padding:15px;
 
-      to {
-        transform:
-          translate(-50%,-160%)
-          scale(1);
+  border-radius:15px;
 
-        opacity: 0;
-      }
-    }
+  text-align:center;
 
-  </style>
+  background:#ff509926;
+
+}
+
+
+/* =========================
+   ASK ME
+========================= */
+
+.ask{
+
+  margin-top:35px;
+
+  padding-top:25px;
+
+  border-top:
+    1px solid #ffffff20;
+
+}
+
+.ask h2{
+
+  text-align:center;
+
+  margin-bottom:8px;
+
+}
+
+.ask p{
+
+  text-align:center;
+
+  color:#e5c9d8;
+
+  margin-bottom:15px;
+
+}
+
+.ask-row{
+
+  display:flex;
+
+  gap:8px;
+
+}
+
+.ask-row input{
+
+  flex:1;
+
+}
+
+.ask-row button{
+
+  padding:0 18px;
+
+  border:0;
+
+  border-radius:12px;
+
+  background:#ff4f91;
+
+  color:white;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
+
+/* =========================
+   QUESTIONS DISPLAY
+========================= */
+
+.item{
+
+  margin-top:12px;
+
+  padding:15px;
+
+  border-radius:15px;
+
+  background:#ffffff0d;
+
+  line-height:1.5;
+
+}
+
+.reply{
+
+  margin-top:10px;
+
+  padding:10px;
+
+  border-radius:10px;
+
+  background:#ff4f9120;
+
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin{
+
+  display:none;
+
+  margin-top:35px;
+
+  padding-top:25px;
+
+  border-top:
+    1px solid #ffffff20;
+
+}
+
+.admin-title{
+
+  text-align:center;
+
+  margin-bottom:15px;
+
+}
+
+.admin-box{
+
+  margin-top:12px;
+
+  padding:15px;
+
+  border-radius:15px;
+
+  background:#ffffff0d;
+
+}
+
+.admin-answer{
+
+  margin-top:10px;
+
+}
+
+.admin-button{
+
+  margin-top:8px;
+
+  padding:10px 14px;
+
+  border:0;
+
+  border-radius:10px;
+
+  background:#ff4f91;
+
+  color:white;
+
+  font-weight:bold;
+
+}
+
+.logout{
+
+  background:#555;
+
+}
+
+
+/* =========================
+   TOUCH EMOJI
+========================= */
+
+.touch{
+
+  position:fixed;
+
+  pointer-events:none;
+
+  z-index:1000;
+
+  font-size:40px;
+
+  animation:
+    touchAnimation 1.4s
+    ease-out forwards;
+
+}
+
+@keyframes touchAnimation{
+
+  0%{
+
+    transform:
+      translate(-50%,-50%)
+      scale(.4);
+
+    opacity:0;
+
+  }
+
+  20%{
+
+    transform:
+      translate(-50%,-50%)
+      scale(1.2);
+
+    opacity:1;
+
+  }
+
+  100%{
+
+    transform:
+      translate(-50%,-160%)
+      scale(1);
+
+    opacity:0;
+
+  }
+
+}
+
+
+/* =========================
+   FLOATING EMOJIS
+========================= */
+
+.floating{
+
+  position:fixed;
+
+  bottom:-50px;
+
+  pointer-events:none;
+
+  z-index:1;
+
+  animation:
+    floatUp 6s linear forwards;
+
+}
+
+@keyframes floatUp{
+
+  from{
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity:0;
+
+  }
+
+  15%{
+    opacity:.8;
+  }
+
+  to{
+
+    transform:
+      translateY(-110vh)
+      rotate(360deg);
+
+    opacity:0;
+
+  }
+
+}
+
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+.login{
+
+  margin-top:25px;
+
+  text-align:center;
+
+}
+
+.login-box{
+
+  display:none;
+
+  margin-top:15px;
+
+}
+
+.small-button{
+
+  padding:10px 15px;
+
+  border:0;
+
+  border-radius:10px;
+
+  background:#ffffff18;
+
+  color:white;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+  .container{
+
+    padding:
+      24px 12px;
+
+  }
+
+  .ask-row{
+
+    flex-direction:column;
+
+  }
+
+  .ask-row button{
+
+    padding:12px;
+
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -432,813 +700,1314 @@
 <body>
 
 
-  <div
-    class="stars"
-    id="stars">
-  </div>
+<!-- BACKGROUND -->
 
+<div id="stars"></div>
 
-  <div class="container">
 
+<div class="container">
 
-    <div class="main-heart">
-      ❤️
-    </div>
 
+<!-- TITLE -->
 
-    <h1>
-      My Love
-    </h1>
+<div class="main-heart">
+❤️
+</div>
 
+<h1>
+My Love
+</h1>
 
-    <p class="intro">
+<p class="intro">
 
-      Some feelings are too special
-      to explain with words. 💖
+Some feelings are too special
+to explain with words. ❤️
 
-      <br>
+<br>
 
-      Answer these little questions
-      and ask me anything. ✨
+Answer these questions
+and ask me anything. ✨
 
-    </p>
+</p>
 
 
-    <!-- QUESTION 1 -->
+<!-- =========================
+     QUESTION 1
+========================= -->
 
-    <div class="question">
+<div class="question">
 
-      <h2>
-        1. What makes you happiest? 😊
-      </h2>
+<h2>
+1. What makes you happiest? 😊
+</h2>
 
-      <button class="answer" data-q="1">
-        😊 Spending time together
-      </button>
+<button
+class="answer"
+data-q="1">
 
-      <button class="answer" data-q="1">
-        😂 Making each other laugh
-      </button>
+😊 Spending time together
 
-      <button class="answer" data-q="1">
-        💖 Being understood
-      </button>
+</button>
 
-      <button class="answer" data-q="1">
-        ✨ Something else
-      </button>
+<button
+class="answer"
+data-q="1">
 
-    </div>
+😂 Making each other laugh
 
+</button>
 
-    <!-- QUESTION 2 -->
+<button
+class="answer"
+data-q="1">
 
-    <div class="question">
+💖 Being understood
 
-      <h2>
-        2. Choose a feeling ❤️
-      </h2>
+</button>
 
-      <button class="answer" data-q="2">
-        🥰 Happiness
-      </button>
+<button
+class="answer"
+data-q="1">
 
-      <button class="answer" data-q="2">
-        😍 Love
-      </button>
+✨ Something else
 
-      <button class="answer" data-q="2">
-        🤗 Comfort
-      </button>
+</button>
 
-      <button class="answer" data-q="2">
-        ✨ Peace
-      </button>
+</div>
 
-    </div>
 
+<!-- QUESTION 2 -->
 
-    <!-- QUESTION 3 -->
+<div class="question">
 
-    <div class="question">
+<h2>
+2. Choose a feeling ❤️
+</h2>
 
-      <h2>
-        3. What would you choose? 🌙
-      </h2>
+<button
+class="answer"
+data-q="2">
 
-      <button class="answer" data-q="3">
-        🌅 Watching the sunset
-      </button>
+🥰 Happiness
 
-      <button class="answer" data-q="3">
-        🌙 Looking at stars
-      </button>
+</button>
 
-      <button class="answer" data-q="3">
-        🎵 Listening to music
-      </button>
+<button
+class="answer"
+data-q="2">
 
-      <button class="answer" data-q="3">
-        💬 Talking for hours
-      </button>
+😍 Love
 
-    </div>
+</button>
 
+<button
+class="answer"
+data-q="2">
 
-    <!-- WRITTEN QUESTIONS -->
+🤗 Comfort
 
-    <div class="question">
+</button>
 
-      <h2>
-        4. Write something you want to say 💌
-      </h2>
+<button
+class="answer"
+data-q="2">
 
-      <textarea
-        id="q4"
-        placeholder="Your answer...">
-      </textarea>
+✨ Peace
 
-    </div>
+</button>
 
+</div>
 
-    <div class="question">
 
-      <h2>
-        5. What makes you smile? 😊
-      </h2>
+<!-- QUESTION 3 -->
 
-      <textarea
-        id="q5"
-        placeholder="Your answer...">
-      </textarea>
+<div class="question">
 
-    </div>
+<h2>
+3. What would you choose? 🌙
+</h2>
 
+<button
+class="answer"
+data-q="3">
 
-    <div class="question">
+🌅 Watching the sunset
 
-      <h2>
-        6. What is your favorite memory? 💭
-      </h2>
+</button>
 
-      <textarea
-        id="q6"
-        placeholder="Your answer...">
-      </textarea>
+<button
+class="answer"
+data-q="3">
 
-    </div>
+🌙 Looking at stars
 
+</button>
 
-    <div class="question">
+<button
+class="answer"
+data-q="3">
 
-      <h2>
-        7. What would you like to say right now? ❤️
-      </h2>
+🎵 Listening to music
 
-      <textarea
-        id="q7"
-        placeholder="Write anything...">
-      </textarea>
+</button>
 
-    </div>
+<button
+class="answer"
+data-q="3">
 
+💬 Talking for hours
 
-    <div class="question">
+</button>
 
-      <h2>
-        8. Describe this website in one word ✨
-      </h2>
+</div>
 
-      <textarea
-        id="q8"
-        placeholder="Your answer...">
-      </textarea>
 
-    </div>
+<!-- QUESTIONS 4-10 -->
 
+<div class="question">
 
-    <div class="question">
+<h2>
+4. Write something you want to say 💌
+</h2>
 
-      <h2>
-        9. What makes someone special? 🥰
-      </h2>
+<textarea
+id="q4"
+placeholder="Your answer...">
+</textarea>
 
-      <textarea
-        id="q9"
-        placeholder="Your answer...">
-      </textarea>
+</div>
 
-    </div>
 
+<div class="question">
 
-    <div class="question">
+<h2>
+5. What makes you smile? 😊
+</h2>
 
-      <h2>
-        10. Anything else you want to share? 💖
-      </h2>
+<textarea
+id="q5"
+placeholder="Your answer...">
+</textarea>
 
-      <textarea
-        id="q10"
-        placeholder="Your answer...">
-      </textarea>
+</div>
 
-    </div>
 
+<div class="question">
 
-    <button
-      class="button"
-      id="submit">
-      💌 Submit Answers
-    </button>
+<h2>
+6. What is your favorite memory? 💭
+</h2>
 
+<textarea
+id="q6"
+placeholder="Your answer...">
+</textarea>
 
-    <div
-      class="message"
-      id="message">
-      Your answers are saved. ❤️
-    </div>
+</div>
 
 
-    <!-- ASK ME -->
+<div class="question">
 
-    <div class="ask-section">
+<h2>
+7. What would you like to say right now? ❤️
+</h2>
 
-      <h2>
-        💌 Ask Me Anything
-      </h2>
+<textarea
+id="q7"
+placeholder="Write anything...">
+</textarea>
 
-      <p>
-        You can ask as many questions
-        as you want.
-      </p>
+</div>
 
 
-      <div class="ask-row">
+<div class="question">
 
-        <input
-          id="questionInput"
-          type="text"
-          placeholder="Write your question..."
-        >
+<h2>
+8. Describe this website in one word ✨
+</h2>
 
-        <button
-          id="askButton">
-          Ask
-        </button>
+<textarea
+id="q8"
+placeholder="Your answer...">
+</textarea>
 
-      </div>
+</div>
 
 
-      <div id="questionList"></div>
+<div class="question">
 
-    </div>
+<h2>
+9. What makes someone special? 🥰
+</h2>
 
+<textarea
+id="q9"
+placeholder="Your answer...">
+</textarea>
 
-  </div>
+</div>
 
 
-  <script>
+<div class="question">
 
+<h2>
+10. Anything else you want to share? 💖
+</h2>
 
-    /* STARS */
+<textarea
+id="q10"
+placeholder="Write your answer...">
+</textarea>
 
-    const stars =
-      document.getElementById("stars");
+</div>
 
 
-    for (
-      let i = 0;
-      i < 20;
-      i++
-    ) {
+<button
+class="button"
+id="submit">
 
-      const star =
-        document.createElement("div");
+💌 Submit Answers
 
-      star.className = "star";
+</button>
 
-      star.innerHTML = "✦";
 
-      star.style.left =
-        Math.random() * 100 + "vw";
+<div
+class="message"
+id="message">
 
-      star.style.top =
-        Math.random() * 100 + "vh";
+Your answers were saved online. ❤️
 
-      star.style.animationDelay =
-        Math.random() * 3 + "s";
+</div>
 
-      stars.appendChild(star);
+
+<!-- =========================
+     ASK ME
+========================= -->
+
+<div class="ask">
+
+<h2>
+💌 Ask Me Anything
+</h2>
+
+<p>
+Ask as many questions as you want.
+</p>
+
+
+<div class="ask-row">
+
+<input
+id="questionInput"
+placeholder="Write your question..."
+>
+
+<button
+id="askButton">
+
+Ask
+
+</button>
+
+</div>
+
+
+<div id="questions">
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     ADMIN LOGIN
+========================= -->
+
+<div class="login">
+
+<button
+class="small-button"
+id="adminLoginButton">
+
+🔐 Admin
+
+</button>
+
+
+<div
+class="login-box"
+id="loginBox">
+
+<input
+type="email"
+id="adminEmail"
+placeholder="Admin email"
+>
+
+<br><br>
+
+<input
+type="password"
+id="adminPassword"
+placeholder="Password"
+>
+
+<button
+class="button"
+id="loginButton">
+
+Login
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     ADMIN PANEL
+========================= -->
+
+<div
+class="admin"
+id="adminPanel">
+
+<h2 class="admin-title">
+
+👑 Admin Panel
+
+</h2>
+
+
+<h3>
+💌 Visitor Questions
+</h3>
+
+
+<div id="adminQuestions">
+
+</div>
+
+
+<h3 style="margin-top:25px">
+
+📝 Submitted Answers
+
+</h3>
+
+
+<div id="submissions">
+
+</div>
+
+
+<button
+class="button logout"
+id="logoutButton">
+
+Log Out
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================
+     FIREBASE
+========================= -->
+
+<script type="module">
+
+
+/* FIREBASE APP */
+
+import {
+  initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+
+/* AUTHENTICATION */
+
+import {
+
+  getAuth,
+
+  signInAnonymously,
+
+  signInWithEmailAndPassword,
+
+  onAuthStateChanged,
+
+  signOut
+
+}
+from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
+
+/* REALTIME DATABASE */
+
+import {
+
+  getDatabase,
+
+  ref,
+
+  push,
+
+  set,
+
+  onValue,
+
+  update
+
+}
+from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+
+
+
+/* =========================
+   YOUR FIREBASE CONFIG
+========================= */
+
+const firebaseConfig = {
+
+  apiKey:
+  "AIzaSyCD4Hdw-hFVEzp4d6VtTFtaSL5lDm4_9kQ",
+
+  authDomain:
+  "my-love-f71e9.firebaseapp.com",
+
+  databaseURL:
+  "https://my-love-f71e9-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+  projectId:
+  "my-love-f71e9",
+
+  storageBucket:
+  "my-love-f71e9.firebasestorage.app",
+
+  messagingSenderId:
+  "360275672768",
+
+  appId:
+  "1:360275672768:web:5badcea5ab381da01df725"
+
+};
+
+
+
+/* =========================
+   YOUR ADMIN EMAIL
+========================= */
+
+/*
+
+IMPORTANT:
+
+Replace this with the SAME
+Gmail you created in Firebase
+Authentication.
+
+*/
+
+const ADMIN_EMAIL =
+"adityachauc@gmail.com";
+
+
+
+/* =========================
+   START FIREBASE
+========================= */
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const auth =
+getAuth(app);
+
+
+const db =
+getDatabase(app);
+
+
+
+/* =========================
+   VISITOR LOGIN
+========================= */
+
+async function visitorLogin(){
+
+  if(!auth.currentUser){
+
+    try{
+
+      await signInAnonymously(auth);
 
     }
 
+    catch(error){
 
-    /* FLOATING EMOJIS */
-
-    const floatingEmojis = [
-
-      "❤️",
-      "💗",
-      "💕",
-      "💖",
-      "💜",
-      "😊",
-      "🥰",
-      "✨",
-      "🌸",
-      "🌟"
-
-    ];
-
-
-    let emojiCount = 0;
-
-
-    function createFloatingEmoji() {
-
-      if (emojiCount >= 7)
-        return;
-
-
-      const emoji =
-        document.createElement("div");
-
-
-      emoji.className =
-        "floating";
-
-
-      emoji.innerHTML =
-        floatingEmojis[
-          Math.floor(
-            Math.random() *
-            floatingEmojis.length
-          )
-        ];
-
-
-      emoji.style.left =
-        Math.random() * 100 + "vw";
-
-
-      emoji.style.fontSize =
-        18 +
-        Math.random() * 14 +
-        "px";
-
-
-      document.body.appendChild(
-        emoji
-      );
-
-
-      emojiCount++;
-
-
-      setTimeout(
-        function() {
-
-          emoji.remove();
-
-          emojiCount--;
-
-        },
-        6000
+      console.error(
+        "Anonymous login error:",
+        error
       );
 
     }
 
+  }
 
-    setInterval(
-      createFloatingEmoji,
-      900
-    );
+}
 
-
-    /* TOUCH */
-
-    document.addEventListener(
-      "pointerdown",
-      function(event) {
-
-        const touch =
-          document.createElement("div");
-
-        const touchEmojis = [
-          "😘",
-          "❤️‍🩹",
-          "🥰"
-        ];
-
-        touch.className =
-          "touch";
-
-        touch.innerHTML =
-          touchEmojis[
-            Math.floor(
-              Math.random() *
-              touchEmojis.length
-            )
-          ];
-
-        touch.style.left =
-          event.clientX + "px";
-
-        touch.style.top =
-          event.clientY + "px";
-
-        document.body.appendChild(
-          touch
-        );
-
-        setTimeout(
-          function() {
-
-            touch.remove();
-
-          },
-          1400
-        );
-
-      }
-    );
+visitorLogin();
 
 
-    /* MULTIPLE CHOICE */
+
+/* =========================
+   STARS
+========================= */
+
+const stars =
+document.getElementById("stars");
+
+
+for(
+  let i=0;
+  i<35;
+  i++
+){
+
+  const star =
+  document.createElement("div");
+
+  star.className =
+  "star";
+
+  star.textContent =
+  "✦";
+
+  star.style.left =
+  Math.random()*100+"vw";
+
+  star.style.top =
+  Math.random()*100+"vh";
+
+  star.style.animationDelay =
+  Math.random()*3+"s";
+
+  stars.appendChild(star);
+
+}
+
+
+
+/* =========================
+   TOUCH EMOJIS
+========================= */
+
+document.addEventListener(
+"pointerdown",
+function(event){
+
+  const emojis = [
+
+    "😘",
+    "❤️‍🩹",
+    "🥰"
+
+  ];
+
+
+  const emoji =
+  document.createElement("div");
+
+
+  emoji.className =
+  "touch";
+
+
+  emoji.textContent =
+  emojis[
+    Math.floor(
+      Math.random()*emojis.length
+    )
+  ];
+
+
+  emoji.style.left =
+  event.clientX+"px";
+
+
+  emoji.style.top =
+  event.clientY+"px";
+
+
+  document.body.appendChild(
+    emoji
+  );
+
+
+  setTimeout(
+    ()=>emoji.remove(),
+    1400
+  );
+
+});
+
+
+
+/* =========================
+   FLOATING EMOJIS
+========================= */
+
+const floatingEmojis = [
+
+  "❤️",
+  "💗",
+  "💕",
+  "💖",
+  "💜",
+  "🥰",
+  "😊",
+  "✨"
+
+];
+
+
+let floatingCount = 0;
+
+
+setInterval(
+function(){
+
+  if(
+    floatingCount>=5
+  ){
+    return;
+  }
+
+
+  const emoji =
+  document.createElement("div");
+
+
+  emoji.className =
+  "floating";
+
+
+  emoji.textContent =
+  floatingEmojis[
+    Math.floor(
+      Math.random()*
+      floatingEmojis.length
+    )
+  ];
+
+
+  emoji.style.left =
+  Math.random()*100+"vw";
+
+
+  emoji.style.fontSize =
+  (18+
+   Math.random()*15)
+   +"px";
+
+
+  document.body.appendChild(
+    emoji
+  );
+
+
+  floatingCount++;
+
+
+  setTimeout(
+  function(){
+
+    emoji.remove();
+
+    floatingCount--;
+
+  },
+  6000);
+
+},
+1200);
+
+
+
+/* =========================
+   MULTIPLE CHOICE
+========================= */
+
+document
+.querySelectorAll(".answer")
+.forEach(
+function(button){
+
+  button.addEventListener(
+  "click",
+  function(){
+
+    const q =
+    this.dataset.q;
+
 
     document
-      .querySelectorAll(".answer")
-      .forEach(
-        function(button) {
+    .querySelectorAll(
+      '[data-q="'+q+'"]'
+    )
+    .forEach(
+    function(b){
 
-          button.addEventListener(
-            "click",
-            function(event) {
-
-              event.stopPropagation();
-
-              const q =
-                this.dataset.q;
-
-              document
-                .querySelectorAll(
-                  '[data-q="' + q + '"]'
-                )
-                .forEach(
-                  function(b) {
-
-                    b.classList.remove(
-                      "selected"
-                    );
-
-                  }
-                );
-
-              this.classList.add(
-                "selected"
-              );
-
-            }
-          );
-
-        }
+      b.classList.remove(
+        "selected"
       );
 
+    });
 
-    /* SAVE ANSWERS */
+
+    this.classList.add(
+      "selected"
+    );
+
+  });
+
+});
+
+
+
+/* =========================
+   SUBMIT ANSWERS
+========================= */
+
+document
+.getElementById("submit")
+.addEventListener(
+"click",
+async function(){
+
+  const user =
+  auth.currentUser;
+
+
+  if(!user){
+
+    alert(
+      "Please wait a moment and try again."
+    );
+
+    return;
+
+  }
+
+
+  const answers = {};
+
+
+  for(
+    let i=1;
+    i<=3;
+    i++
+  ){
+
+    const selected =
+    document.querySelector(
+      '[data-q="'+i+'"].selected'
+    );
+
+
+    answers[
+      "question"+i
+    ] =
+    selected
+    ? selected.innerText
+    : "Not answered";
+
+  }
+
+
+  for(
+    let i=4;
+    i<=10;
+    i++
+  ){
+
+    answers[
+      "question"+i
+    ] =
+    document
+    .getElementById("q"+i)
+    .value
+    .trim()
+    ||
+    "Not answered";
+
+  }
+
+
+  try{
+
+    const newSubmission =
+    push(
+      ref(db,"submissions")
+    );
+
+
+    await set(
+      newSubmission,
+      {
+
+        uid:user.uid,
+
+        createdAt:
+        Date.now(),
+
+        answers:answers
+
+      }
+    );
+
 
     document
-      .getElementById("submit")
-      .addEventListener(
-        "click",
-        function() {
+    .getElementById("message")
+    .style.display =
+    "block";
 
 
-          let answers = {};
+    alert(
+      "Your answers were submitted ❤️"
+    );
 
+  }
 
-          for (
-            let i = 1;
-            i <= 3;
-            i++
-          ) {
+  catch(error){
 
-            const selected =
-              document.querySelector(
-                '[data-q="' +
-                i +
-                '"].selected'
-              );
+    console.error(error);
 
-            answers[
-              "Question " + i
-            ] =
-              selected
-                ? selected.innerText
-                : "Not answered";
+    alert(
+      "Could not save answers. Check Firebase rules."
+    );
 
-          }
+  }
 
+});
 
-          for (
-            let i = 4;
-            i <= 10;
-            i++
-          ) {
 
-            answers[
-              "Question " + i
-            ] =
-              document
-                .getElementById(
-                  "q" + i
-                )
-                .value
-                .trim() ||
-              "Not answered";
 
-          }
+/* =========================
+   ASK QUESTION
+========================= */
 
+document
+.getElementById("askButton")
+.addEventListener(
+"click",
+async function(){
 
-          let saved =
-            JSON.parse(
-              localStorage.getItem(
-                "answers"
-              )
-            ) || [];
+  const input =
+  document.getElementById(
+    "questionInput"
+  );
 
 
-          saved.push({
+  const question =
+  input.value.trim();
 
-            date:
-              new Date()
-                .toLocaleString(),
 
-            answers:
-              answers
+  if(!question){
 
-          });
+    alert(
+      "Write a question first."
+    );
 
+    return;
 
-          localStorage.setItem(
-            "answers",
-            JSON.stringify(saved)
-          );
+  }
 
 
-          document
-            .getElementById(
-              "message"
-            )
-            .style.display =
-            "block";
+  const user =
+  auth.currentUser;
 
 
-          alert(
-            "Answers saved ❤️"
-          );
+  if(!user){
 
-        }
-      );
+    alert(
+      "Please wait a moment."
+    );
 
+    return;
 
-    /* ASK QUESTIONS */
+  }
 
-    const input =
-      document.getElementById(
-        "questionInput"
-      );
 
-    const askButton =
-      document.getElementById(
-        "askButton"
-      );
+  try{
 
-    const questionList =
-      document.getElementById(
-        "questionList"
-      );
+    const newQuestion =
+    push(
+      ref(db,"questions")
+    );
 
 
-    let questions =
-      JSON.parse(
-        localStorage.getItem(
-          "askedQuestions"
-        )
-      ) || [];
+    await set(
+      newQuestion,
+      {
 
+        uid:user.uid,
 
-    function displayQuestions() {
+        question:question,
 
+        answer:"",
 
-      questionList.innerHTML =
-        "";
+        createdAt:
+        Date.now()
 
+      }
+    );
 
-      questions.forEach(
-        function(item, index) {
 
+    input.value="";
 
-          const box =
-            document.createElement(
-              "div"
-            );
 
+  }
 
-          box.className =
-            "asked-question";
+  catch(error){
 
+    console.error(error);
 
-          const question =
-            document.createElement(
-              "div"
-            );
+    alert(
+      "Question could not be sent."
+    );
 
+  }
 
-          question.className =
-            "asked-text";
+});
 
 
-          question.innerText =
-            "❓ " +
-            item.question;
 
+/* =========================
+   DISPLAY VISITOR QUESTIONS
+========================= */
 
-          box.appendChild(
-            question
-          );
+onValue(
+ref(db,"questions"),
+function(snapshot){
 
+  const box =
+  document.getElementById(
+    "questions"
+  );
 
-          if (item.answer) {
 
+  box.innerHTML="";
 
-            const answer =
-              document.createElement(
-                "div"
-              );
 
+  const data =
+  snapshot.val();
 
-            answer.className =
-              "my-answer";
 
+  if(!data){
 
-            answer.innerText =
-              "❤️ My answer: " +
-              item.answer;
+    return;
 
+  }
 
-            box.appendChild(
-              answer
-            );
 
+  const user =
+  auth.currentUser;
 
-          } else {
 
+  if(!user){
 
-            const input =
-              document.createElement(
-                "input"
-              );
+    return;
 
+  }
 
-            input.className =
-              "answer-input";
 
+  Object.entries(data)
+  .forEach(
+  function([id,item]){
 
-            input.placeholder =
-              "Write your answer here...";
+    if(
+      item.uid !==
+      user.uid
+    ){
 
-
-            const button =
-              document.createElement(
-                "button"
-              );
-
-
-            button.className =
-              "button";
-
-
-            button.innerText =
-              "Save My Answer";
-
-
-            button.addEventListener(
-              "click",
-              function() {
-
-
-                item.answer =
-                  input.value.trim();
-
-
-                if (!item.answer)
-                  return;
-
-
-                localStorage.setItem(
-                  "askedQuestions",
-                  JSON.stringify(
-                    questions
-                  )
-                );
-
-
-                displayQuestions();
-
-              }
-            );
-
-
-            box.appendChild(
-              input
-            );
-
-
-            box.appendChild(
-              button
-            );
-
-          }
-
-
-          questionList.appendChild(
-            box
-          );
-
-        }
-      );
+      return;
 
     }
 
 
-    askButton.addEventListener(
-      "click",
-      function() {
-
-
-        const text =
-          input.value.trim();
-
-
-        if (!text) {
-
-          alert(
-            "Please write a question first."
-          );
-
-          return;
-
-        }
-
-
-        questions.push({
-
-          question: text,
-
-          answer: ""
-
-        });
-
-
-        localStorage.setItem(
-          "askedQuestions",
-          JSON.stringify(
-            questions
-          )
-        );
-
-
-        input.value = "";
-
-
-        displayQuestions();
-
-      }
+    const div =
+    document.createElement(
+      "div"
     );
 
 
-    input.addEventListener(
-      "keydown",
-      function(event) {
+    div.className =
+    "item";
 
-        if (
-          event.key === "Enter"
-        ) {
 
-          askButton.click();
-
-        }
-
-      }
+    const question =
+    document.createElement(
+      "div"
     );
 
 
-    displayQuestions();
+    question.textContent =
+    "❓ "+item.question;
 
 
-  </script>
+    div.appendChild(
+      question
+    );
 
-</body>
 
-</html>
+    const reply =
+    document.createElement(
+      "div"
+    );
+
+
+    reply.className =
+    "reply";
+
+
+    if(item.answer){
+
+      reply.textContent =
+      "❤️ My answer: "+
+      item.answer;
+
+    }
+
+    else{
+
+      reply.textContent =
+      "⏳ Waiting for a reply...";
+
+    }
+
+
+    div.appendChild(
+      reply
+    );
+
+
+    box.appendChild(
+      div
+    );
+
+  });
+
+});
+
+
+
+/* =========================
+   ADMIN LOGIN BUTTON
+========================= */
+
+document
+.getElementById(
+  "adminLoginButton"
+)
+.addEventListener(
+"click",
+function(){
+
+  const box =
+  document.getElementById(
+    "loginBox"
+  );
+
+
+  if(
+    box.style.display===
+    "block"
+  ){
+
+    box.style.display=
+    "none";
+
+  }
+
+  else{
+
+    box.style.display=
+    "block";
+
+  }
+
+});
+
+
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+document
+.getElementById(
+  "loginButton"
+)
+.addEventListener(
+"click",
+async function(){
+
+  const email =
+  document.getElementById(
+    "adminEmail"
+  ).value.trim();
+
+
+  const password =
+  document.getElementById(
+    "adminPassword"
+  ).value;
+
+
+  if(
+    email !== ADMIN_EMAIL
+  ){
+
+    alert(
+      "That is not the admin email."
+    );
+
+    return;
+
+  }
+
+
+  try{
+
+    await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+
+    alert(
+      "Admin login successful 👑"
+    );
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    alert(
+      "Login failed. Check your email and password."
+    );
+
+  }
+
+});
+
+
+
+/* =========================
+   CHECK LOGIN
+========================= */
+
+onAuthStateChanged(
+auth,
+function(user){
+
+  if(
+    user &&
+    user.email ===
+    ADMIN_EMAIL
+  ){
+
+    document
+    .getElementById(
+      "adminPanel"
+    )
+    .style.display =
+    "block";
+
+
+    loadAdminQuestions();
+
+    loadSubmissions();
+
+  }
+
+  else{
+
+    document
+    .getElementById(
+      "adminPanel"
+    )
+    .style.display =
+    "none";
+
+  }
+
+});
+
+
+
+/* =========================
+   ADMIN QUESTIONS
+========================= */
+
+function loadAdminQuestions(){
+
+  onValue(
+  ref(db,"questions"),
+  function(snapshot){
+
+    const box =
+    document.getElementById(
+      "adminQuestions"
+    );
+
+
+    box.innerHTML="";
+
+
+    const data =
+    snapshot.val();
+
+
+    if(!data){
+
+      box.innerHTML =
+      "<p>No questions yet.</p>";
+
+      return;
+
+    }
+
+
+    Object.entries(data)
+    .forEach(
+    function([id,item]){
+
+      const div =
+      document.createElement(
+        "div"
+      );
+
+
+      div.className =
+      "admin-box";
+
+
+      const question =
+      document.c
