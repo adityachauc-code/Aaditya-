@@ -737,53 +737,75 @@ alert("Question could not be sent.");
 
 /* SHOW VISITOR QUESTIONS */
 
-onValue(
-  query(
+function loadVisitorQuestions(user){
+
+  if(!user || user.isAnonymous !== true){
+    return;
+  }
+
+  const questionsQuery = query(
     ref(db,"questions"),
     orderByChild("uid"),
-    equalTo(auth.currentUser.uid)
-  ),
-  snapshot=>{
+    equalTo(user.uid)
+  );
 
-const box=
-document.getElementById("questions");
+  onValue(questionsQuery, snapshot=>{
 
-box.innerHTML="";
+    const box =
+      document.getElementById("questions");
 
-const data=snapshot.val();
+    box.innerHTML = "";
 
-const user=auth.currentUser;
+    const data = snapshot.val();
 
-if(!data||!user)return;
+    if(!data){
+      return;
+    }
 
-Object.entries(data).forEach(([id,item])=>{
+    Object.entries(data).forEach(([id,item])=>{
 
-if(item.uid!==user.uid)return;
+      const div =
+        document.createElement("div");
 
-const div=document.createElement("div");
+      div.className = "item";
 
-div.className="item";
+      const q =
+        document.createElement("div");
 
-const q=document.createElement("div");
+      q.textContent =
+        "❓ " + item.question;
 
-q.textContent="❓ "+item.question;
+      div.appendChild(q);
 
-div.appendChild(q);
+      const reply =
+        document.createElement("div");
 
-const reply=document.createElement("div");
+      reply.className = "reply";
 
-reply.className="reply";
+      reply.textContent =
+        item.answer
+        ? "❤️ My answer: " + item.answer
+        : "⏳ Waiting for a reply...";
 
-reply.textContent=
-item.answer
-?"❤️ My answer: "+item.answer
-:"⏳ Waiting for a reply...";
+      div.appendChild(reply);
 
-div.appendChild(reply);
+      box.appendChild(div);
 
-box.appendChild(div);
+    });
 
-});
+  });
+}
+
+
+/* WAIT FOR VISITOR LOGIN */
+
+onAuthStateChanged(auth, user=>{
+
+  if(user && user.isAnonymous){
+
+    loadVisitorQuestions(user);
+
+  }
 
 });
 
